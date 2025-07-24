@@ -1,7 +1,7 @@
 
 import React from "react";
 const Footer = () => {
-  return 
+  return (
       <div className="section-container">
         <div className="flex flex-col items-center space-y-4">
           <img 
@@ -10,6 +10,7 @@ const Footer = () => {
             className="h-8 sm:h-10" 
           />
         </div>
-      </div>;
+      </div>
+  );
 };
 export default Footer;

@@ -62,7 +62,7 @@ const Navbar = () => {
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-8">
+        <nav className="hidden md:flex items-center space-x-8">
           <a 
             href="#" 
             className="nav-link"
@@ -75,6 +75,9 @@ const Navbar = () => {
           <a href="#solution" className="nav-link">Solution</a>
           <a href="#features" className="nav-link">Features</a>
           <a href="#testimonials" className="nav-link">Testimonials</a>
+          <button className="bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-2 rounded-md font-medium transition-colors">
+            Schedule a Demo
+          </button>
         </nav>
 
         {/* Mobile menu button - increased touch target */}
@@ -125,6 +128,15 @@ const Navbar = () => {
           >
             Contact
           </a>
+          <button 
+            className="bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 rounded-lg font-medium transition-colors mt-4"
+            onClick={() => {
+              setIsMenuOpen(false);
+              document.body.style.overflow = '';
+            }}
+          >
+            Schedule a Demo
+          </button>
         </nav>
       </div>
     </header>
