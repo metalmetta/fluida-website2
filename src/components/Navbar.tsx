@@ -77,7 +77,7 @@ const Navbar = () => {
           <a href="#testimonials" className="nav-link">Testimonials</a>
           <button className="bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 px-6 py-3 rounded-full font-medium transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl">
             Schedule a Demo
-            <ArrowRight size={16} />
+            <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
           </button>
         </nav>
 
@@ -137,7 +137,7 @@ const Navbar = () => {
             }}
           >
             Schedule a Demo
-            <ArrowRight size={16} />
+            <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
           </button>
         </nav>
       </div>

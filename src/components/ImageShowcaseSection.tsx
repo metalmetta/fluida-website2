@@ -11,17 +11,21 @@ const ImageShowcaseSection = () => {
         <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-elegant mx-auto max-w-4xl animate-on-scroll">
           <div className="w-full">
             <img 
-              src="/lovable-uploads/c3d5522b-6886-4b75-8ffc-d020016bb9c2.png" 
+              src="/money.png" 
               alt="Advanced humanoid robot with orange and white design" 
               className="w-full h-auto object-cover"
             />
           </div>
           <div className="bg-white p-4 sm:p-8">
-            <h3 className="text-xl sm:text-2xl font-display font-semibold mb-3 sm:mb-4">Next Generation Technology</h3>
+            <h3 className="text-xl sm:text-2xl font-display font-semibold mb-3 sm:mb-4">Next Generation Financial Technology</h3>
             <p className="text-gray-700 text-sm sm:text-base">
-              Built with precision engineering and sophisticated AI, our robots seamlessly 
-              integrate into various environments, from homes to hospitals, providing 
-              assistance and enriching human experiences.
+              Withdraw, convert, or pay anyone anywherewith real-time, multi-currency payouts powered by your Global Stablecoin Account.
+
+Withdraw in USD, EUR, COP, MXN, and more.
+
+Send payouts via PIX, SPEI, ACH, SEPA, and more.
+
+Enable stablecoin payouts and withdraws.
             </p>
           </div>
         </div>

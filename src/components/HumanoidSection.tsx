@@ -95,7 +95,7 @@ const HumanoidSection = () => {
               <div className="pulse-chip opacity-0 animate-fade-in" style={{
                 animationDelay: "0.1s"
               }}>
-                <span>Mission</span>
+                <span>Vision</span>
               </div>
             </div>
             
