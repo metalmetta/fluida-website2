@@ -52,11 +52,11 @@ const Navbar = () => {
             e.preventDefault();
             scrollToTop();
           }}
-          aria-label="Pulse Robot"
+          aria-label="Fluida"
         >
           <img 
-            src="/logo.svg" 
-            alt="Pulse Robot Logo" 
+            src="/lovable-uploads/f9efe843-5fe2-418a-b90f-682dea8eb2c3.png" 
+            alt="Fluida Logo" 
             className="h-7 sm:h-8" 
           />
         </a>
