@@ -57,7 +57,7 @@ const Navbar = () => {
           <img 
             src="/lovable-uploads/3ecdfdbf-07a6-433e-aa29-44c5a5d3b0bb.png" 
             alt="Fluida Logo" 
-            className="h-12 sm:h-16 md:h-20" 
+            className="h-16 sm:h-20 md:h-24" 
           />
         </a>
 
