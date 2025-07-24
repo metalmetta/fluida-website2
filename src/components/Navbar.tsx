@@ -55,9 +55,9 @@ const Navbar = () => {
           aria-label="Fluida"
         >
           <img 
-            src="/lovable-uploads/f9efe843-5fe2-418a-b90f-682dea8eb2c3.png" 
+            src="/lovable-uploads/3ecdfdbf-07a6-433e-aa29-44c5a5d3b0bb.png" 
             alt="Fluida Logo" 
-            className="h-7 sm:h-8" 
+            className="h-12 sm:h-16 md:h-20" 
           />
         </a>
 
