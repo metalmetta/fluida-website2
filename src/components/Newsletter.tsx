@@ -29,15 +29,15 @@ const Newsletter = () => {
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-4 mb-6">
             <div className="pulse-chip">
-              <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-pulse-500 text-white mr-2">05</span>
               <span>Newsletter</span>
             </div>
           </div>
           
           <h2 className="text-5xl font-display font-bold mb-4 text-left">Subscribe to the newsletter</h2>
           <p className="text-xl text-gray-700 mb-10 text-left">
-            Be first to hear about breakthroughs, partnerships, and deployment opportunities
-          </p>
+          Join the group of disruptive companies saving time and money with Fluida.
+
+</p>
           
           <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-4 items-start md:items-center">
             <div className="relative flex-grow">

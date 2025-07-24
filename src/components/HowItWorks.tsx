@@ -48,7 +48,7 @@ const HowItWorks = () => {
   const stepsData = [
     {
       number: "01",
-      title: "Request Access",
+      title: "Schedule a Demo",
       description: "Fill out the application form to join our early access program and secure your spot in line.",
       image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80"
     },

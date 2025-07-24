@@ -71,10 +71,10 @@ const Navbar = () => {
               scrollToTop();
             }}
           >
-            Home
           </a>
-          <a href="#features" className="nav-link">About</a>
-          <a href="#details" className="nav-link">Contact</a>
+          <a href="#solution" className="nav-link">Solution</a>
+          <a href="#features" className="nav-link">Features</a>
+          <a href="#testimonials" className="nav-link">Testimonials</a>
         </nav>
 
         {/* Mobile menu button - increased touch target */}
@@ -113,7 +113,7 @@ const Navbar = () => {
               document.body.style.overflow = '';
             }}
           >
-            About
+            Features
           </a>
           <a 
             href="#details" 
