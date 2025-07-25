@@ -75,10 +75,15 @@ const Navbar = () => {
           <a href="#solution" className="nav-link">Solution</a>
           <a href="#features" className="nav-link">Features</a>
           <a href="#testimonials" className="nav-link">Testimonials</a>
-          <button className="bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 px-6 py-3 rounded-full font-medium transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl">
+          <a 
+            href="https://bookva.ai/fluida" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 px-6 py-3 rounded-full font-medium transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl"
+          >
             Schedule a Demo
             <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-          </button>
+          </a>
         </nav>
 
         {/* Mobile menu button - increased touch target */}
@@ -129,7 +134,10 @@ const Navbar = () => {
           >
             Contact
           </a>
-          <button 
+          <a 
+            href="https://bookva.ai/fluida"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 px-6 py-3 rounded-full font-medium transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl mt-4"
             onClick={() => {
               setIsMenuOpen(false);
@@ -138,7 +146,7 @@ const Navbar = () => {
           >
             Schedule a Demo
             <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-          </button>
+          </a>
         </nav>
       </div>
     </header>
