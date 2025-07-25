@@ -93,10 +93,10 @@ const Hero = () => {
               Send funds worlwide to your Vendors, Suppliers and Contractors in real time at a fraction of the cost.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in" style={{
+            <div className="flex flex-col sm:flex-row gap-4 justify-start sm:justify-end opacity-0 animate-fade-in" style={{
             animationDelay: "0.7s"
           }}>
-              <a href="https://bookva.ai/fluida" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 px-6 py-3 rounded-full font-medium transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl w-full sm:w-auto group">
+              <a href="https://bookva.ai/fluida" target="_blank" rel="noopener noreferrer" className="bg-white text-orange-600 hover:bg-gray-50 border-2 border-orange-600 hover:border-orange-700 px-6 py-3 rounded-full font-medium transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl w-full sm:w-auto group">
                 Schedule a Demo
                 <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
               </a>
