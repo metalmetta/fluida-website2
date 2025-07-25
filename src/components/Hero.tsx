@@ -127,19 +127,10 @@ const Hero = () => {
               style={{ animationDelay: "0.7s" }}
             >
               <a 
-                href="#get-access" 
-                className="flex items-center justify-center group w-full sm:w-auto text-center" 
-                style={{
-                  backgroundColor: '#FE5C02',
-                  borderRadius: '1440px',
-                  boxSizing: 'border-box',
-                  color: '#FFFFFF',
-                  cursor: 'pointer',
-                  fontSize: '14px',
-                  lineHeight: '20px',
-                  padding: '16px 24px', // Slightly reduced padding for mobile
-                  border: '1px solid white',
-                }}
+                href="https://bookva.ai/fluida"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 px-6 py-3 rounded-full font-medium transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl w-full sm:w-auto group"
               >
                 Schedule a Demo
                 <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
