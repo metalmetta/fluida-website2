@@ -1,5 +1,6 @@
 
 import React, { useEffect } from "react";
+import TopBanner from "@/components/TopBanner";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import HumanoidSection from "@/components/HumanoidSection";
@@ -60,6 +61,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <TopBanner />
       <Navbar />
       <main className="space-y-4 sm:space-y-8"> {/* Reduced space on mobile */}
         <Hero />
