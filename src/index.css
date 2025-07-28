@@ -163,11 +163,11 @@
   }
   
   .button-primary {
-    @apply bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80 text-primary-foreground font-semibold py-4 px-8 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98] border border-primary/20;
+    @apply bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary/25;
   }
 
   .button-secondary {
-    @apply bg-white/80 backdrop-blur-sm border-2 border-primary/30 hover:border-primary text-primary hover:bg-primary/5 font-semibold py-4 px-8 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg;
+    @apply bg-transparent border border-gray-200 hover:border-primary text-gray-700 hover:text-primary font-medium py-3 px-6 rounded-lg transition-all duration-300;
   }
   
   .nav-link {
