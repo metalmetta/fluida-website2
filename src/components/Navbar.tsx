@@ -125,10 +125,19 @@ const Navbar = () => {
 
       {/* Mobile Navigation - improved for better touch experience */}
       <div className={cn(
-        "fixed inset-0 z-40 bg-white flex flex-col pt-16 px-6 md:hidden transition-all duration-300 ease-in-out",
+        "fixed inset-0 z-40 bg-white w-full h-full flex flex-col pt-16 px-6 md:hidden transition-all duration-300 ease-in-out overflow-hidden",
         isMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
       )}>
-        <nav className="flex flex-col space-y-6 items-center mt-12">
+        {/* Logo in mobile menu */}
+        <div className="flex justify-center mb-8">
+          <img 
+            src="/lovable-uploads/3ecdfdbf-07a6-433e-aa29-44c5a5d3b0bb.png" 
+            alt="Fluida Logo" 
+            className="h-20 w-auto" 
+          />
+        </div>
+        
+        <nav className="flex flex-col space-y-6 items-center mt-4">
           <button 
             onClick={() => handleSectionNavigation('solution')}
             className="text-xl font-medium py-4 px-8 w-full max-w-xs text-center rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors shadow-md" 
