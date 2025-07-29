@@ -221,3 +221,39 @@
   transform: translateY(var(--parallax-y, 0));
   transition: transform 0.1s ease-out;
 }
+
+/* Mobile-specific performance optimizations */
+@media (max-width: 768px) {
+  /* Reduce animation complexity on mobile */
+  .animate-fade-in {
+    animation-duration: 0.5s !important;
+  }
+  
+  /* Improve scrolling performance */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Optimize font rendering */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeSpeed;
+  }
+  
+  /* Prevent horizontal scroll */
+  body, html {
+    overflow-x: hidden;
+  }
+  
+  /* Improve tap responsiveness */
+  button, a, [role="button"] {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+    touch-action: manipulation;
+  }
+  
+  /* Optimize background images for mobile */
+  .bg-cover {
+    background-attachment: scroll !important;
+  }
+}
