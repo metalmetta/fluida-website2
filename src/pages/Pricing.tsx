@@ -19,68 +19,68 @@ const Pricing = () => {
               Simple, Transparent Pricing
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Choose the perfect plan for your team. All plans include our core features 
-              with the flexibility to scale as you grow.
+              Pay only a small fee for successful transactions. No hidden costs, no monthly subscriptions.
             </p>
           </div>
 
-          {/* Pricing Cards */}
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {plans.map((plan, index) => (
-              <div
-                key={plan.name}
-                className={`relative bg-white rounded-2xl shadow-lg border-2 transition-all duration-300 hover:shadow-xl ${
-                  plan.popular 
-                    ? "border-primary scale-105" 
-                    : "border-gray-200 hover:border-primary/50"
-                }`}
-              >
-                {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-primary text-white px-6 py-2 rounded-full text-sm font-semibold">
-                      Most Popular
-                    </span>
-                  </div>
-                )}
-                
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                    {plan.name}
-                  </h3>
-                  <p className="text-gray-600 mb-6">
-                    {plan.description}
-                  </p>
-                  
-                  <div className="mb-8">
-                    <span className="text-4xl font-bold text-gray-900">
-                      {plan.price}
-                    </span>
-                    <span className="text-gray-600">
-                      {plan.period}
-                    </span>
-                  </div>
-                  
-                  <ul className="space-y-4 mb-8">
-                    {plan.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center">
-                        <Check className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
-                        <span className="text-gray-700">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <button
-                    className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 ${
-                      plan.popular
-                        ? "bg-primary text-white hover:bg-primary/90 hover:shadow-lg"
-                        : "bg-gray-100 text-gray-900 hover:bg-gray-200"
-                    }`}
-                  >
-                    {plan.name === "Enterprise" ? "Contact Sales" : "Get Started"}
-                  </button>
-                </div>
+          {/* Single Pricing Card */}
+          <div className="max-w-2xl mx-auto">
+            <div className="relative bg-white rounded-2xl shadow-xl border-2 border-primary">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <span className="bg-primary text-white px-6 py-2 rounded-full text-sm font-semibold">
+                  Simple & Fair
+                </span>
               </div>
-            ))}
+              
+              <div className="p-12 text-center">
+                <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                  Transaction Fee
+                </h3>
+                <p className="text-gray-600 mb-8 text-lg">
+                  Only pay when you succeed
+                </p>
+                
+                <div className="mb-12">
+                  <span className="text-6xl font-bold text-primary">
+                    0.5%
+                  </span>
+                  <span className="text-xl text-gray-600 ml-2">
+                    per transaction
+                  </span>
+                </div>
+                
+                <ul className="space-y-4 mb-10 text-left max-w-md mx-auto">
+                  <li className="flex items-center">
+                    <Check className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
+                    <span className="text-gray-700">No setup fees</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
+                    <span className="text-gray-700">No monthly subscription</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
+                    <span className="text-gray-700">Full platform access</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
+                    <span className="text-gray-700">24/7 support</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
+                    <span className="text-gray-700">Real-time analytics</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
+                    <span className="text-gray-700">API access</span>
+                  </li>
+                </ul>
+                
+                <button className="w-full py-4 px-8 rounded-lg font-semibold bg-primary text-white hover:bg-primary/90 transition-all duration-300 hover:shadow-lg text-lg">
+                  Get Started
+                </button>
+              </div>
+            </div>
           </div>
 
           {/* FAQ Section */}
@@ -91,26 +91,26 @@ const Pricing = () => {
             <div className="max-w-3xl mx-auto space-y-6">
               <div className="text-left bg-gray-50 rounded-lg p-6">
                 <h3 className="font-semibold text-gray-900 mb-2">
-                  Can I change plans anytime?
+                  How is the 0.5% fee calculated?
                 </h3>
                 <p className="text-gray-600">
-                  Yes, you can upgrade or downgrade your plan at any time. Changes will be reflected in your next billing cycle.
+                  The fee is calculated as 0.5% of each successful transaction amount. You only pay when transactions are completed successfully.
                 </p>
               </div>
               <div className="text-left bg-gray-50 rounded-lg p-6">
                 <h3 className="font-semibold text-gray-900 mb-2">
-                  Is there a free trial?
+                  Are there any minimum fees or monthly charges?
                 </h3>
                 <p className="text-gray-600">
-                  We offer a 14-day free trial for all plans. No credit card required to get started.
+                  No, there are no minimum fees, setup costs, or monthly subscriptions. You only pay the 0.5% transaction fee when you use the platform.
                 </p>
               </div>
               <div className="text-left bg-gray-50 rounded-lg p-6">
                 <h3 className="font-semibold text-gray-900 mb-2">
-                  What payment methods do you accept?
+                  When are fees collected?
                 </h3>
                 <p className="text-gray-600">
-                  We accept all major credit cards, bank transfers, and can arrange custom payment terms for Enterprise customers.
+                  Fees are automatically deducted from successful transactions in real-time. You'll receive detailed reports of all fee calculations.
                 </p>
               </div>
             </div>
@@ -119,10 +119,10 @@ const Pricing = () => {
           {/* CTA Section */}
           <div className="mt-20 text-center bg-gradient-to-r from-primary/10 to-primary/5 rounded-2xl p-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Ready to get started?
+              Start with zero upfront costs
             </h2>
             <p className="text-xl text-gray-600 mb-8">
-              Join thousands of teams already using our platform to automate their workflows.
+              Begin using our platform immediately. You only pay the 0.5% fee when you succeed.
             </p>
             <a
               href="https://bookva.ai/fluida"
@@ -130,7 +130,7 @@ const Pricing = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center bg-primary text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary/90 transition-all duration-300 hover:shadow-lg"
             >
-              Schedule a Demo
+              Get Started Now
             </a>
           </div>
         </div>
