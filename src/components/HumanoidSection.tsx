@@ -1,5 +1,6 @@
 
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const HumanoidSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -8,6 +9,7 @@ const HumanoidSection = () => {
   const [isIntersecting, setIsIntersecting] = useState(false);
   const ticking = useRef(false);
   const lastScrollY = useRef(0);
+  const isMobile = useIsMobile();
 
   // More responsive timing function with shorter duration
   const cardStyle = {
@@ -42,21 +44,31 @@ const HumanoidSection = () => {
           
           const sectionRect = sectionRef.current.getBoundingClientRect();
           const viewportHeight = window.innerHeight;
-          const totalScrollDistance = viewportHeight * 2;
           
-          // Calculate the scroll progress
-          let progress = 0;
-          if (sectionRect.top <= 0) {
-            progress = Math.min(1, Math.max(0, Math.abs(sectionRect.top) / totalScrollDistance));
-          }
-          
-          // Determine which card should be visible based on progress
-          if (progress >= 0.66) {
-            setActiveCardIndex(2);
-          } else if (progress >= 0.33) {
-            setActiveCardIndex(1);
+          // On mobile, show all cards at once, on desktop use scroll animation
+          if (isMobile) {
+            // Simple mobile behavior - show all cards when section is visible
+            if (sectionRect.top <= viewportHeight && sectionRect.bottom >= 0) {
+              setActiveCardIndex(2); // Show all cards
+            }
           } else {
-            setActiveCardIndex(0);
+            // Desktop scroll behavior
+            const totalScrollDistance = viewportHeight * 2;
+            
+            // Calculate the scroll progress
+            let progress = 0;
+            if (sectionRect.top <= 0) {
+              progress = Math.min(1, Math.max(0, Math.abs(sectionRect.top) / totalScrollDistance));
+            }
+            
+            // Determine which card should be visible based on progress
+            if (progress >= 0.66) {
+              setActiveCardIndex(2);
+            } else if (progress >= 0.33) {
+              setActiveCardIndex(1);
+            } else {
+              setActiveCardIndex(0);
+            }
           }
           
           ticking.current = false;
@@ -75,7 +87,7 @@ const HumanoidSection = () => {
         observer.unobserve(sectionRef.current);
       }
     };
-  }, []);
+  }, [isMobile]);
 
   // Card visibility based on active index instead of direct scroll progress
   const isFirstCardVisible = isIntersecting;
@@ -86,7 +98,7 @@ const HumanoidSection = () => {
     <div 
       ref={sectionRef} 
       className="relative" 
-      style={{ height: '300vh' }}
+      style={{ height: isMobile ? '100vh' : '300vh' }}
     >
       <section className="w-full h-screen py-10 md:py-16 sticky top-0 overflow-hidden bg-white" id="why-humanoid">
         <div className="container px-6 lg:px-8 mx-auto h-full flex flex-col">
