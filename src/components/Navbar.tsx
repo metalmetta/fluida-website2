@@ -37,68 +37,91 @@ const Navbar = () => {
   };
 
   return (
-    <header
-      className={cn(
-        "fixed left-0 right-0 z-50 py-2 sm:py-3 md:py-4 transition-all duration-300",
-        "top-[40px]", // Account for banner height
-        isScrolled 
-          ? "bg-white/80 backdrop-blur-md shadow-sm" 
-          : "bg-transparent"
-      )}
-    >
-      <div className="container flex items-center justify-between px-4 sm:px-6 lg:px-8">
-        <a 
-          href="#" 
-          className="flex items-center space-x-2"
-          onClick={(e) => {
-            e.preventDefault();
-            scrollToTop();
-          }}
-          aria-label="Fluida"
-        >
-          <img 
-            src="/lovable-uploads/3ecdfdbf-07a6-433e-aa29-44c5a5d3b0bb.png" 
-            alt="Fluida Logo" 
-            className="h-16 sm:h-20 md:h-24" 
-          />
-        </a>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
-          <a href="#solution" className="nav-link">Solution</a>
-          <a href="#features" className="nav-link">Features</a>
-          <a href="#testimonials" className="nav-link">Testimonials</a>
-          <Link to="/pricing" className="nav-link">Pricing</Link>
+    <header className="fixed top-[50px] left-1/2 transform -translate-x-1/2 z-50">
+      <div 
+        className={cn(
+          "transition-all duration-500 ease-out",
+          "bg-black/90 backdrop-blur-xl border border-white/10",
+          "rounded-full shadow-2xl shadow-black/20",
+          isScrolled 
+            ? "px-6 py-3" 
+            : "px-8 py-4"
+        )}
+      >
+        <div className="flex items-center justify-between">
+          {/* Logo - compact for island */}
           <a 
-            href="https://bookva.ai/fluida" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-2 px-5 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 flex items-center gap-2"
+            href="#" 
+            className="flex items-center"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToTop();
+            }}
+            aria-label="Fluida"
           >
-            Schedule a Demo
-            <ArrowRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" />
+            <img 
+              src="/lovable-uploads/3ecdfdbf-07a6-433e-aa29-44c5a5d3b0bb.png" 
+              alt="Fluida Logo" 
+              className={cn(
+                "transition-all duration-300",
+                isScrolled ? "h-8" : "h-10"
+              )}
+            />
           </a>
-        </nav>
 
-        {/* Mobile menu button - increased touch target */}
-        <button 
-          className="md:hidden text-gray-700 p-3 focus:outline-none" 
-          onClick={toggleMenu}
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          {/* Desktop Navigation - compact island style */}
+          <nav className="hidden lg:flex items-center space-x-1 ml-8">
+            <a href="#solution" className="text-white/90 hover:text-white px-4 py-2 rounded-full hover:bg-white/10 transition-all duration-200 text-sm font-medium">
+              Solution
+            </a>
+            <a href="#features" className="text-white/90 hover:text-white px-4 py-2 rounded-full hover:bg-white/10 transition-all duration-200 text-sm font-medium">
+              Features
+            </a>
+            <a href="#testimonials" className="text-white/90 hover:text-white px-4 py-2 rounded-full hover:bg-white/10 transition-all duration-200 text-sm font-medium">
+              Testimonials
+            </a>
+            <Link to="/pricing" className="text-white/90 hover:text-white px-4 py-2 rounded-full hover:bg-white/10 transition-all duration-200 text-sm font-medium">
+              Pricing
+            </Link>
+          </nav>
+
+          {/* CTA Button - island style */}
+          <div className="hidden md:flex items-center ml-6">
+            <a 
+              href="https://bookva.ai/fluida" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-white text-black hover:bg-gray-100 font-semibold px-4 py-2 rounded-full transition-all duration-300 hover:shadow-lg flex items-center gap-2 text-sm"
+            >
+              Demo
+              <ArrowRight className="w-3 h-3" />
+            </a>
+          </div>
+
+          {/* Mobile menu button - island style */}
+          <button 
+            className="md:hidden text-white/90 hover:text-white p-2 hover:bg-white/10 rounded-full transition-all duration-200 ml-4" 
+            onClick={toggleMenu}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          >
+            {isMenuOpen ? <X size={18} /> : <Menu size={18} />}
+          </button>
+        </div>
       </div>
 
-      {/* Mobile Navigation - improved for better touch experience */}
+      {/* Mobile Navigation - island-style dropdown */}
       <div className={cn(
-        "fixed inset-0 z-40 bg-white flex flex-col pt-16 px-6 md:hidden transition-all duration-300 ease-in-out",
-        isMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
+        "absolute top-full left-1/2 transform -translate-x-1/2 mt-2 md:hidden",
+        "bg-black/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl",
+        "transition-all duration-300 ease-out min-w-[280px]",
+        isMenuOpen 
+          ? "opacity-100 scale-100 translate-y-0" 
+          : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
       )}>
-        <nav className="flex flex-col space-y-8 items-center mt-8">
+        <nav className="flex flex-col p-4 space-y-2">
           <Link 
             to="/" 
-            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
+            className="text-white/90 hover:text-white hover:bg-white/10 py-3 px-4 rounded-xl transition-all duration-200 text-center font-medium" 
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';
@@ -107,8 +130,18 @@ const Navbar = () => {
             Home
           </Link>
           <a 
+            href="#solution" 
+            className="text-white/90 hover:text-white hover:bg-white/10 py-3 px-4 rounded-xl transition-all duration-200 text-center font-medium" 
+            onClick={() => {
+              setIsMenuOpen(false);
+              document.body.style.overflow = '';
+            }}
+          >
+            Solution
+          </a>
+          <a 
             href="#features" 
-            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
+            className="text-white/90 hover:text-white hover:bg-white/10 py-3 px-4 rounded-xl transition-all duration-200 text-center font-medium" 
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';
@@ -116,9 +149,19 @@ const Navbar = () => {
           >
             Features
           </a>
+          <a 
+            href="#testimonials" 
+            className="text-white/90 hover:text-white hover:bg-white/10 py-3 px-4 rounded-xl transition-all duration-200 text-center font-medium" 
+            onClick={() => {
+              setIsMenuOpen(false);
+              document.body.style.overflow = '';
+            }}
+          >
+            Testimonials
+          </a>
           <Link 
             to="/pricing" 
-            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
+            className="text-white/90 hover:text-white hover:bg-white/10 py-3 px-4 rounded-xl transition-all duration-200 text-center font-medium" 
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';
@@ -126,28 +169,19 @@ const Navbar = () => {
           >
             Pricing
           </Link>
-          <a 
-            href="#details" 
-            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
-            onClick={() => {
-              setIsMenuOpen(false);
-              document.body.style.overflow = '';
-            }}
-          >
-            Contact
-          </a>
+          <div className="border-t border-white/10 my-2"></div>
           <a 
             href="https://bookva.ai/fluida"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 flex items-center justify-center gap-2 mt-4"
+            className="bg-white text-black hover:bg-gray-100 font-semibold py-3 px-4 rounded-xl transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2 mt-2"
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';
             }}
           >
             Schedule a Demo
-            <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+            <ArrowRight className="w-4 h-4" />
           </a>
         </nav>
       </div>
