@@ -64,18 +64,10 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a 
-            href="#" 
-            className="nav-link"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToTop();
-            }}
-          >
-          </a>
           <a href="#solution" className="nav-link">Solution</a>
           <a href="#features" className="nav-link">Features</a>
           <a href="#testimonials" className="nav-link">Testimonials</a>
+          <a href="/pricing" className="nav-link">Pricing</a>
           <a 
             href="https://bookva.ai/fluida" 
             target="_blank" 
@@ -104,11 +96,9 @@ const Navbar = () => {
       )}>
         <nav className="flex flex-col space-y-8 items-center mt-8">
           <a 
-            href="#" 
+            href="/" 
             className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToTop();
+            onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';
             }}
@@ -124,6 +114,16 @@ const Navbar = () => {
             }}
           >
             Features
+          </a>
+          <a 
+            href="/pricing" 
+            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
+            onClick={() => {
+              setIsMenuOpen(false);
+              document.body.style.overflow = '';
+            }}
+          >
+            Pricing
           </a>
           <a 
             href="#details" 
