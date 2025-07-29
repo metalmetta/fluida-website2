@@ -96,7 +96,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in" style={{
             animationDelay: "0.7s"
           }}>
-<a href="https://bookva.ai/fluida" target="_blank" rel="noopener noreferrer" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-white/25 flex items-center justify-center gap-2 w-full sm:w-auto group">
+<a href="https://bookva.ai/fluida" target="_blank" rel="noopener noreferrer" className="bg-pulse-500 border-2 border-pulse-500 text-white hover:bg-pulse-600 hover:border-pulse-600 sm:bg-transparent sm:border-white sm:text-white sm:hover:bg-white sm:hover:text-primary sm:hover:shadow-white/25 font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2 w-full sm:w-auto group">
 Schedule a Demo
                 <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
               </a>

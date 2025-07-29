@@ -180,7 +180,7 @@ const Navbar = () => {
             href="https://bookva.ai/fluida"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-primary text-white hover:bg-primary/90 font-semibold py-4 px-8 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 mt-8 w-full max-w-xs"
+            className="bg-pulse-500 text-white hover:bg-pulse-600 font-semibold py-4 px-8 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 mt-8 w-full max-w-xs"
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';
