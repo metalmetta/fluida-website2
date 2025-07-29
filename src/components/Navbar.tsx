@@ -1,12 +1,14 @@
 
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Menu, X, ArrowRight } from "lucide-react";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,10 +19,50 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Handle hash navigation when coming from other pages
+  useEffect(() => {
+    if (location.pathname === '/' && location.hash) {
+      const sectionId = location.hash.substring(1);
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const offset = window.innerWidth < 768 ? 100 : 80;
+          window.scrollTo({
+            top: element.offsetTop - offset,
+            behavior: 'smooth'
+          });
+        }
+      }, 100); // Small delay to ensure DOM is ready
+    }
+  }, [location]);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
     // Prevent background scrolling when menu is open
     document.body.style.overflow = !isMenuOpen ? 'hidden' : '';
+  };
+
+  const handleSectionNavigation = (sectionId: string) => {
+    // Close mobile menu if open
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+      document.body.style.overflow = '';
+    }
+
+    // If we're already on the homepage, just scroll to section
+    if (location.pathname === '/') {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const offset = window.innerWidth < 768 ? 100 : 80;
+        window.scrollTo({
+          top: element.offsetTop - offset,
+          behavior: 'smooth'
+        });
+      }
+    } else {
+      // Navigate to homepage with hash, then scroll
+      navigate(`/#${sectionId}`);
+    }
   };
 
 
@@ -56,9 +98,9 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a href="https://getfluida.com#solution" className="nav-link">Solution</a>
-          <a href="https://getfluida.com#features" className="nav-link">Features</a>
-          <a href="https://getfluida.com#testimonials" className="nav-link">Testimonials</a>
+          <button onClick={() => handleSectionNavigation('solution')} className="nav-link">Solution</button>
+          <button onClick={() => handleSectionNavigation('features')} className="nav-link">Features</button>
+          <button onClick={() => handleSectionNavigation('testimonials')} className="nav-link">Testimonials</button>
           <Link to="/pricing" className="nav-link">Pricing</Link>
           <a 
             href="https://bookva.ai/fluida" 
@@ -97,36 +139,24 @@ const Navbar = () => {
           >
             Home
           </Link>
-          <a 
-            href="#solution" 
+          <button 
+            onClick={() => handleSectionNavigation('solution')}
             className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
-            onClick={() => {
-              setIsMenuOpen(false);
-              document.body.style.overflow = '';
-            }}
           >
             Solution
-          </a>
-          <a 
-            href="#features" 
+          </button>
+          <button 
+            onClick={() => handleSectionNavigation('features')}
             className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
-            onClick={() => {
-              setIsMenuOpen(false);
-              document.body.style.overflow = '';
-            }}
           >
             Features
-          </a>
-          <a 
-            href="#testimonials" 
+          </button>
+          <button 
+            onClick={() => handleSectionNavigation('testimonials')}
             className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
-            onClick={() => {
-              setIsMenuOpen(false);
-              document.body.style.overflow = '';
-            }}
           >
             Testimonials
-          </a>
+          </button>
           <Link 
             to="/pricing" 
             className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
