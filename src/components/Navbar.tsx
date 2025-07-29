@@ -1,12 +1,14 @@
 
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Menu, X, ArrowRight } from "lucide-react";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+  const isOnPricingPage = location.pathname === '/pricing';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,13 +49,9 @@ const Navbar = () => {
       )}
     >
       <div className="container flex items-center justify-between px-4 sm:px-6 lg:px-8">
-        <a 
-          href="#" 
+        <Link 
+          to="/" 
           className="flex items-center space-x-2"
-          onClick={(e) => {
-            e.preventDefault();
-            scrollToTop();
-          }}
           aria-label="Fluida"
         >
           <img 
@@ -61,13 +59,13 @@ const Navbar = () => {
             alt="Fluida Logo" 
             className="h-16 sm:h-20 md:h-24" 
           />
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a href="#solution" className="nav-link">Solution</a>
-          <a href="#features" className="nav-link">Features</a>
-          <a href="#testimonials" className="nav-link">Testimonials</a>
+          <a href={isOnPricingPage ? "/#solution" : "#solution"} className="nav-link">Solution</a>
+          <a href={isOnPricingPage ? "/#features" : "#features"} className="nav-link">Features</a>
+          <a href={isOnPricingPage ? "/#testimonials" : "#testimonials"} className="nav-link">Testimonials</a>
           <Link to="/pricing" className="nav-link">Pricing</Link>
           <a 
             href="https://bookva.ai/fluida" 
@@ -107,7 +105,17 @@ const Navbar = () => {
             Home
           </Link>
           <a 
-            href="#features" 
+            href={isOnPricingPage ? "/#solution" : "#solution"}
+            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
+            onClick={() => {
+              setIsMenuOpen(false);
+              document.body.style.overflow = '';
+            }}
+          >
+            Solution
+          </a>
+          <a 
+            href={isOnPricingPage ? "/#features" : "#features"}
             className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
             onClick={() => {
               setIsMenuOpen(false);
@@ -115,6 +123,16 @@ const Navbar = () => {
             }}
           >
             Features
+          </a>
+          <a 
+            href={isOnPricingPage ? "/#testimonials" : "#testimonials"}
+            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
+            onClick={() => {
+              setIsMenuOpen(false);
+              document.body.style.overflow = '';
+            }}
+          >
+            Testimonials
           </a>
           <Link 
             to="/pricing" 
@@ -126,16 +144,6 @@ const Navbar = () => {
           >
             Pricing
           </Link>
-          <a 
-            href="#details" 
-            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
-            onClick={() => {
-              setIsMenuOpen(false);
-              document.body.style.overflow = '';
-            }}
-          >
-            Contact
-          </a>
           <a 
             href="https://bookva.ai/fluida"
             target="_blank"
