@@ -56,9 +56,9 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a href="#solution" className="nav-link">Solution</a>
-          <a href="#features" className="nav-link">Features</a>
-          <a href="#testimonials" className="nav-link">Testimonials</a>
+          <a href="https://getfluida.com#solution" className="nav-link">Solution</a>
+          <a href="https://getfluida.com#features" className="nav-link">Features</a>
+          <a href="https://getfluida.com#testimonials" className="nav-link">Testimonials</a>
           <Link to="/pricing" className="nav-link">Pricing</Link>
           <a 
             href="https://bookva.ai/fluida" 
