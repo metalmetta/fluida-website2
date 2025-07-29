@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Menu, X, ArrowRight } from "lucide-react";
@@ -23,18 +23,6 @@ const Navbar = () => {
     document.body.style.overflow = !isMenuOpen ? 'hidden' : '';
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-    
-    // Close mobile menu if open
-    if (isMenuOpen) {
-      setIsMenuOpen(false);
-      document.body.style.overflow = '';
-    }
-  };
 
   return (
     <header
@@ -47,21 +35,24 @@ const Navbar = () => {
       )}
     >
       <div className="container flex items-center justify-between px-4 sm:px-6 lg:px-8">
-        <a 
-          href="#" 
+        <Link 
+          to="/" 
           className="flex items-center space-x-2"
-          onClick={(e) => {
-            e.preventDefault();
-            scrollToTop();
+          onClick={() => {
+            // Close mobile menu if open when clicking logo
+            if (isMenuOpen) {
+              setIsMenuOpen(false);
+              document.body.style.overflow = '';
+            }
           }}
-          aria-label="Fluida"
+          aria-label="Fluida Homepage"
         >
           <img 
             src="/lovable-uploads/3ecdfdbf-07a6-433e-aa29-44c5a5d3b0bb.png" 
             alt="Fluida Logo" 
             className="h-16 sm:h-20 md:h-24" 
           />
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
@@ -107,6 +98,16 @@ const Navbar = () => {
             Home
           </Link>
           <a 
+            href="#solution" 
+            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
+            onClick={() => {
+              setIsMenuOpen(false);
+              document.body.style.overflow = '';
+            }}
+          >
+            Solution
+          </a>
+          <a 
             href="#features" 
             className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
             onClick={() => {
@@ -115,6 +116,16 @@ const Navbar = () => {
             }}
           >
             Features
+          </a>
+          <a 
+            href="#testimonials" 
+            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
+            onClick={() => {
+              setIsMenuOpen(false);
+              document.body.style.overflow = '';
+            }}
+          >
+            Testimonials
           </a>
           <Link 
             to="/pricing" 
