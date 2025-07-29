@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import TopBanner from "@/components/TopBanner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -8,6 +9,17 @@ const Pricing = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Pricing | Fluida - 0.5% Transaction Fee | B2B Payment Platform</title>
+        <meta name="description" content="Simple, transparent pricing for Fluida's B2B payment platform. Pay only 0.5% per successful transaction. No hidden costs, no monthly subscriptions." />
+        <meta name="keywords" content="B2B payment pricing, transaction fees, business payment costs, supplier payment fees, international transfer pricing" />
+        <link rel="canonical" href="https://getfluida.com/pricing" />
+        <meta property="og:title" content="Pricing | Fluida - 0.5% Transaction Fee" />
+        <meta property="og:description" content="Simple, transparent pricing for B2B payments. Pay only 0.5% per successful transaction with no hidden costs." />
+        <meta property="og:url" content="https://getfluida.com/pricing" />
+        <meta property="twitter:title" content="Pricing | Fluida - 0.5% Transaction Fee" />
+        <meta property="twitter:description" content="Simple, transparent pricing for B2B payments. Pay only 0.5% per successful transaction." />
+      </Helmet>
       <TopBanner />
       <Navbar />
       

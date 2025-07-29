@@ -68,7 +68,7 @@ const Hero = () => {
     });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isMobile]);
-  return <section className="overflow-hidden relative bg-cover" id="hero" style={{
+  return <section className="overflow-hidden relative bg-cover" id="hero" role="banner" style={{
     backgroundImage: 'url("/Header-background.webp")',
     backgroundPosition: 'center 30%',
     padding: isMobile ? '80px 16px 40px' : '120px 20px 60px'
@@ -83,13 +83,13 @@ const Hero = () => {
             <h1 className="section-title text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-tight opacity-0 animate-fade-in" style={{
             animationDelay: "0.3s"
           }}>
-              Cut Costs by 88% on
-              <br className="hidden sm:inline" /> Supplier Payments
+              <span itemProp="name">Cut Costs by 88% on</span>
+              <br className="hidden sm:inline" /> <span itemProp="description">Supplier Payments</span>
             </h1>
             
             <p style={{
             animationDelay: "0.5s"
-          }} className="section-subtitle mt-3 sm:mt-6 mb-4 sm:mb-8 leading-relaxed opacity-0 animate-fade-in text-gray-950 font-normal text-base sm:text-lg text-left">
+          }} className="section-subtitle mt-3 sm:mt-6 mb-4 sm:mb-8 leading-relaxed opacity-0 animate-fade-in text-gray-950 font-normal text-base sm:text-lg text-left" itemProp="description">
               Send funds worldwide to your Vendors, Suppliers and Contractors in real time at a fraction of the cost.
             </p>
             

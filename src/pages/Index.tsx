@@ -1,5 +1,6 @@
 
 import React, { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import TopBanner from "@/components/TopBanner";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -61,6 +62,17 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Fluida | Cut Supplier Payment Costs by 88% | Global B2B Payments</title>
+        <meta name="description" content="Send funds worldwide to vendors, suppliers, and contractors in real time at a fraction of the cost. Cut supplier payment costs by 88% with Fluida's revolutionary B2B payment platform." />
+        <meta name="keywords" content="B2B payments, supplier payments, global payments, international transfers, payment platform, business payments, fintech, vendor payments, contractor payments" />
+        <link rel="canonical" href="https://getfluida.com/" />
+        <meta property="og:title" content="Fluida | Cut Supplier Payment Costs by 88%" />
+        <meta property="og:description" content="Revolutionary B2B payment platform. Send funds worldwide to vendors, suppliers, and contractors in real time at 88% lower cost." />
+        <meta property="og:url" content="https://getfluida.com/" />
+        <meta property="twitter:title" content="Fluida | Cut Supplier Payment Costs by 88%" />
+        <meta property="twitter:description" content="Revolutionary B2B payment platform. Send funds worldwide at 88% lower cost." />
+      </Helmet>
       <TopBanner />
       <Navbar />
       <main className="space-y-4 sm:space-y-8"> {/* Reduced space on mobile */}

@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://getfluida.com/sitemap.xml
+
+# Crawl-delay (optional - helps with server load)
+Crawl-delay: 1
+
+# Block specific paths if needed (currently allowing all)
+# Disallow: /admin/
+# Disallow: /private/
