@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { toast } from "@/components/ui/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 const Newsletter = () => {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) {
       toast({
@@ -14,15 +15,36 @@ const Newsletter = () => {
     }
     setIsSubmitting(true);
 
-    // Simulate API call
-    setTimeout(() => {
+    try {
+      const { error } = await supabase
+        .from('signups')
+        .insert([
+          {
+            email,
+            company_name: 'Newsletter Subscriber',
+            origin: 'website'
+          }
+        ]);
+
+      if (error) {
+        throw error;
+      }
+
       toast({
         title: "Thank you for subscribing!",
-        description: "You'll receive updates about Atlas soon."
+        description: "You'll receive updates about Fluida soon."
       });
       setEmail("");
+    } catch (error) {
+      console.error('Error saving email:', error);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again later.",
+        variant: "destructive"
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
   return <section id="newsletter" className="bg-white py-0">
       <div className="section-container opacity-0 animate-on-scroll">
