@@ -113,9 +113,9 @@ const Navbar = () => {
           </a>
         </nav>
 
-        {/* Mobile menu button - increased touch target */}
+        {/* Mobile menu button - increased touch target with background */}
         <button 
-          className="md:hidden text-gray-700 p-3 focus:outline-none" 
+          className="md:hidden text-gray-700 p-3 focus:outline-none bg-white/90 backdrop-blur-sm rounded-lg shadow-sm border border-gray-200/50" 
           onClick={toggleMenu}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         >
@@ -128,38 +128,28 @@ const Navbar = () => {
         "fixed inset-0 z-40 bg-white flex flex-col pt-16 px-6 md:hidden transition-all duration-300 ease-in-out",
         isMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
       )}>
-        <nav className="flex flex-col space-y-8 items-center mt-8">
-          <Link 
-            to="/" 
-            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
-            onClick={() => {
-              setIsMenuOpen(false);
-              document.body.style.overflow = '';
-            }}
-          >
-            Home
-          </Link>
+        <nav className="flex flex-col space-y-6 items-center mt-12">
           <button 
             onClick={() => handleSectionNavigation('solution')}
-            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
+            className="text-xl font-medium py-4 px-8 w-full max-w-xs text-center rounded-lg hover:bg-gray-100 transition-colors" 
           >
             Solution
           </button>
           <button 
             onClick={() => handleSectionNavigation('features')}
-            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
+            className="text-xl font-medium py-4 px-8 w-full max-w-xs text-center rounded-lg hover:bg-gray-100 transition-colors" 
           >
             Features
           </button>
           <button 
             onClick={() => handleSectionNavigation('testimonials')}
-            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
+            className="text-xl font-medium py-4 px-8 w-full max-w-xs text-center rounded-lg hover:bg-gray-100 transition-colors" 
           >
             Testimonials
           </button>
           <Link 
             to="/pricing" 
-            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
+            className="text-xl font-medium py-4 px-8 w-full max-w-xs text-center rounded-lg hover:bg-gray-100 transition-colors" 
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';
@@ -168,20 +158,10 @@ const Navbar = () => {
             Pricing
           </Link>
           <a 
-            href="#details" 
-            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
-            onClick={() => {
-              setIsMenuOpen(false);
-              document.body.style.overflow = '';
-            }}
-          >
-            Contact
-          </a>
-          <a 
             href="https://bookva.ai/fluida"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 flex items-center justify-center gap-2 mt-4"
+            className="bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 flex items-center justify-center gap-2 mt-8 w-full max-w-xs"
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';

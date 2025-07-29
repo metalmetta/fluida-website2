@@ -84,7 +84,7 @@ const Hero = () => {
             animationDelay: "0.3s"
           }}>
               Cut Costs by 88% on
-              <br className="hidden sm:inline" />Supplier Payments
+              <br className="hidden sm:inline" /> Supplier Payments
             </h1>
             
             <p style={{
