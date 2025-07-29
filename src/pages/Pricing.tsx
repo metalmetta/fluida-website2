@@ -128,8 +128,7 @@ const Pricing = () => {
               href="https://bookva.ai/fluida"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center bg-primary text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary/90 transition-all duration-300 hover:shadow-lg"
-            >
+              className="bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 md:ml-4 disabled:opacity-50 disabled:cursor-not-allowed"            >
               Get Started Now
             </a>
           </div>

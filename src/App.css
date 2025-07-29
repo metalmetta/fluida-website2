@@ -92,9 +92,10 @@
     width: 100%; /* Full width buttons on mobile */
   }
   
-  /* Enhanced padding for mobile */
+  /* Enhanced padding for mobile with persistent elements */
   .section-container {
     padding: 1.5rem 1rem;
+    padding-top: 5rem; /* Account for persistent logo and burger menu */
   }
   
   /* Better touch targets for mobile */

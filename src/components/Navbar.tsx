@@ -67,19 +67,13 @@ const Navbar = () => {
 
 
   return (
-    <header
-      className={cn(
-        "fixed left-0 right-0 z-50 py-2 sm:py-3 md:py-4 transition-all duration-300",
-        "top-[40px]", // Account for banner height
-        isScrolled 
-          ? "bg-white/80 backdrop-blur-md shadow-sm" 
-          : "bg-transparent"
-      )}
-    >
-      <div className="container flex items-center justify-between px-4 sm:px-6 lg:px-8">
+    <>
+      {/* Mobile Persistent Elements */}
+      <div className="md:hidden">
+        {/* Persistent Mobile Logo */}
         <Link 
           to="/" 
-          className="flex items-center space-x-2"
+          className="fixed top-12 left-4 z-50 flex items-center"
           onClick={() => {
             // Close mobile menu if open when clicking logo
             if (isMenuOpen) {
@@ -92,30 +86,13 @@ const Navbar = () => {
           <img 
             src="/lovable-uploads/3ecdfdbf-07a6-433e-aa29-44c5a5d3b0bb.png" 
             alt="Fluida Logo" 
-            className="h-16 sm:h-20 md:h-24" 
+            className="h-12 w-auto" 
           />
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
-          <button onClick={() => handleSectionNavigation('solution')} className="nav-link">Solution</button>
-          <button onClick={() => handleSectionNavigation('features')} className="nav-link">Features</button>
-          <button onClick={() => handleSectionNavigation('testimonials')} className="nav-link">Testimonials</button>
-          <Link to="/pricing" className="nav-link">Pricing</Link>
-          <a 
-            href="https://bookva.ai/fluida" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-2 px-5 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 flex items-center gap-2"
-          >
-            Schedule a Demo
-            <ArrowRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" />
-          </a>
-        </nav>
-
-        {/* Mobile menu button - increased touch target with background */}
+        {/* Persistent Mobile Burger Menu Button */}
         <button 
-          className="md:hidden text-gray-700 p-3 focus:outline-none bg-white/90 backdrop-blur-sm rounded-lg shadow-sm border border-gray-200/50" 
+          className="fixed top-12 right-4 z-50 text-gray-700 p-3 focus:outline-none bg-white/90 backdrop-blur-sm rounded-lg shadow-sm border border-gray-200/50" 
           onClick={toggleMenu}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         >
@@ -123,21 +100,54 @@ const Navbar = () => {
         </button>
       </div>
 
+      {/* Desktop Header */}
+      <header
+        className={cn(
+          "hidden md:block fixed left-0 right-0 z-50 py-2 sm:py-3 md:py-4 transition-all duration-300",
+          "top-[40px]", // Account for banner height
+          isScrolled 
+            ? "bg-white/80 backdrop-blur-md shadow-sm" 
+            : "bg-transparent"
+        )}
+      >
+        <div className="container flex items-center justify-between px-4 sm:px-6 lg:px-8">
+          <Link 
+            to="/" 
+            className="flex items-center space-x-2"
+            aria-label="Fluida Homepage"
+          >
+            <img 
+              src="/lovable-uploads/3ecdfdbf-07a6-433e-aa29-44c5a5d3b0bb.png" 
+              alt="Fluida Logo" 
+              className="h-16 sm:h-20 md:h-24" 
+            />
+          </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="flex items-center space-x-8">
+            <button onClick={() => handleSectionNavigation('solution')} className="nav-link">Solution</button>
+            <button onClick={() => handleSectionNavigation('features')} className="nav-link">Features</button>
+            <button onClick={() => handleSectionNavigation('testimonials')} className="nav-link">Testimonials</button>
+            <Link to="/pricing" className="nav-link">Pricing</Link>
+            <a 
+              href="https://bookva.ai/fluida" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-2 px-5 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 flex items-center gap-2"
+            >
+              Schedule a Demo
+              <ArrowRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </a>
+          </nav>
+        </div>
+      </header>
+
       {/* Mobile Navigation - improved for better touch experience */}
       <div className={cn(
-        "fixed inset-0 z-40 bg-white w-full h-full flex flex-col pt-16 px-6 md:hidden transition-all duration-300 ease-in-out overflow-hidden",
+        "fixed inset-0 z-40 bg-white w-full h-full flex flex-col pt-20 px-6 md:hidden transition-all duration-300 ease-in-out overflow-hidden",
         isMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
       )}>
-        {/* Logo in mobile menu */}
-        <div className="flex justify-center mb-8">
-          <img 
-            src="/lovable-uploads/3ecdfdbf-07a6-433e-aa29-44c5a5d3b0bb.png" 
-            alt="Fluida Logo" 
-            className="h-20 w-auto" 
-          />
-        </div>
-        
-        <nav className="flex flex-col space-y-6 items-center mt-4">
+        <nav className="flex flex-col space-y-6 items-center mt-8">
           <button 
             onClick={() => handleSectionNavigation('solution')}
             className="text-xl font-medium py-4 px-8 w-full max-w-xs text-center rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors shadow-md" 
@@ -181,7 +191,7 @@ const Navbar = () => {
           </a>
         </nav>
       </div>
-    </header>
+    </>
   );
 };
 
