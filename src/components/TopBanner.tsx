@@ -7,7 +7,7 @@ const TopBanner = () => {
         href="https://snake.getfluida.com/" 
         target="_blank" 
         rel="noopener noreferrer"
-        className="block w-full py-2 px-4 text-center font-medium hover:bg-primary/90 transition-colors duration-200"
+        className="block w-full py-2 px-4 text-center font-medium hover:bg-primary/90 transition-colors duration-200 text-sm sm:text-base"
       >
         🐍 Play Pay-Snake - The slowest payment game ever!
       </a>

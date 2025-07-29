@@ -73,7 +73,7 @@ const Navbar = () => {
         {/* Persistent Mobile Logo */}
         <Link 
           to="/" 
-          className="fixed top-12 left-4 z-50 flex items-center"
+          className="fixed top-16 left-4 z-50 flex items-center"
           onClick={() => {
             // Close mobile menu if open when clicking logo
             if (isMenuOpen) {
@@ -92,7 +92,7 @@ const Navbar = () => {
 
         {/* Persistent Mobile Burger Menu Button */}
         <button 
-          className="fixed top-12 right-4 z-50 text-gray-700 p-3 focus:outline-none bg-white/90 backdrop-blur-sm rounded-lg shadow-sm border border-gray-200/50" 
+          className="fixed top-16 right-4 z-50 text-gray-700 p-3 focus:outline-none bg-white/90 backdrop-blur-sm rounded-lg shadow-sm border border-gray-200/50" 
           onClick={toggleMenu}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         >
