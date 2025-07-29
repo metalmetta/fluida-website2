@@ -5,52 +5,6 @@ import Footer from "@/components/Footer";
 import { Check } from "lucide-react";
 
 const Pricing = () => {
-  const plans = [
-    {
-      name: "Starter",
-      price: "$299",
-      period: "/month",
-      description: "Perfect for small teams getting started",
-      features: [
-        "Up to 5 users",
-        "Basic automation features",
-        "Email support",
-        "Monthly reports",
-        "Standard integrations"
-      ],
-      popular: false
-    },
-    {
-      name: "Professional",
-      price: "$599",
-      period: "/month",
-      description: "Ideal for growing businesses",
-      features: [
-        "Up to 20 users",
-        "Advanced automation",
-        "Priority support",
-        "Real-time analytics",
-        "Custom integrations",
-        "API access"
-      ],
-      popular: true
-    },
-    {
-      name: "Enterprise",
-      price: "Custom",
-      period: "",
-      description: "For large organizations with custom needs",
-      features: [
-        "Unlimited users",
-        "Full automation suite",
-        "24/7 dedicated support",
-        "Advanced analytics",
-        "Custom development",
-        "On-premise deployment"
-      ],
-      popular: false
-    }
-  ];
 
   return (
     <div className="min-h-screen">
