@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Menu, X, ArrowRight } from "lucide-react";
 
@@ -67,7 +68,7 @@ const Navbar = () => {
           <a href="#solution" className="nav-link">Solution</a>
           <a href="#features" className="nav-link">Features</a>
           <a href="#testimonials" className="nav-link">Testimonials</a>
-          <a href="/pricing" className="nav-link">Pricing</a>
+          <Link to="/pricing" className="nav-link">Pricing</Link>
           <a 
             href="https://bookva.ai/fluida" 
             target="_blank" 
@@ -95,8 +96,8 @@ const Navbar = () => {
         isMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
       )}>
         <nav className="flex flex-col space-y-8 items-center mt-8">
-          <a 
-            href="/" 
+          <Link 
+            to="/" 
             className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
             onClick={() => {
               setIsMenuOpen(false);
@@ -104,7 +105,7 @@ const Navbar = () => {
             }}
           >
             Home
-          </a>
+          </Link>
           <a 
             href="#features" 
             className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
@@ -115,8 +116,8 @@ const Navbar = () => {
           >
             Features
           </a>
-          <a 
-            href="/pricing" 
+          <Link 
+            to="/pricing" 
             className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
             onClick={() => {
               setIsMenuOpen(false);
@@ -124,7 +125,7 @@ const Navbar = () => {
             }}
           >
             Pricing
-          </a>
+          </Link>
           <a 
             href="#details" 
             className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
