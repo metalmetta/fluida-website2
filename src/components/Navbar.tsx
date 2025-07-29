@@ -131,25 +131,25 @@ const Navbar = () => {
         <nav className="flex flex-col space-y-6 items-center mt-12">
           <button 
             onClick={() => handleSectionNavigation('solution')}
-            className="text-xl font-medium py-4 px-8 w-full max-w-xs text-center rounded-lg hover:bg-gray-100 transition-colors" 
+            className="text-xl font-medium py-4 px-8 w-full max-w-xs text-center rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors shadow-md" 
           >
             Solution
           </button>
           <button 
             onClick={() => handleSectionNavigation('features')}
-            className="text-xl font-medium py-4 px-8 w-full max-w-xs text-center rounded-lg hover:bg-gray-100 transition-colors" 
+            className="text-xl font-medium py-4 px-8 w-full max-w-xs text-center rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors shadow-md" 
           >
             Features
           </button>
           <button 
             onClick={() => handleSectionNavigation('testimonials')}
-            className="text-xl font-medium py-4 px-8 w-full max-w-xs text-center rounded-lg hover:bg-gray-100 transition-colors" 
+            className="text-xl font-medium py-4 px-8 w-full max-w-xs text-center rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors shadow-md" 
           >
             Testimonials
           </button>
           <Link 
             to="/pricing" 
-            className="text-xl font-medium py-4 px-8 w-full max-w-xs text-center rounded-lg hover:bg-gray-100 transition-colors" 
+            className="text-xl font-medium py-4 px-8 w-full max-w-xs text-center rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors shadow-md" 
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';
@@ -161,7 +161,7 @@ const Navbar = () => {
             href="https://bookva.ai/fluida"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 flex items-center justify-center gap-2 mt-8 w-full max-w-xs"
+            className="bg-primary text-white hover:bg-primary/90 font-semibold py-4 px-8 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 mt-8 w-full max-w-xs"
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';
