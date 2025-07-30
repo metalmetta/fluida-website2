@@ -178,9 +178,12 @@ const Blog = () => {
                 placeholder="Enter your email"
                 className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pulse-500 focus:border-transparent"
               />
-<button type="submit" disabled={isSubmitting} className="bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 md:ml-4 disabled:opacity-50 disabled:cursor-not-allowed">
-              {isSubmitting ? "Submitting..." : "Start now"}
-            </button>
+              <button 
+                type="submit" 
+                className="bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary/25"
+              >
+                Subscribe
+              </button>
             </div>
           </div>
         </div>
