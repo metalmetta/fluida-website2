@@ -57,7 +57,7 @@ const Footer = () => {
         {/* Bottom copyright */}
         <div className="border-t border-gray-800 pt-6 mt-8">
           <p className="text-sm text-center text-gray-500">
-            © 2025 Fluida Inc. All rights reserved.
+            © 2025 Fluida Inc. All rights reserved. Fluida Inc. is a financial technology company and we are not a bank. By creating and using your account at Fluida, you agree to Fluida, Inc.'s Terms of Service, to all applicable laws and regulations, and agree that you are responsible for compliance with any and all applicable local laws.
           </p>
         </div>
       </div>
