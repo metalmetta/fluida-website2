@@ -129,6 +129,7 @@ const Navbar = () => {
             <button onClick={() => handleSectionNavigation('features')} className="nav-link">Features</button>
             <button onClick={() => handleSectionNavigation('testimonials')} className="nav-link">Testimonials</button>
             <Link to="/pricing" className="nav-link">Pricing</Link>
+            <Link to="/blog" className="nav-link">Blog</Link>
             <a 
               href="https://bookva.ai/fluida" 
               target="_blank" 
@@ -175,6 +176,16 @@ const Navbar = () => {
             }}
           >
             Pricing
+          </Link>
+          <Link 
+            to="/blog" 
+            className="text-xl font-medium py-4 px-8 w-full max-w-xs text-center rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors shadow-md" 
+            onClick={() => {
+              setIsMenuOpen(false);
+              document.body.style.overflow = '';
+            }}
+          >
+            Blog
           </Link>
           <a 
             href="https://bookva.ai/fluida"

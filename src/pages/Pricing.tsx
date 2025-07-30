@@ -11,7 +11,7 @@ const Pricing = () => {
     <div className="min-h-screen">
       <Helmet>
         <title>Pricing | Fluida - 0.5% Transaction Fee | B2B Payment Platform</title>
-        <meta name="description" content="Simple, transparent pricing for Fluida's B2B payment platform. Pay only 0.5% per successful transaction. No hidden costs, no monthly subscriptions." />
+        <meta name="description" content="Discover Fluida's simple, transparent pricing - just 0.5% per transaction with no hidden fees or monthly subscriptions. Save up to 88% on supplier payments compared to traditional banking. See exactly what you'll pay and start saving today." />
         <meta name="keywords" content="B2B payment pricing, transaction fees, business payment costs, supplier payment fees, international transfer pricing" />
         <link rel="canonical" href="https://getfluida.com/pricing" />
         <meta property="og:title" content="Pricing | Fluida - 0.5% Transaction Fee" />

@@ -90,7 +90,10 @@ const Hero = () => {
             <p style={{
             animationDelay: "0.5s"
           }} className="section-subtitle mt-3 sm:mt-6 mb-4 sm:mb-8 leading-relaxed opacity-0 animate-fade-in text-gray-950 font-normal text-base sm:text-lg text-left" itemProp="description">
-              Send funds worldwide to your Vendors, Suppliers and Contractors in real time at a fraction of the cost.
+              Send funds worldwide to your Vendors, Suppliers and Contractors in real time at a fraction of the cost. 
+              <a href="/blog/reduce-international-payment-fees-suppliers" className="text-pulse-600 hover:text-pulse-700 underline ml-1">
+                Learn how to save 88% on payment fees
+              </a>
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in" style={{
