@@ -428,6 +428,45 @@ const BlogPost = () => {
           </div>
         </div>
       </article>
+
+      {/* Press Mentions */}
+      <section className="py-12 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <h3 className="text-xl font-semibold text-gray-900 mb-6">Fluida in the News</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+                <h4 className="font-semibold text-gray-900 mb-2">EconomyUp Coverage</h4>
+                <p className="text-sm text-gray-600 mb-4">
+                  Featured as an innovative fintech startup in Italy's leading economy publication.
+                </p>
+                <a
+                  href="https://www.economyup.it/startup/come-si-costruisce-una-startup-buona-per-la-silicon-valley-successi-e-piccoli-fallimenti/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-orange-600 hover:text-orange-700 text-sm font-medium"
+                >
+                  Read the article →
+                </a>
+              </div>
+              <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+                <h4 className="font-semibold text-gray-900 mb-2">Startup Database</h4>
+                <p className="text-sm text-gray-600 mb-4">
+                  Comprehensive profile showcasing our mission to reduce cross-border payment costs.
+                </p>
+                <a
+                  href="https://www.c14.so/fluida"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-orange-600 hover:text-orange-700 text-sm font-medium"
+                >
+                  View our profile →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       
       <Footer />
     </div>

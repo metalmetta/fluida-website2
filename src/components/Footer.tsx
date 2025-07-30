@@ -130,6 +130,14 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link 
+                  to="/press" 
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Press & Media
+                </Link>
+              </li>
+              <li>
                 <a 
                   href="https://bookva.ai/fluida" 
                   target="_blank" 
@@ -137,14 +145,6 @@ const Footer = () => {
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Support
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="#" 
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Documentation
                 </a>
               </li>
             </ul>

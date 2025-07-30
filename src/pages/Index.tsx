@@ -82,6 +82,40 @@ const Index = () => {
         <DetailsSection />
         <ImageShowcaseSection />
         <Features />
+        
+        {/* As Featured In Section */}
+        <section className="py-12 bg-white">
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="max-w-4xl mx-auto text-center">
+              <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-8">As Featured In</h3>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
+                <a
+                  href="https://www.economyup.it/startup/come-si-costruisce-una-startup-buona-per-la-silicon-valley-successi-e-piccoli-fallimenti/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-gray-600 hover:text-orange-600 transition-colors group"
+                >
+                  <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-orange-100 transition-colors">
+                    <span className="text-sm font-bold">E</span>
+                  </div>
+                  <span className="font-medium">EconomyUp</span>
+                </a>
+                <a
+                  href="https://www.c14.so/fluida"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-gray-600 hover:text-orange-600 transition-colors group"
+                >
+                  <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-orange-100 transition-colors">
+                    <span className="text-sm font-bold">C14</span>
+                  </div>
+                  <span className="font-medium">C14 Startup Database</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        
         <Testimonials />
         <Newsletter />
         <MadeByHumans />
