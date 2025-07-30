@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { X, Linkedin } from "lucide-react";
+import { Twitter, Linkedin } from "lucide-react";
 
 const Footer = () => {
   const handleSectionNavigation = (sectionId: string) => {
@@ -37,7 +37,7 @@ const Footer = () => {
                   className="text-gray-400 hover:text-white transition-colors"
                   aria-label="Follow us on X"
                 >
-                  <X className="w-5 h-5" />
+                  <Twitter className="w-5 h-5" />
                 </a>
                 <a 
                   href="https://www.linkedin.com/company/getfluida" 
@@ -75,14 +75,6 @@ const Footer = () => {
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => handleSectionNavigation('features')}
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Features
-                </button>
-              </li>
-              <li>
                 <Link 
                   to="/pricing" 
                   className="text-gray-400 hover:text-white transition-colors"
@@ -97,14 +89,6 @@ const Footer = () => {
                 >
                   Blog
                 </Link>
-              </li>
-              <li>
-                <button 
-                  onClick={() => handleSectionNavigation('testimonials')}
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Testimonials
-                </button>
               </li>
             </ul>
           </div>
