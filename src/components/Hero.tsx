@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import LottieAnimation from "./LottieAnimation";
+import OptimizedImage from "./OptimizedImage";
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
@@ -114,9 +115,13 @@ Schedule a Demo
               </div> : <>
               <div className="absolute inset-0 bg-dark-900 rounded-2xl sm:rounded-3xl -z-10 shadow-xl"></div>
               <div className="relative transition-all duration-500 ease-out overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl">
-                <img ref={imageRef} src="/hero2.png" alt="Atlas Robot" className="w-full h-auto object-cover transition-transform duration-500 ease-out" style={{
-                transformStyle: 'preserve-3d'
-              }} />
+                <OptimizedImage 
+                  src="/hero2.png" 
+                  alt="Atlas Robot" 
+                  className="w-full h-auto object-cover transition-transform duration-500 ease-out" 
+                  loading="eager"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
                 <div className="absolute inset-0" style={{
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',

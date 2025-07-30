@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet-async";
 import TopBanner from "@/components/TopBanner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SocialShare from "@/components/SocialShare";
 import { Calendar, Clock, ArrowLeft, ArrowRight } from "lucide-react";
 
 interface BlogPostData {
@@ -390,6 +391,18 @@ const BlogPost = () => {
             />
           </header>
 
+          {/* Social Sharing */}
+          <div className="flex justify-between items-center mb-8 pb-4 border-b border-gray-200">
+            <SocialShare 
+              url={`https://getfluida.com/blog/${post.slug}`}
+              title={post.title}
+              description={post.metaDescription}
+            />
+            <div className="text-sm text-gray-500">
+              Share this article
+            </div>
+          </div>
+          
           {/* Content */}
           <div className="prose prose-lg max-w-none">
             <div dangerouslySetInnerHTML={{ __html: post.content.replace(/\n/g, '<br />').replace(/^# (.*$)/gim, '<h1>$1</h1>').replace(/^## (.*$)/gim, '<h2>$1</h2>').replace(/^### (.*$)/gim, '<h3>$1</h3>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\*(.*?)\*/g, '<em>$1</em>') }} />

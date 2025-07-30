@@ -1,5 +1,6 @@
 
 import React from "react";
+import OptimizedImage from "./OptimizedImage";
 
 const ImageShowcaseSection = () => {
   return (
@@ -10,10 +11,11 @@ const ImageShowcaseSection = () => {
         
         <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-elegant mx-auto max-w-4xl animate-on-scroll">
           <div className="w-full">
-            <img 
+            <OptimizedImage 
               src="/money.png" 
-              alt="Advanced humanoid robot with orange and white design" 
+              alt="Financial technology interface showing cost savings" 
               className="w-full h-auto object-cover"
+              sizes="(max-width: 768px) 100vw, 896px"
             />
           </div>
           <div className="bg-white p-4 sm:p-8">

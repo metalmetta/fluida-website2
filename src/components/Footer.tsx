@@ -1,6 +1,6 @@
 
-import React from "react";
 import { Link } from "react-router-dom";
+import { X, Linkedin } from "lucide-react";
 
 const Footer = () => {
   const handleSectionNavigation = (sectionId: string) => {
@@ -28,6 +28,28 @@ const Footer = () => {
             <p className="text-gray-400 mb-6 max-w-md">
               Cut supplier payment costs by 88% with our global B2B payment platform. Send funds worldwide to vendors, suppliers, and contractors in real time.
             </p>
+            <div className="flex items-center gap-6 mb-6">
+              <div className="flex space-x-4">
+                <a 
+                  href="https://x.com/getfluida" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors"
+                  aria-label="Follow us on X"
+                >
+                  <X className="w-5 h-5" />
+                </a>
+                <a 
+                  href="https://www.linkedin.com/company/getfluida" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors"
+                  aria-label="Follow us on LinkedIn"
+                >
+                  <Linkedin className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
             <div className="flex space-x-4">
               <a 
                 href="https://bookva.ai/fluida" 
