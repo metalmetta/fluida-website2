@@ -98,38 +98,36 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Resources</h3>
             <ul className="space-y-3">
               <li>
-                <Link 
-                  to="/blog/reduce-international-payment-fees-suppliers" 
+                <button 
+                  onClick={() => handleSectionNavigation('hero')}
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Cost Reduction Guide
-                </Link>
+                </button>
               </li>
               <li>
-                <Link 
-                  to="/blog/best-b2b-payment-platform-small-businesses" 
+                <button 
+                  onClick={() => handleSectionNavigation('hero')}
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Platform Comparison
-                </Link>
+                </button>
               </li>
               <li>
-                <Link 
-                  to="/press" 
+                <button 
+                  onClick={() => handleSectionNavigation('hero')}
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Press & Media
-                </Link>
+                </button>
               </li>
               <li>
-                <a 
-                  href="https://bookva.ai/fluida" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+                <button 
+                  onClick={() => handleSectionNavigation('hero')}
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Support
-                </a>
+                </button>
               </li>
             </ul>
           </div>
@@ -138,13 +136,12 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm text-gray-400 text-center md:text-left leading-relaxed max-w-4xl mb-4 md:mb-0">
+            <p className="text-sm text-gray-400 text-left leading-relaxed max-w-2xl mb-4 md:mb-0">
               © 2025 Fluida Inc. All rights reserved. Fluida Inc. is a financial technology company, not a bank or a money services business. Certain services are provided by our licensed partners across the globe.
             </p>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Compliance</a>
             </div>
           </div>
         </div>
