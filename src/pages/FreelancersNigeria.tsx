@@ -3,7 +3,7 @@ import LandingPageTemplate from "@/components/LandingPageTemplate";
 
 const FreelancersNigeria = () => {
   const landingPageData = {
-    route: "/freelancers-nigeria",
+    route: "/freelancers",
     headline: "Get Paid in USD or EUR — No Local Bank Hassles",
     subheadline: "Fluida gives you a real global account to receive payments from clients on Upwork, Fiverr, and beyond. No FX traps, no delays.",
     ctaButton: "Join the waitlist",
