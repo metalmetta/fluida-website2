@@ -20,7 +20,7 @@ const Press = () => {
       publication: "C14 Startup Database",
       date: "2024",
       description: "Comprehensive startup profile showcasing Fluida's innovative approach to reducing international payment costs by 88% through advanced fintech solutions.",
-      url: "https://www.c14.so/fluida",
+      url: "https://www.c14.so/a083fb31-53a0-4ee9-bf92-3d964b0074d6",
       type: "Startup Database",
       language: "English"
     }

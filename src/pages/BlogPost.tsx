@@ -455,7 +455,7 @@ const BlogPost = () => {
                   Comprehensive profile showcasing our mission to reduce cross-border payment costs.
                 </p>
                 <a
-                  href="https://www.c14.so/fluida"
+                  href="https://www.c14.so/a083fb31-53a0-4ee9-bf92-3d964b0074d6"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-orange-600 hover:text-orange-700 text-sm font-medium"

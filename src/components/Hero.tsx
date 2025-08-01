@@ -156,14 +156,14 @@ const Hero = () => {
                   value={email} 
                   onChange={e => setEmail(e.target.value)} 
                   placeholder="Enter your email for early access" 
-                  className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-transparent backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-pulse-500 text-gray-700 placeholder-gray-500" 
+                  className="w-full px-4 py-3 rounded-lg border border-black bg-transparent backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-black text-black placeholder-black"
                   required 
                 />
               </div>
               <button 
                 type="submit" 
                 disabled={isSubmitting} 
-                className="bg-pulse-500 border-2 border-pulse-500 text-white hover:bg-pulse-600 hover:border-pulse-600 sm:bg-transparent sm:border-white sm:text-white sm:hover:bg-white sm:hover:text-primary sm:hover:shadow-white/25 font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2 w-full sm:w-auto group disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-transparent border-2 border-black text-black hover:bg-black hover:text-white hover:border-black font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2 w-full sm:w-auto group disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <Mail className="w-4 h-4" />
                 {isSubmitting ? "Requesting..." : "Request Access"}

@@ -101,7 +101,7 @@ const Index = () => {
                   <span className="font-medium">EconomyUp</span>
                 </a>
                 <a
-                  href="https://www.c14.so/fluida"
+                  href="https://www.c14.so/a083fb31-53a0-4ee9-bf92-3d964b0074d6"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-gray-600 hover:text-orange-600 transition-colors group"
