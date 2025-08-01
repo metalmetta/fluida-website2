@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { cn } from "@/lib/utils";
-import { ArrowRight, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 import LottieAnimation from "./LottieAnimation";
 import OptimizedImage from "./OptimizedImage";
@@ -31,8 +30,8 @@ const Hero = () => {
         .insert([
           {
             email,
-            company_name: 'Waitlist Signup - Main Page',
-            origin: 'main-page-hero'
+            company_name: 'Request Access - Main Page',
+            origin: 'website'
           }
         ]);
 
@@ -41,8 +40,8 @@ const Hero = () => {
       }
 
       toast({
-        title: "Welcome to the waitlist!",
-        description: "You'll be the first to know when we launch."
+        title: "Access requested successfully!",
+        description: "You'll be the first to know when we're ready."
       });
       setEmail("");
     } catch (error) {
@@ -146,39 +145,30 @@ const Hero = () => {
               </Link>
             </p>
             
-            <div className="flex flex-col gap-4 opacity-0 animate-fade-in" style={{
+            {/* Request Access Form */}
+            <form onSubmit={handleWaitlistSubmit} className="flex flex-col sm:flex-row gap-3 items-start sm:items-center opacity-0 animate-fade-in" style={{
             animationDelay: "0.7s"
           }}>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a href="https://bookva.ai/fluida" target="_blank" rel="noopener noreferrer" className="bg-pulse-500 border-2 border-pulse-500 text-white hover:bg-pulse-600 hover:border-pulse-600 sm:bg-transparent sm:border-white sm:text-white sm:hover:bg-white sm:hover:text-primary sm:hover:shadow-white/25 font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2 w-full sm:w-auto group">
-                  Schedule a Demo
-                  <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </a>
+              <div className="relative flex-grow">
+                <input 
+                  type="email" 
+                  inputMode="email" 
+                  value={email} 
+                  onChange={e => setEmail(e.target.value)} 
+                  placeholder="Enter your email for early access" 
+                  className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white/90 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-pulse-500 text-gray-700 placeholder-gray-500" 
+                  required 
+                />
               </div>
-              
-              {/* Waitlist Form */}
-              <form onSubmit={handleWaitlistSubmit} className="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
-                <div className="relative flex-grow">
-                  <input 
-                    type="email" 
-                    inputMode="email" 
-                    value={email} 
-                    onChange={e => setEmail(e.target.value)} 
-                    placeholder="Enter your email for early access" 
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white/90 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-pulse-500 text-gray-700 placeholder-gray-500" 
-                    required 
-                  />
-                </div>
-                <button 
-                  type="submit" 
-                  disabled={isSubmitting} 
-                  className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2 w-full sm:w-auto group disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  <Mail className="w-4 h-4" />
-                  {isSubmitting ? "Joining..." : "Join Waitlist"}
-                </button>
-              </form>
-            </div>
+              <button 
+                type="submit" 
+                disabled={isSubmitting} 
+                className="bg-pulse-500 border-2 border-pulse-500 text-white hover:bg-pulse-600 hover:border-pulse-600 sm:bg-transparent sm:border-white sm:text-white sm:hover:bg-white sm:hover:text-primary sm:hover:shadow-white/25 font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2 w-full sm:w-auto group disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                <Mail className="w-4 h-4" />
+                {isSubmitting ? "Requesting..." : "Request Access"}
+              </button>
+            </form>
           </div>
           
           <div className="w-full lg:w-1/2 relative mt-6 lg:mt-0">

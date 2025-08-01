@@ -94,8 +94,8 @@ const LandingPageTemplate: React.FC<LandingPageTemplateProps> = ({ data }) => {
         .insert([
           {
             email: waitlistEmail,
-            company_name: `Waitlist Signup - ${data.route}`,
-            origin: `${data.route}-hero-waitlist`
+            company_name: `Request Access - ${data.route}`,
+            origin: 'website'
           }
         ]);
 
@@ -104,8 +104,8 @@ const LandingPageTemplate: React.FC<LandingPageTemplateProps> = ({ data }) => {
       }
 
       toast({
-        title: "Welcome to the waitlist!",
-        description: "You'll be the first to know when we launch."
+        title: "Access requested successfully!",
+        description: "You'll be the first to know when we're ready."
       });
       setWaitlistEmail("");
     } catch (error) {
@@ -233,20 +233,7 @@ const LandingPageTemplate: React.FC<LandingPageTemplateProps> = ({ data }) => {
                   </button>
                 </form>
                 
-                {/* Action Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 mt-4">
-                  <a 
-                    href="https://bookva.ai/fluida" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="bg-transparent border-2 border-pulse-500 text-pulse-500 hover:bg-pulse-500 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg inline-flex items-center justify-center gap-2 w-full sm:w-auto group"
-                  >
-                    Schedule a Demo
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </a>
-                </div>
-
-                {/* Waitlist Form */}
+                {/* Request Access Form */}
                 <form onSubmit={handleWaitlistSubmit} className="flex flex-col sm:flex-row gap-3 items-start sm:items-center mt-4">
                   <div className="relative flex-grow">
                     <input 
@@ -254,7 +241,7 @@ const LandingPageTemplate: React.FC<LandingPageTemplateProps> = ({ data }) => {
                       inputMode="email" 
                       value={waitlistEmail} 
                       onChange={e => setWaitlistEmail(e.target.value)} 
-                      placeholder="Join our waitlist for early access" 
+                      placeholder="Enter your email to request access" 
                       className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pulse-500 text-gray-700 placeholder-gray-500" 
                       required 
                     />
@@ -262,10 +249,10 @@ const LandingPageTemplate: React.FC<LandingPageTemplateProps> = ({ data }) => {
                   <button 
                     type="submit" 
                     disabled={isWaitlistSubmitting} 
-                    className="bg-transparent border-2 border-gray-400 text-gray-600 hover:bg-gray-400 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2 w-full sm:w-auto group disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="bg-transparent border-2 border-pulse-500 text-pulse-500 hover:bg-pulse-500 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2 w-full sm:w-auto group disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <Mail className="w-4 h-4" />
-                    {isWaitlistSubmitting ? "Joining..." : "Join Waitlist"}
+                    {isWaitlistSubmitting ? "Requesting..." : "Request Access"}
                   </button>
                 </form>
               </div>
