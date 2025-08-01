@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TopBanner from "@/components/TopBanner";
+import Features from "@/components/Features";
+import Testimonials from "@/components/Testimonials";
+import Newsletter from "@/components/Newsletter";
 import { toast } from "@/components/ui/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -26,6 +29,51 @@ interface LandingPageTemplateProps {
 const LandingPageTemplate: React.FC<LandingPageTemplateProps> = ({ data }) => {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Initialize intersection observer to detect when elements enter viewport
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-fade-in");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    
+    const elements = document.querySelectorAll(".animate-on-scroll");
+    elements.forEach((el) => observer.observe(el));
+    
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+
+  useEffect(() => {
+    // This helps ensure smooth scrolling for the anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href')?.substring(1);
+        if (!targetId) return;
+        
+        const targetElement = document.getElementById(targetId);
+        if (!targetElement) return;
+        
+        // Increased offset to account for mobile nav
+        const offset = window.innerWidth < 768 ? 100 : 80;
+        
+        window.scrollTo({
+          top: targetElement.offsetTop - offset,
+          behavior: 'smooth'
+        });
+      });
+    });
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -87,7 +135,7 @@ const LandingPageTemplate: React.FC<LandingPageTemplateProps> = ({ data }) => {
       <TopBanner />
       <Navbar />
       
-      <main>
+      <main className="space-y-4 sm:space-y-8">
         {/* Hero Section */}
         <section className="overflow-hidden relative bg-cover" style={{
           backgroundImage: 'url("/Header-background.webp")',
@@ -194,6 +242,15 @@ const LandingPageTemplate: React.FC<LandingPageTemplateProps> = ({ data }) => {
             </div>
           </div>
         </section>
+
+        {/* Features Section */}
+        <Features />
+        
+        {/* Testimonials Section */}
+        <Testimonials />
+        
+        {/* Newsletter Section */}
+        <Newsletter />
 
         {/* Final CTA Section */}
         <section className="py-16 bg-white">
