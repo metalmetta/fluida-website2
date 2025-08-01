@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TopBanner from "@/components/TopBanner";
@@ -29,6 +29,8 @@ interface LandingPageTemplateProps {
 const LandingPageTemplate: React.FC<LandingPageTemplateProps> = ({ data }) => {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [waitlistEmail, setWaitlistEmail] = useState("");
+  const [isWaitlistSubmitting, setIsWaitlistSubmitting] = useState(false);
 
   // Initialize intersection observer to detect when elements enter viewport
   useEffect(() => {
@@ -74,6 +76,49 @@ const LandingPageTemplate: React.FC<LandingPageTemplateProps> = ({ data }) => {
       });
     });
   }, []);
+
+  const handleWaitlistSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!waitlistEmail) {
+      toast({
+        title: "Please enter your email address",
+        variant: "destructive"
+      });
+      return;
+    }
+    setIsWaitlistSubmitting(true);
+
+    try {
+      const { error } = await supabase
+        .from('signups')
+        .insert([
+          {
+            email: waitlistEmail,
+            company_name: `Waitlist Signup - ${data.route}`,
+            origin: `${data.route}-hero-waitlist`
+          }
+        ]);
+
+      if (error) {
+        throw error;
+      }
+
+      toast({
+        title: "Welcome to the waitlist!",
+        description: "You'll be the first to know when we launch."
+      });
+      setWaitlistEmail("");
+    } catch (error) {
+      console.error('Error saving email:', error);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again later.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsWaitlistSubmitting(false);
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -185,6 +230,42 @@ const LandingPageTemplate: React.FC<LandingPageTemplateProps> = ({ data }) => {
                   >
                     {isSubmitting ? "Submitting..." : data.ctaButton}
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </button>
+                </form>
+                
+                {/* Action Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4 mt-4">
+                  <a 
+                    href="https://bookva.ai/fluida" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="bg-transparent border-2 border-pulse-500 text-pulse-500 hover:bg-pulse-500 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg inline-flex items-center justify-center gap-2 w-full sm:w-auto group"
+                  >
+                    Schedule a Demo
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </a>
+                </div>
+
+                {/* Waitlist Form */}
+                <form onSubmit={handleWaitlistSubmit} className="flex flex-col sm:flex-row gap-3 items-start sm:items-center mt-4">
+                  <div className="relative flex-grow">
+                    <input 
+                      type="email" 
+                      inputMode="email" 
+                      value={waitlistEmail} 
+                      onChange={e => setWaitlistEmail(e.target.value)} 
+                      placeholder="Join our waitlist for early access" 
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pulse-500 text-gray-700 placeholder-gray-500" 
+                      required 
+                    />
+                  </div>
+                  <button 
+                    type="submit" 
+                    disabled={isWaitlistSubmitting} 
+                    className="bg-transparent border-2 border-gray-400 text-gray-600 hover:bg-gray-400 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2 w-full sm:w-auto group disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    <Mail className="w-4 h-4" />
+                    {isWaitlistSubmitting ? "Joining..." : "Join Waitlist"}
                   </button>
                 </form>
               </div>
