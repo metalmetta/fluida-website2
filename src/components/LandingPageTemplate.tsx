@@ -146,7 +146,7 @@ const LandingPageTemplate: React.FC<LandingPageTemplateProps> = ({ data }) => {
       <TopBanner />
       <Navbar />
       
-      <main className="space-y-4 sm:space-y-8">
+      <main className="space-y-4 sm:space-y-8 pt-8 sm:pt-12">
         {/* Hero Section */}
         <section className="overflow-hidden relative bg-cover" id="hero" role="banner" style={{
           backgroundImage: 'url("/Header-background.webp")',

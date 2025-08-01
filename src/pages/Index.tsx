@@ -75,7 +75,7 @@ const Index = () => {
       </Helmet>
       <TopBanner />
       <Navbar />
-      <main className="space-y-4 sm:space-y-8"> {/* Reduced space on mobile */}
+      <main className="space-y-4 sm:space-y-8 pt-8 sm:pt-12"> {/* Reduced space on mobile */}
         <Hero />
         <HumanoidSection />
         <SpecsSection />
