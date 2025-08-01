@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
-import { ArrowRight, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TopBanner from "@/components/TopBanner";
@@ -276,28 +276,6 @@ const LandingPageTemplate: React.FC<LandingPageTemplateProps> = ({ data }) => {
         {/* Newsletter Section */}
         <Newsletter />
 
-        {/* Final CTA Section */}
-        <section className="py-16 bg-white">
-          <div className="container mx-auto px-4 sm:px-6">
-            <div className="max-w-2xl mx-auto text-center">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Ready to get started?
-              </h2>
-              <p className="text-gray-600 mb-8">
-                Schedule a demo to see how Fluida can transform your global payments
-              </p>
-              <a 
-                href="https://bookva.ai/fluida" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="bg-pulse-500 border-2 border-pulse-500 text-white hover:bg-pulse-600 hover:border-pulse-600 font-semibold py-4 px-8 rounded-lg transition-all duration-300 hover:shadow-lg inline-flex items-center gap-2 group"
-              >
-                Schedule a Demo
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </a>
-            </div>
-          </div>
-        </section>
       </main>
       
       <Footer />

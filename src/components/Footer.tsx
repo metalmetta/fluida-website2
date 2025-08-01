@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Left side - Logo and CTA */}
           <div className="flex flex-col md:flex-row items-center gap-6">
             <img 
-              src="/lovable-uploads/3ecdfdbf-07a6-433e-aa29-44c5a5d3b0bb.png" 
+              src="/logowhite.png" 
               alt="Fluida Logo" 
               className="h-10 w-auto" 
             />
