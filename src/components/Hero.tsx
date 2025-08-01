@@ -156,7 +156,7 @@ const Hero = () => {
                   value={email} 
                   onChange={e => setEmail(e.target.value)} 
                   placeholder="Enter your email for early access" 
-                  className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white/90 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-pulse-500 text-gray-700 placeholder-gray-500" 
+                  className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-transparent backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-pulse-500 text-gray-700 placeholder-gray-500" 
                   required 
                 />
               </div>
