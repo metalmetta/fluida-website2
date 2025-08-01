@@ -3,7 +3,7 @@ import LandingPageTemplate from "@/components/LandingPageTemplate";
 
 const CryptoDevs = () => {
   const landingPageData = {
-    route: "/crypto-devs",
+    route: "/crypto",
     headline: "Convert USDC to EUR or USD — Instantly and On Your Terms",
     subheadline: "Fluida gives crypto builders real IBAN and USD accounts to off-ramp without friction. No custodial wallets, no middlemen.",
     ctaButton: "Request access",
