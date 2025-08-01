@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TopBanner from "@/components/TopBanner";
@@ -29,6 +29,17 @@ interface LandingPageTemplateProps {
 const LandingPageTemplate: React.FC<LandingPageTemplateProps> = ({ data }) => {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check if mobile on mount and when window resizes
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Initialize intersection observer to detect when elements enter viewport
   useEffect(() => {
@@ -93,7 +104,7 @@ const LandingPageTemplate: React.FC<LandingPageTemplateProps> = ({ data }) => {
           {
             email,
             company_name: `Landing Page Signup - ${data.route}`,
-            origin: `landing-page-${data.route}`
+            origin: 'website'
           }
         ]);
 
@@ -102,8 +113,8 @@ const LandingPageTemplate: React.FC<LandingPageTemplateProps> = ({ data }) => {
       }
 
       toast({
-        title: "Thank you for signing up!",
-        description: "You'll receive updates about Fluida soon."
+        title: "Access requested successfully!",
+        description: "You'll be the first to know when we're ready."
       });
       setEmail("");
     } catch (error) {
@@ -137,26 +148,33 @@ const LandingPageTemplate: React.FC<LandingPageTemplateProps> = ({ data }) => {
       
       <main className="space-y-4 sm:space-y-8">
         {/* Hero Section */}
-        <section className="overflow-hidden relative bg-cover" style={{
+        <section className="overflow-hidden relative bg-cover" id="hero" role="banner" style={{
           backgroundImage: 'url("/Header-background.webp")',
           backgroundPosition: 'center 30%',
-          padding: '120px 20px 60px'
+          padding: isMobile ? '80px 16px 40px' : '120px 20px 60px'
         }}>
           <div className="absolute -top-[10%] -right-[5%] w-1/2 h-[70%] bg-pulse-gradient opacity-20 blur-3xl rounded-full"></div>
           
           <div className="container px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-center">
               <div className="w-full lg:w-1/2">
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-gray-950 mb-6">
-                  {data.headline}
+                
+                <h1 className="section-title text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-tight opacity-0 animate-fade-in" style={{
+                  animationDelay: "0.3s"
+                }}>
+                  <span itemProp="name">{data.headline}</span>
                 </h1>
                 
-                <p className="text-base sm:text-lg text-gray-700 mb-8 leading-relaxed">
+                <p style={{
+                  animationDelay: "0.5s"
+                }} className="section-subtitle mt-3 sm:mt-6 mb-4 sm:mb-8 leading-relaxed opacity-0 animate-fade-in text-gray-950 font-normal text-base sm:text-lg text-left" itemProp="description">
                   {data.subheadline}
                 </p>
 
                 {/* Features bullets */}
-                <ul className="mb-8 space-y-3">
+                <ul className="mb-8 space-y-3 opacity-0 animate-fade-in" style={{
+                  animationDelay: "0.6s"
+                }}>
                   {data.bullets.map((bullet, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-pulse-500 rounded-full mt-2 flex-shrink-0"></div>
@@ -165,29 +183,30 @@ const LandingPageTemplate: React.FC<LandingPageTemplateProps> = ({ data }) => {
                   ))}
                 </ul>
                 
-                {/* CTA Form */}
-                <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+                {/* Request Access Form */}
+                <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 items-start sm:items-center opacity-0 animate-fade-in" style={{
+                  animationDelay: "0.7s"
+                }}>
                   <div className="relative flex-grow">
                     <input 
                       type="email" 
                       inputMode="email" 
                       value={email} 
                       onChange={e => setEmail(e.target.value)} 
-                      placeholder="Enter your email address" 
-                      className="w-full px-6 py-4 rounded-lg border border-gray-200 bg-transparent focus:outline-none focus:ring-2 focus:ring-pulse-500 text-gray-700" 
+                      placeholder="Enter your email for early access" 
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-transparent backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-pulse-500 text-gray-700 placeholder-gray-500" 
                       required 
                     />
                   </div>
                   <button 
                     type="submit" 
                     disabled={isSubmitting} 
-                    className="bg-pulse-500 border-2 border-pulse-500 text-white hover:bg-pulse-600 hover:border-pulse-600 font-semibold py-4 px-6 rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2 w-full sm:w-auto group disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="bg-pulse-500 border-2 border-pulse-500 text-white hover:bg-pulse-600 hover:border-pulse-600 sm:bg-transparent sm:border-white sm:text-white sm:hover:bg-white sm:hover:text-primary sm:hover:shadow-white/25 font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2 w-full sm:w-auto group disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {isSubmitting ? "Submitting..." : data.ctaButton}
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    <Mail className="w-4 h-4" />
+                    {isSubmitting ? "Requesting..." : "Request Access"}
                   </button>
                 </form>
-                
               </div>
               
               <div className="w-full lg:w-1/2 relative mt-6 lg:mt-0">
