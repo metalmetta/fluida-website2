@@ -9,6 +9,9 @@ import Pricing from "./pages/Pricing";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Press from "./pages/Press";
+import FreelancersNigeria from "./pages/FreelancersNigeria";
+import CryptoDevs from "./pages/CryptoDevs";
+import StartupsLatam from "./pages/StartupsLatam";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +29,9 @@ const App = () => (
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/press" element={<Press />} />
+            <Route path="/freelancers-nigeria" element={<FreelancersNigeria />} />
+            <Route path="/crypto-devs" element={<CryptoDevs />} />
+            <Route path="/startups-latam" element={<StartupsLatam />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

@@ -134,14 +134,14 @@ const Pricing = () => {
               Start with zero upfront costs
             </h2>
             <p className="text-xl text-gray-600 mb-8">
-              Begin using our platform immediately. You only pay the 0.5% fee when you succeed.
+              Pay and get paid globally with Fluida, at a simple 0.5% fee.
             </p>
             <a
               href="https://bookva.ai/fluida"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 md:ml-4 disabled:opacity-50 disabled:cursor-not-allowed"            >
-              Get Started Now
+              Start Now
             </a>
           </div>
         </div>
