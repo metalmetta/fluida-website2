@@ -73,7 +73,7 @@ const Navbar = () => {
         {/* Persistent Mobile Logo */}
         <Link 
           to="/" 
-          className="fixed top-16 left-4 z-50 flex items-center"
+          className="fixed top-[40px] left-4 z-50 flex items-center"
           onClick={() => {
             // Close mobile menu if open when clicking logo
             if (isMenuOpen) {
@@ -92,7 +92,7 @@ const Navbar = () => {
 
         {/* Persistent Mobile Burger Menu Button */}
         <button 
-          className="fixed top-16 right-4 z-50 text-gray-700 p-3 focus:outline-none bg-white/90 backdrop-blur-sm rounded-lg shadow-sm border border-gray-200/50" 
+          className="fixed top-[40px] right-4 z-50 text-gray-700 p-3 focus:outline-none bg-white/90 backdrop-blur-sm rounded-lg shadow-sm border border-gray-200/50" 
           onClick={toggleMenu}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         >
@@ -104,7 +104,7 @@ const Navbar = () => {
       <header
         className={cn(
           "hidden md:block fixed left-0 right-0 z-50 py-2 sm:py-3 md:py-4 transition-all duration-300",
-          "top-[40px]", // Account for banner height
+          isScrolled ? "top-0" : "top-[40px]", // Stick to top when scrolled, otherwise account for banner
           isScrolled 
             ? "bg-white/80 backdrop-blur-md shadow-sm" 
             : "bg-transparent"

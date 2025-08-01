@@ -5,6 +5,7 @@ import LottieAnimation from "./LottieAnimation";
 import OptimizedImage from "./OptimizedImage";
 import { toast } from "@/components/ui/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { getLocationInfo, getPersonalizedHeadline } from "@/utils/geoip";
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
@@ -12,6 +13,8 @@ const Hero = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [heroTitle, setHeroTitle] = useState("Cut Costs by 88% on");
+  const [heroSubtitle, setHeroSubtitle] = useState("Supplier Payments");
 
   const handleWaitlistSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -64,6 +67,48 @@ const Hero = () => {
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  useEffect(() => {
+    // Load location data for personalization
+    const loadLocationData = async () => {
+      try {
+        const { country } = await getLocationInfo();
+        
+        if (country && country !== "your country") {
+          // Personalize for specific countries
+          const personalizations: Record<string, { title: string; subtitle: string }> = {
+            'Nigeria': { title: `Cut Costs by 88% on Payments in`, subtitle: `Nigeria` },
+            'India': { title: `Cut Costs by 88% on Payments in`, subtitle: `India` },
+            'Pakistan': { title: `Cut Costs by 88% on Payments in`, subtitle: `Pakistan` },
+            'Bangladesh': { title: `Cut Costs by 88% on Payments in`, subtitle: `Bangladesh` },
+            'Philippines': { title: `Cut Costs by 88% on Payments in`, subtitle: `Philippines` },
+            'Kenya': { title: `Cut Costs by 88% on Payments in`, subtitle: `Kenya` },
+            'Ghana': { title: `Cut Costs by 88% on Payments in`, subtitle: `Ghana` },
+            'Egypt': { title: `Cut Costs by 88% on Payments in`, subtitle: `Egypt` },
+            'South Africa': { title: `Cut Costs by 88% on Payments in`, subtitle: `South Africa` },
+            'Indonesia': { title: `Cut Costs by 88% on Payments in`, subtitle: `Indonesia` },
+            'Vietnam': { title: `Cut Costs by 88% on Payments in`, subtitle: `Vietnam` },
+            'Brazil': { title: `Cut Costs by 88% on Payments in`, subtitle: `Brazil` },
+            'Mexico': { title: `Cut Costs by 88% on Payments in`, subtitle: `Mexico` },
+            'Argentina': { title: `Cut Costs by 88% on Payments in`, subtitle: `Argentina` },
+            'Colombia': { title: `Cut Costs by 88% on Payments in`, subtitle: `Colombia` },
+            'Ukraine': { title: `Cut Costs by 88% on Payments in`, subtitle: `Ukraine` },
+            'Turkey': { title: `Cut Costs by 88% on Payments in`, subtitle: `Turkey` },
+          };
+
+          const personalization = personalizations[country];
+          if (personalization) {
+            setHeroTitle(personalization.title);
+            setHeroSubtitle(personalization.subtitle);
+          }
+        }
+      } catch (error) {
+        console.warn('Failed to load location data for personalization:', error);
+      }
+    };
+
+    loadLocationData();
   }, []);
   useEffect(() => {
     fetch('/loop-header.lottie').then(response => response.json()).then(data => setLottieData(data)).catch(error => console.error("Error loading Lottie animation:", error));
@@ -120,7 +165,7 @@ const Hero = () => {
   return <section className="overflow-hidden relative bg-cover" id="hero" role="banner" style={{
     backgroundImage: 'url("/Header-background.webp")',
     backgroundPosition: 'center 30%',
-    padding: isMobile ? '80px 16px 40px' : '120px 20px 60px'
+    padding: isMobile ? '112px 16px 40px' : '168px 20px 60px'
   }}>
       <div className="absolute -top-[10%] -right-[5%] w-1/2 h-[70%] bg-pulse-gradient opacity-20 blur-3xl rounded-full"></div>
       
@@ -132,8 +177,8 @@ const Hero = () => {
             <h1 className="section-title text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-tight opacity-0 animate-fade-in" style={{
             animationDelay: "0.3s"
           }}>
-              <span itemProp="name">Cut Costs by 88% on</span>
-              <br className="hidden sm:inline" /> <span itemProp="description">Supplier Payments</span>
+              <span itemProp="name">{heroTitle}</span>
+              <br className="hidden sm:inline" /> <span itemProp="description">{heroSubtitle}</span>
             </h1>
             
             <p style={{
