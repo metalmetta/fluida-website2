@@ -240,14 +240,16 @@ const LandingPageTemplate: React.FC<LandingPageTemplateProps> = ({ data }) => {
                   href="https://www.economyup.it/startup/come-si-costruisce-una-startup-buona-per-la-silicon-valley-successi-e-piccoli-fallimenti/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-gray-600 hover:text-orange-600 transition-colors group"
+                  className="group relative"
                 >
-                  <img 
-                    src="/ecoup.png" 
-                    alt="EconomyUp Logo" 
-                    className="w-8 h-8 object-contain"
-                  />
-                  <span className="font-medium">EconomyUp</span>
+                  <div className="relative">
+                    <img 
+                      src="/ecoup.png" 
+                      alt="EconomyUp Logo" 
+                      className="w-16 h-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gray-200 opacity-20 rounded-lg"></div>
+                  </div>
                 </a>
                 <a
                   href="https://www.c14.so/a083fb31-53a0-4ee9-bf92-3d964b0074d6"
