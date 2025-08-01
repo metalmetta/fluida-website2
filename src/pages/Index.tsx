@@ -64,7 +64,7 @@ const Index = () => {
     <div className="min-h-screen">
       <Helmet>
         <title>Fluida | Cut Supplier Payment Costs by 88% | Global B2B Payments</title>
-        <meta name="description" content="Transform your business payments with Fluida's revolutionary B2B platform. Send funds to suppliers worldwide in real-time while cutting payment costs by up to 88%. Join thousands of businesses saving money on international transfers. Schedule your demo today." />
+        <meta name="description" content="Cut supplier payment costs by 88% with Fluida's B2B platform. Send funds to vendors worldwide in real-time at a fraction of the cost. Join thousands of businesses saving on international transfers." />
         <meta name="keywords" content="B2B payments, supplier payments, global payments, international transfers, payment platform, business payments, fintech, vendor payments, contractor payments" />
         <link rel="canonical" href="https://getfluida.com/" />
         <meta property="og:title" content="Fluida | Cut Supplier Payment Costs by 88%" />
