@@ -4,13 +4,13 @@ import LandingPageTemplate from "@/components/LandingPageTemplate";
 const FreelancersNigeria = () => {
   const landingPageData = {
     route: "/freelancers-nigeria",
-    headline: "Nigerian freelancers: Get paid in USD or EUR",
-    subheadline: "Open your global account and avoid high FX fees",
+    headline: "Get Paid in USD or EUR — No Local Bank Hassles",
+    subheadline: "Fluida gives you a real global account to receive payments from clients on Upwork, Fiverr, and beyond. No FX traps, no delays.",
     ctaButton: "Join the waitlist",
     bullets: [
-      "Receive USD/EUR like a local",
+      "Get real USD/EUR banking details",
       "No forced currency conversion",
-      "Works with Upwork, Fiverr, and more"
+      "Works seamlessly with global freelance platforms"
     ],
     heroImage: "/hero2.png",
     metaTitle: "Nigerian Freelancers: Get Paid in USD/EUR | Fluida",

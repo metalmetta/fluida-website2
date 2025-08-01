@@ -255,12 +255,16 @@ const LandingPageTemplate: React.FC<LandingPageTemplateProps> = ({ data }) => {
                   href="https://www.c14.so/a083fb31-53a0-4ee9-bf92-3d964b0074d6"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-gray-600 hover:text-orange-600 transition-colors group"
+                  className="group relative"
                 >
-                  <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-orange-100 transition-colors">
-                    <span className="text-sm font-bold">C14</span>
+                  <div className="relative">
+                    <img 
+                      src="/C14.png" 
+                      alt="C14 Logo" 
+                      className="w-16 h-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gray-200 opacity-20 rounded-lg"></div>
                   </div>
-                  <span className="font-medium">C14 Startup Database</span>
                 </a>
               </div>
             </div>

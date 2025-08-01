@@ -4,13 +4,13 @@ import LandingPageTemplate from "@/components/LandingPageTemplate";
 const CryptoDevs = () => {
   const landingPageData = {
     route: "/crypto-devs",
-    headline: "Off-ramp crypto to a real EUR or USD account",
-    subheadline: "For builders, freelancers, and web3 pros",
+    headline: "Convert USDC to EUR or USD — Instantly and On Your Terms",
+    subheadline: "Fluida gives crypto builders real IBAN and USD accounts to off-ramp without friction. No custodial wallets, no middlemen.",
     ctaButton: "Request access",
     bullets: [
-      "Instant conversion to fiat",
-      "Receive USDC and withdraw to EUR/USD IBAN",
-      "Works with self-custody wallets"
+      "Off-ramp USDC to fiat in seconds",
+      "Withdraw to real EUR/IBAN or USD/ACH accounts",
+      "Fully compatible with self-custody wallets"
     ],
     heroImage: "/hero2.png",
     metaTitle: "Crypto Developers: Off-ramp to Real EUR/USD Accounts | Fluida",
