@@ -95,9 +95,11 @@ const Index = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-gray-600 hover:text-orange-600 transition-colors group"
                 >
-                  <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-orange-100 transition-colors">
-                    <span className="text-sm font-bold">E</span>
-                  </div>
+                  <img 
+                    src="/ecoup.png" 
+                    alt="EconomyUp Logo" 
+                    className="w-8 h-8 object-contain"
+                  />
                   <span className="font-medium">EconomyUp</span>
                 </a>
                 <a
