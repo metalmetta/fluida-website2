@@ -177,8 +177,8 @@ const LandingPageTemplate: React.FC<LandingPageTemplateProps> = ({ data }) => {
                 }}>
                   {data.bullets.map((bullet, index) => (
                     <li key={index} className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-pulse-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-gray-700">{bullet}</span>
+                      <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
+                      <span className="text-black">{bullet}</span>
                     </li>
                   ))}
                 </ul>
