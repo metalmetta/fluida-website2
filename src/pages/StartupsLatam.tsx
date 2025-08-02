@@ -4,7 +4,7 @@ import LandingPageTemplate from "@/components/LandingPageTemplate";
 const StartupsLatam = () => {
   const landingPageData = {
     route: "/latam",
-    headline: "Get USD Payments with Real US Banking — No Entity Needed",
+    headline: "Get USD Payments with Real US Banking - No Entity Needed",
     subheadline: "Fluida gives LATAM businesses US account details to receive ACH and wire transfers from global clients. No LLC, no legal complexity.",
     ctaButton: "Get early access",
     bullets: [

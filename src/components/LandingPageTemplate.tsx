@@ -225,52 +225,6 @@ const LandingPageTemplate: React.FC<LandingPageTemplateProps> = ({ data }) => {
           <div className="hidden lg:block absolute bottom-0 left-1/4 w-64 h-64 bg-pulse-100/30 rounded-full blur-3xl -z-10"></div>
         </section>
 
-        {/* Trust Section */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                Trusted by businesses worldwide
-              </h2>
-              <p className="text-gray-600 mb-8">
-                Join thousands of companies already saving money on global payments with Fluida
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
-                <a
-                  href="https://www.economyup.it/startup/come-si-costruisce-una-startup-buona-per-la-silicon-valley-successi-e-piccoli-fallimenti/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative"
-                >
-                  <div className="relative">
-                    <img 
-                      src="/ecoup.png" 
-                      alt="EconomyUp Logo" 
-                      className="w-16 h-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                    />
-                    <div className="absolute inset-0 bg-gray-200 opacity-20 rounded-lg"></div>
-                  </div>
-                </a>
-                <a
-                  href="https://www.c14.so/a083fb31-53a0-4ee9-bf92-3d964b0074d6"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative"
-                >
-                  <div className="relative">
-                    <img 
-                      src="/C14.png" 
-                      alt="C14 Logo" 
-                      className="w-16 h-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                    />
-                    <div className="absolute inset-0 bg-gray-200 opacity-20 rounded-lg"></div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Features Section */}
         <Features />
         

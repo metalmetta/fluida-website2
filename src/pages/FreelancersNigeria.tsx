@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import LandingPageTemplate from "@/components/LandingPageTemplate";
 import { getLocationInfo, getPersonalizedHeadline } from "@/utils/geoip";
 
-const FreelancersNigeria = () => {
+const Freelancers = () => {
   const [personalizedHeadline, setPersonalizedHeadline] = useState("Get Paid in USD or EUR — No Local Bank Hassles");
   const [country, setCountry] = useState<string>("");
 
@@ -12,7 +12,7 @@ const FreelancersNigeria = () => {
         const { country: detectedCountry } = await getLocationInfo();
         setCountry(detectedCountry);
         
-        const baseHeadline = "Get Paid in USD or EUR — No Local Bank Hassles";
+        const baseHeadline = "Get Paid for your work in USD or EUR - Bank as a local";
         const customHeadline = getPersonalizedHeadline(detectedCountry, baseHeadline);
         setPersonalizedHeadline(customHeadline);
       } catch (error) {
@@ -26,12 +26,12 @@ const FreelancersNigeria = () => {
   const landingPageData = {
     route: "/freelancers",
     headline: personalizedHeadline,
-    subheadline: "Fluida gives you a real global account to receive payments from clients on Upwork, Fiverr, and beyond. No FX traps, no delays.",
+    subheadline: "Fluida gives you a real global account to receive payments from clients on Upwork, Fiverr, OnlineJobs.ph and beyond. No FX hefty fees, no delays.",
     ctaButton: "Join the waitlist",
     bullets: [
-      "Get real USD/EUR banking details",
-      "No forced currency conversion",
-      "Works seamlessly with global freelance platforms"
+      "Get real and local USD/EUR banking details",
+      "No forced currency conversion, store your money in your preferred stablecoin",
+      "Off-ramp PHP instantly to your local bank account or e-wallet"
     ],
     heroImage: "/hero2.png",
     metaTitle: country && country !== "your country" ? `${country} Freelancers: Get Paid in USD/EUR | Fluida` : "Freelancers: Get Paid in USD/EUR | Fluida",
@@ -42,4 +42,4 @@ const FreelancersNigeria = () => {
   return <LandingPageTemplate data={landingPageData} />;
 };
 
-export default FreelancersNigeria;
+export default Freelancers;

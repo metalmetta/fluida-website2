@@ -9,7 +9,7 @@ import Pricing from "./pages/Pricing";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Press from "./pages/Press";
-import FreelancersNigeria from "./pages/FreelancersNigeria";
+import Freelancers from "./pages/Freelancers";
 import CryptoDevs from "./pages/CryptoDevs";
 import StartupsLatam from "./pages/StartupsLatam";
 import NotFound from "./pages/NotFound";
@@ -29,7 +29,7 @@ const App = () => (
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/press" element={<Press />} />
-            <Route path="/freelancers" element={<FreelancersNigeria />} />
+            <Route path="/freelancers" element={<Freelancers />} />
             <Route path="/crypto" element={<CryptoDevs />} />
             <Route path="/latam" element={<StartupsLatam />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
