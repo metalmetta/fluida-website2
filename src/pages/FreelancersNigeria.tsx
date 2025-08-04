@@ -12,7 +12,13 @@ const Freelancers = () => {
         const { country: detectedCountry } = await getLocationInfo();
         setCountry(detectedCountry);
         
-        const baseHeadline = "Get Paid for your work in USD or EUR - Bank as a local";
+        const baseHeadline = (
+          <>
+            Get Paid for your work in USD or EUR,
+            <br />
+            Bank as a local
+          </>
+        );
         const customHeadline = getPersonalizedHeadline(detectedCountry, baseHeadline);
         setPersonalizedHeadline(customHeadline);
       } catch (error) {
@@ -33,7 +39,7 @@ const Freelancers = () => {
       "No forced currency conversion, store your earnings in USDC",
       "Off-ramp PHP instantly to your local bank account or e-wallet"
     ],
-    heroImage: "/hero2.png",
+    heroImage: "/hero3.png",
     metaTitle: country && country !== "your country" ? `${country} Freelancers: Get Paid in USD/EUR | Fluida` : "Freelancers: Get Paid in USD/EUR | Fluida",
     metaDescription: country && country !== "your country" ? `Open your global account and receive USD/EUR payments like a local. Perfect for ${country} freelancers working with Upwork, Fiverr, and international clients. Avoid high FX fees.` : "Open your global account and receive USD/EUR payments like a local. Perfect for freelancers working with Upwork, Fiverr, and international clients. Avoid high FX fees.",
     metaKeywords: country && country !== "your country" ? `${country} freelancers, USD payments, EUR payments, global account, Upwork, Fiverr, freelancer payments, ${country}` : "freelancers, USD payments, EUR payments, global account, Upwork, Fiverr, freelancer payments"
