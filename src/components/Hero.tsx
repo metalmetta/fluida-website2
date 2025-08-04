@@ -6,6 +6,7 @@ import OptimizedImage from "./OptimizedImage";
 import { toast } from "@/components/ui/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { getLocationInfo, getPersonalizedHeadline } from "@/utils/geoip";
+import { sendWelcomeEmail } from "@/utils/email";
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
@@ -40,6 +41,14 @@ const Hero = () => {
 
       if (error) {
         throw error;
+      }
+
+      // Send welcome email
+      try {
+        await sendWelcomeEmail(email);
+      } catch (emailError) {
+        console.error('Failed to send welcome email:', emailError);
+        // Don't show error to user, just log it
       }
 
       toast({

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { toast } from "@/components/ui/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { sendWelcomeEmail } from "@/utils/email";
 const Newsletter = () => {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -28,6 +29,14 @@ const Newsletter = () => {
 
       if (error) {
         throw error;
+      }
+
+      // Send welcome email
+      try {
+        await sendWelcomeEmail(email);
+      } catch (emailError) {
+        console.error('Failed to send welcome email:', emailError);
+        // Don't show error to user, just log it
       }
 
       toast({

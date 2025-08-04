@@ -9,6 +9,7 @@ import Testimonials from "@/components/Testimonials";
 import Newsletter from "@/components/Newsletter";
 import { toast } from "@/components/ui/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { sendWelcomeEmail } from "@/utils/email";
 
 interface LandingPageData {
   route: string;
@@ -110,6 +111,14 @@ const LandingPageTemplate: React.FC<LandingPageTemplateProps> = ({ data }) => {
 
       if (error) {
         throw error;
+      }
+
+      // Send welcome email
+      try {
+        await sendWelcomeEmail(email);
+      } catch (emailError) {
+        console.error('Failed to send welcome email:', emailError);
+        // Don't show error to user, just log it
       }
 
       toast({
