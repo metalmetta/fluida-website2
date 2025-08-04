@@ -30,7 +30,7 @@ const Freelancers = () => {
     ctaButton: "Join the waitlist",
     bullets: [
       "Get real and local USD/EUR banking details",
-      "No forced currency conversion, store your money in your preferred stablecoin",
+      "No forced currency conversion, store your earnings in USDC",
       "Off-ramp PHP instantly to your local bank account or e-wallet"
     ],
     heroImage: "/hero2.png",

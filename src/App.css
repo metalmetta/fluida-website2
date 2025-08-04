@@ -182,3 +182,37 @@
     transition: none !important;
   }
 }
+
+/* Additional mobile optimizations for landing pages */
+@media (max-width: 640px) {
+  /* Landing page specific mobile improvements */
+  #hero ul {
+    margin-bottom: 1.5rem \!important;
+  }
+  
+  #hero li {
+    font-size: 0.875rem \!important;
+  }
+  
+  /* Better form spacing on landing pages */
+  #hero form {
+    gap: 1rem \!important;
+  }
+  
+  /* Ensure orange buttons display correctly */
+  .bg-orange-500 {
+    background-color: #f97316 \!important;
+  }
+  
+  .hover\:bg-orange-600:hover {
+    background-color: #ea580c \!important;
+  }
+  
+  .border-orange-500 {
+    border-color: #f97316 \!important;
+  }
+  
+  .focus\:ring-orange-500:focus {
+    --tw-ring-color: #f97316 \!important;
+  }
+}

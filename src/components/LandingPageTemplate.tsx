@@ -160,7 +160,7 @@ const LandingPageTemplate: React.FC<LandingPageTemplateProps> = ({ data }) => {
         <section className="overflow-hidden relative bg-cover" id="hero" role="banner" style={{
           backgroundImage: 'url("/Header-background.webp")',
           backgroundPosition: 'center 30%',
-          padding: isMobile ? '112px 16px 40px' : '168px 20px 60px'
+          padding: isMobile ? '120px 16px 60px' : '168px 20px 60px'
         }}>
           <div className="absolute -top-[10%] -right-[5%] w-1/2 h-[70%] bg-pulse-gradient opacity-20 blur-3xl rounded-full"></div>
           
@@ -176,41 +176,41 @@ const LandingPageTemplate: React.FC<LandingPageTemplateProps> = ({ data }) => {
                 
                 <p style={{
                   animationDelay: "0.5s"
-                }} className="section-subtitle mt-3 sm:mt-6 mb-4 sm:mb-8 leading-relaxed opacity-0 animate-fade-in text-gray-950 font-normal text-base sm:text-lg text-left" itemProp="description">
+                }} className="section-subtitle mt-3 sm:mt-6 mb-4 sm:mb-6 leading-relaxed opacity-0 animate-fade-in text-gray-950 font-normal text-base sm:text-lg text-left px-1 sm:px-0" itemProp="description">
                   {data.subheadline}
                 </p>
 
                 {/* Features bullets */}
-                <ul className="mb-8 space-y-3 opacity-0 animate-fade-in" style={{
+                <ul className="mb-6 sm:mb-8 space-y-2 sm:space-y-3 opacity-0 animate-fade-in px-1 sm:px-0" style={{
                   animationDelay: "0.6s"
                 }}>
                   {data.bullets.map((bullet, index) => (
                     <li key={index} className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-black">{bullet}</span>
+                      <div className="w-1.5 h-1.5 bg-black rounded-full mt-2 flex-shrink-0"></div>
+                      <span className="text-black text-sm sm:text-base">{bullet}</span>
                     </li>
                   ))}
                 </ul>
                 
                 {/* Request Access Form */}
-                <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 items-start sm:items-center opacity-0 animate-fade-in" style={{
+                <form onSubmit={handleSubmit} className="flex flex-col gap-4 sm:gap-3 items-stretch sm:items-center opacity-0 animate-fade-in px-1 sm:px-0" style={{
                   animationDelay: "0.7s"
                 }}>
-                  <div className="relative flex-grow">
+                  <div className="relative w-full sm:flex-grow">
                     <input 
                       type="email" 
                       inputMode="email" 
                       value={email} 
                       onChange={e => setEmail(e.target.value)} 
-                      placeholder="Enter your email for early access" 
-                      className="w-full px-4 py-3 rounded-lg border border-black bg-transparent backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-black text-black placeholder-black"
+                      placeholder="Enter your email" 
+                      className="w-full px-4 py-4 sm:py-3 rounded-xl sm:rounded-lg border-2 border-black bg-transparent backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-black text-black placeholder-black text-base"
                       required 
                     />
                   </div>
                   <button 
                     type="submit" 
                     disabled={isSubmitting} 
-                    className="bg-transparent border-2 border-black text-black hover:bg-black hover:text-white hover:border-black font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2 w-full sm:w-auto group disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="bg-transparent border-2 border-black text-black hover:bg-black hover:text-white hover:border-black font-semibold py-4 sm:py-3 px-6 rounded-xl sm:rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2 w-full sm:w-auto group disabled:opacity-50 disabled:cursor-not-allowed min-h-[56px] sm:min-h-[48px]"
                   >
                     <Mail className="w-4 h-4" />
                     {isSubmitting ? "Requesting..." : "Request Access"}
