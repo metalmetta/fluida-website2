@@ -11,6 +11,7 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Press from "./pages/Press";
 import Freelancers from "./pages/Freelancers";
+import Nigeria from "./pages/Nigeria";
 import CryptoDevs from "./pages/CryptoDevs";
 import StartupsLatam from "./pages/StartupsLatam";
 import NotFound from "./pages/NotFound";
@@ -31,6 +32,7 @@ const App = () => (
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/press" element={<Press />} />
             <Route path="/freelancers" element={<Freelancers />} />
+            <Route path="/nigeria" element={<Nigeria />} />
             <Route path="/crypto" element={<CryptoDevs />} />
             <Route path="/latam" element={<StartupsLatam />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

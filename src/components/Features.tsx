@@ -100,9 +100,6 @@ const Features = () => {
           <p className="section-subtitle mx-auto opacity-0 fade-in-element">
           A powerful platform for pay-ins, payouts, invoicing, virtual accounts and compliance across the world.
           <br />
-          <span className="text-sm">
-            Read our <a href="/blog" className="text-pulse-600 hover:text-pulse-700 underline">blog</a> for payment insights or explore our <a href="/pricing" className="text-pulse-600 hover:text-pulse-700 underline">transparent pricing</a>.
-          </span>
           </p>
         </div>
         
