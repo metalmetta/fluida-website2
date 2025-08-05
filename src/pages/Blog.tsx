@@ -22,7 +22,7 @@ const blogPosts: BlogPost[] = [
     slug: "reduce-international-payment-fees-suppliers",
     title: "How to Reduce International Payment Fees for Suppliers by 88%",
     excerpt: "Discover proven strategies to cut supplier payment costs dramatically while maintaining fast, secure international transfers.",
-    date: "2024-01-15",
+    date: "2025-01-15",
     readTime: "5 min read",
     category: "Cost Reduction",
     image: "/money.png",
@@ -32,7 +32,7 @@ const blogPosts: BlogPost[] = [
     slug: "best-b2b-payment-platform-small-businesses",
     title: "Best B2B Payment Platform for Small Businesses in 2024",
     excerpt: "Compare top B2B payment solutions and find the perfect platform for your small business's vendor and supplier payments.",
-    date: "2024-01-12",
+    date: "2025-03-12",
     readTime: "7 min read",
     category: "Platform Comparison",
     image: "/hero2.png",
@@ -42,20 +42,20 @@ const blogPosts: BlogPost[] = [
     slug: "supplier-payment-automation-vs-manual-processing",
     title: "Supplier Payment Automation vs Manual Processing: ROI Analysis",
     excerpt: "Comprehensive analysis of automation benefits, cost savings, and efficiency gains for B2B payment processing.",
-    date: "2024-01-10",
+    date: "2025-04-10",
     readTime: "6 min read",
     category: "Automation",
-    image: "/hero-image.jpg",
+    image: "/hero2.png",
     keywords: ["payment automation", "manual processing", "ROI analysis", "efficiency"]
   },
   {
     slug: "cross-border-payment-solutions-vendors",
     title: "Cross Border Payment Solutions for Vendors: Complete Guide",
     excerpt: "Everything you need to know about sending payments to international vendors, suppliers, and contractors efficiently.",
-    date: "2024-01-08",
+    date: "2025-07-08",
     readTime: "8 min read",
     category: "International Payments",
-    image: "/background-section1.png",
+    image: "/hero2.png",
     keywords: ["cross border payments", "international vendors", "global payments", "foreign suppliers"]
   }
 ];
