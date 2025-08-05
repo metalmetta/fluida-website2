@@ -32,7 +32,7 @@ const Nigeria = () => {
   const landingPageData = {
     route: "/nigeria",
     headline: personalizedHeadline,
-    subheadline: "Fluida gives you a real global account to receive payments from clients on Upwork, Guru, Workana and beyond. No FX hefty fees, no delays.",
+    subheadline: "Fluida gives you a real global account to receive payments from clients on Upwork, Fiverr, Guru and beyond. No FX hefty fees, no delays.",
     ctaButton: "Join the waitlist",
     bullets: [
       "Get real and local USD/EUR banking details",
