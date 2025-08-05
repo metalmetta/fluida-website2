@@ -49,7 +49,7 @@ const Pricing = () => {
                   Transaction Fee
                 </h3>
                 <p className="text-gray-600 mb-8 text-lg">
-                  Only pay when you succeed
+                  Only pay when you pay or get paid
                 </p>
                 
                 <div className="mb-12">
@@ -122,7 +122,7 @@ const Pricing = () => {
                   When are fees collected?
                 </h3>
                 <p className="text-gray-600">
-                  Fees are automatically deducted from successful transactions in real-time. You'll receive detailed reports of all fee calculations.
+                  Fees are aggregated into a single invoice at the end of the month. You'll receive detailed reports of all fee calculations.
                 </p>
               </div>
             </div>
