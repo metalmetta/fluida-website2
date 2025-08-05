@@ -193,10 +193,10 @@ const LandingPageTemplate: React.FC<LandingPageTemplateProps> = ({ data }) => {
                 </ul>
                 
                 {/* Request Access Form */}
-                <form onSubmit={handleSubmit} className="flex flex-col gap-4 sm:gap-3 items-stretch sm:items-center opacity-0 animate-fade-in px-1 sm:px-0" style={{
+                <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 sm:gap-3 items-stretch sm:items-center opacity-0 animate-fade-in px-1 sm:px-0" style={{
                   animationDelay: "0.7s"
                 }}>
-                  <div className="relative w-full sm:flex-grow">
+                  <div className="relative w-full sm:w-80">
                     <input 
                       type="email" 
                       inputMode="email" 
@@ -210,7 +210,7 @@ const LandingPageTemplate: React.FC<LandingPageTemplateProps> = ({ data }) => {
                   <button 
                     type="submit" 
                     disabled={isSubmitting} 
-                    className="bg-transparent border-2 border-black text-black hover:bg-black hover:text-white hover:border-black font-semibold py-4 sm:py-3 px-6 rounded-xl sm:rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2 w-full sm:w-auto group disabled:opacity-50 disabled:cursor-not-allowed min-h-[56px] sm:min-h-[48px]"
+                    className="bg-transparent border-2 border-black text-black hover:bg-black hover:text-white hover:border-black font-semibold py-4 sm:py-3 px-6 rounded-xl sm:rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2 w-full sm:w-auto group disabled:opacity-50 disabled:cursor-not-allowed min-h-[56px] sm:min-h-[48px] whitespace-nowrap"
                   >
                     <Mail className="w-4 h-4" />
                     {isSubmitting ? "Requesting..." : "Request Access"}
