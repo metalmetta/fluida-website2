@@ -171,7 +171,7 @@ const Hero = () => {
     });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isMobile]);
-  return <section className="overflow-hidden relative bg-cover" id="hero" role="banner" style={{
+  return <section className="overflow-hidden relative bg-cover min-h-screen flex items-center" id="hero" role="banner" style={{
     backgroundImage: 'url("/Header-background.webp")',
     backgroundPosition: 'center 30%',
     padding: isMobile ? '112px 16px 40px' : '168px 20px 60px'
