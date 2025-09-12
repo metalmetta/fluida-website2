@@ -174,13 +174,13 @@ const Hero = () => {
   return <section className="overflow-hidden relative bg-cover min-h-screen flex items-center" id="hero" role="banner" style={{
     backgroundImage: 'url("/Header-background.webp")',
     backgroundPosition: 'center 30%',
-    padding: isMobile ? '96px 16px 40px' : '140px 20px 60px'
+    padding: isMobile ? '112px 16px 40px' : '168px 20px 60px'
   }}>
       <div className="absolute -top-[10%] -right-[5%] w-1/2 h-[70%] bg-pulse-gradient opacity-20 blur-3xl rounded-full"></div>
       
       <div className="container px-4 sm:px-6 lg:px-8" ref={containerRef}>
-        <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-center justify-center">
-          <div className="w-full lg:w-1/2 flex flex-col justify-center text-center lg:text-left">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-center">
+          <div className="w-full lg:w-1/2">
             
             
             <h1 className="section-title text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-tight opacity-0 animate-fade-in" style={{
@@ -225,7 +225,7 @@ const Hero = () => {
             </form>
           </div>
           
-          <div className="w-full lg:w-1/2 relative mt-6 lg:mt-0 flex items-center justify-center">
+          <div className="w-full lg:w-1/2 relative mt-6 lg:mt-0">
             {lottieData ? <div className="relative z-10 animate-fade-in" style={{
             animationDelay: "0.9s"
           }}>
@@ -238,7 +238,7 @@ const Hero = () => {
                 <OptimizedImage 
                   src="/hero2.png" 
                   alt="Atlas Robot" 
-                  className="w-full aspect-[4/3] sm:aspect-[16/10] lg:aspect-[3/2] object-cover transition-transform duration-500 ease-out" 
+                  className="w-full h-auto object-cover transition-transform duration-500 ease-out" 
                   loading="eager"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
