@@ -1,66 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import TopBanner from "@/components/TopBanner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Calendar, Clock, ArrowRight } from "lucide-react";
-
-interface BlogPost {
-  slug: string;
-  title: string;
-  excerpt: string;
-  date: string;
-  readTime: string;
-  category: string;
-  image: string;
-  keywords: string[];
-}
-
-const blogPosts: BlogPost[] = [
-  {
-    slug: "reduce-international-payment-fees-suppliers",
-    title: "How to Reduce International Payment Fees for Suppliers by 88%",
-    excerpt: "Discover proven strategies to cut supplier payment costs dramatically while maintaining fast, secure international transfers.",
-    date: "2025-01-15",
-    readTime: "5 min read",
-    category: "Cost Reduction",
-    image: "/money.png",
-    keywords: ["international payment fees", "supplier payments", "cost reduction", "B2B payments"]
-  },
-  {
-    slug: "best-b2b-payment-platform-small-businesses",
-    title: "Best B2B Payment Platform for Small Businesses in 2024",
-    excerpt: "Compare top B2B payment solutions and find the perfect platform for your small business's vendor and supplier payments.",
-    date: "2025-03-12",
-    readTime: "7 min read",
-    category: "Platform Comparison",
-    image: "/hero2.png",
-    keywords: ["B2B payment platform", "small business payments", "vendor payments", "payment solutions"]
-  },
-  {
-    slug: "supplier-payment-automation-vs-manual-processing",
-    title: "Supplier Payment Automation vs Manual Processing: ROI Analysis",
-    excerpt: "Comprehensive analysis of automation benefits, cost savings, and efficiency gains for B2B payment processing.",
-    date: "2025-04-10",
-    readTime: "6 min read",
-    category: "Automation",
-    image: "/hero2.png",
-    keywords: ["payment automation", "manual processing", "ROI analysis", "efficiency"]
-  },
-  {
-    slug: "cross-border-payment-solutions-vendors",
-    title: "Cross Border Payment Solutions for Vendors: Complete Guide",
-    excerpt: "Everything you need to know about sending payments to international vendors, suppliers, and contractors efficiently.",
-    date: "2025-07-08",
-    readTime: "8 min read",
-    category: "International Payments",
-    image: "/hero2.png",
-    keywords: ["cross border payments", "international vendors", "global payments", "foreign suppliers"]
-  }
-];
+import { Calendar, Clock, ArrowRight, Search } from "lucide-react";
+import { getFeaturedPost, getRegularPosts, getAllPosts, BlogPost } from "@/data/blog/posts";
 
 const Blog = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  // Get data from the centralized blog data
+  const featuredPost = getFeaturedPost();
+  const regularPosts = getRegularPosts();
+  const allPosts = getAllPosts();
+  
+  // Get unique categories for filter
+  const categories = ["All", ...Array.from(new Set(allPosts.map(post => post.category)))];
+  
+  // Filter posts based on search and category
+  const filteredPosts = regularPosts.filter(post => {
+    const matchesSearch = searchQuery === "" || 
+      post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      post.keywords.some(keyword => keyword.toLowerCase().includes(searchQuery.toLowerCase()));
+    
+    const matchesCategory = selectedCategory === "All" || post.category === selectedCategory;
+    
+    return matchesSearch && matchesCategory;
+  });
+
   return (
     <div className="min-h-screen">
       <Helmet>
@@ -76,116 +46,128 @@ const Blog = () => {
       <TopBanner />
       <Navbar />
       
-      <main className="pt-32 pb-16">
+      <main className="pt-40 pb-16">
         <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
-          {/* Header */}
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          
+          {/* Page Header */}
+          <div className="text-center mb-12">
+            <h1 className="section-title text-gray-900 mb-4">
               B2B Payment Insights
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Expert guides, cost-saving strategies, and industry insights to optimize your supplier payments and reduce international transfer fees.
+            <p className="section-subtitle text-gray-600 mx-auto">
+              Expert strategies to reduce costs, optimize payments, and scale your business globally
             </p>
           </div>
 
-          {/* Featured Post */}
-          <div className="mb-16">
-            <div className="bg-gradient-to-r from-pulse-50 to-orange-50 rounded-2xl overflow-hidden shadow-xl">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center p-8 lg:p-12">
-                <div>
-                  <span className="inline-block bg-pulse-500 text-white px-3 py-1 rounded-full text-sm font-semibold mb-4">
-                    Featured
-                  </span>
-                  <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                    {blogPosts[0].title}
-                  </h2>
-                  <p className="text-gray-600 mb-6 text-lg">
-                    {blogPosts[0].excerpt}
-                  </p>
-                  <div className="flex items-center text-gray-500 mb-6">
-                    <Calendar className="w-4 h-4 mr-2" />
-                    <span className="mr-4">{new Date(blogPosts[0].date).toLocaleDateString()}</span>
-                    <Clock className="w-4 h-4 mr-2" />
-                    <span>{blogPosts[0].readTime}</span>
-                  </div>
-                  <Link 
-                    to={`/blog/${blogPosts[0].slug}`}
-                    className="inline-flex items-center bg-pulse-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-pulse-600 transition-colors"
+          {/* Search and Filters */}
+          <div className="mb-12">
+            <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
+              {/* Search */}
+              <div className="relative flex-1 max-w-md">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <input
+                  type="text"
+                  placeholder="Search articles..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pulse-500 focus:border-transparent"
+                />
+              </div>
+              
+              {/* Category Filter */}
+              <div className="flex flex-wrap gap-2">
+                {categories.map((category) => (
+                  <button
+                    key={category}
+                    onClick={() => setSelectedCategory(category)}
+                    className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                      selectedCategory === category
+                        ? "bg-pulse-500 text-white"
+                        : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                    }`}
                   >
-                    Read Article
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Link>
-                </div>
-                <div className="relative">
-                  <img 
-                    src={blogPosts[0].image} 
-                    alt={blogPosts[0].title}
-                    className="w-full h-64 lg:h-80 object-cover rounded-xl"
-                  />
-                </div>
+                    {category}
+                  </button>
+                ))}
               </div>
             </div>
           </div>
 
-          {/* Blog Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.slice(1).map((post, index) => (
-              <article key={post.slug} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                <img 
-                  src={post.image} 
-                  alt={post.title}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-6">
-                  <span className="inline-block bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium mb-3">
-                    {post.category}
-                  </span>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
-                    {post.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4 line-clamp-3">
-                    {post.excerpt}
-                  </p>
-                  <div className="flex items-center text-gray-500 mb-4 text-sm">
-                    <Calendar className="w-4 h-4 mr-2" />
-                    <span className="mr-4">{new Date(post.date).toLocaleDateString()}</span>
-                    <Clock className="w-4 h-4 mr-2" />
-                    <span>{post.readTime}</span>
+          {/* Featured Post */}
+          {featuredPost && (
+            <div className="mb-16">
+              <div className="bg-gradient-to-r from-pulse-50 to-orange-50 rounded-2xl overflow-hidden shadow-xl">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center p-8 lg:p-12">
+                  <div>
+                    <span className="inline-block bg-pulse-500 text-white px-3 py-1 rounded-full text-sm font-semibold mb-4">
+                      Featured
+                    </span>
+                    <h2 className="section-title text-2xl lg:text-3xl text-gray-900 mb-4">
+                      {featuredPost.title}
+                    </h2>
+                    <p className="text-gray-600 mb-6 text-lg">
+                      {featuredPost.excerpt}
+                    </p>
+                    <div className="flex items-center text-gray-500 mb-6">
+                      <Calendar className="w-4 h-4 mr-2" />
+                      <span className="mr-4">{new Date(featuredPost.date).toLocaleDateString()}</span>
+                      <Clock className="w-4 h-4 mr-2" />
+                      <span>{featuredPost.readTime}</span>
+                    </div>
+                    <Link 
+                      to={`/blog/${featuredPost.slug}`}
+                      className="inline-flex items-center bg-pulse-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-pulse-600 transition-colors"
+                    >
+                      Read Article
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Link>
                   </div>
-                  <Link 
-                    to={`/blog/${post.slug}`}
-                    className="inline-flex items-center text-pulse-600 font-semibold hover:text-pulse-700 transition-colors"
-                  >
-                    Read More
-                    <ArrowRight className="w-4 h-4 ml-1" />
-                  </Link>
+                  <div className="relative">
+                    <img 
+                      src={featuredPost.image} 
+                      alt={featuredPost.title}
+                      className="w-full h-64 lg:h-80 object-cover rounded-xl"
+                    />
+                  </div>
                 </div>
-              </article>
-            ))}
+              </div>
+            </div>
+          )}
+
+          {/* Results Counter */}
+          <div className="mb-8">
+            <p className="text-gray-600">
+              {searchQuery || selectedCategory !== "All" 
+                ? `Found ${filteredPosts.length} article${filteredPosts.length !== 1 ? 's' : ''}`
+                : `${filteredPosts.length} Articles`
+              }
+            </p>
           </div>
 
-          {/* Newsletter CTA */}
-          <div className="mt-16 bg-gray-50 rounded-2xl p-8 text-center">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Stay Updated on B2B Payment Trends
-            </h3>
-            <p className="text-gray-600 mb-6">
-              Get weekly insights on cost reduction strategies, payment automation, and industry best practices.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input 
-                type="email" 
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pulse-500 focus:border-transparent"
-              />
-              <button 
-                type="submit" 
-                className="bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary/25"
+          {/* Blog Grid */}
+          {filteredPosts.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredPosts.map((post) => (
+                <BlogCard key={post.slug} post={post} />
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-12">
+              <p className="text-gray-600 text-lg mb-4">No articles found matching your criteria.</p>
+              <button
+                onClick={() => {
+                  setSearchQuery("");
+                  setSelectedCategory("All");
+                }}
+                className="text-pulse-600 hover:text-pulse-700 font-medium"
               >
-                Subscribe
+                Clear filters
               </button>
             </div>
-          </div>
+          )}
+
+          {/* Newsletter CTA */}
+          <NewsletterSection />
         </div>
       </main>
       
@@ -193,5 +175,72 @@ const Blog = () => {
     </div>
   );
 };
+
+// Extracted Blog Card Component for reusability
+const BlogCard: React.FC<{ post: BlogPost }> = ({ post }) => (
+  <article className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+    <div className="relative overflow-hidden">
+      <img 
+        src={post.image} 
+        alt={post.title}
+        className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105"
+      />
+      <div className="absolute top-4 left-4">
+        <span className="bg-white/90 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-full text-sm font-medium">
+          {post.category}
+        </span>
+      </div>
+    </div>
+    <div className="p-6">
+      <h3 className="font-display font-bold text-xl text-gray-900 mb-3 line-clamp-2 hover:text-pulse-600 transition-colors">
+        <Link to={`/blog/${post.slug}`}>
+          {post.title}
+        </Link>
+      </h3>
+      <p className="text-gray-600 mb-4 line-clamp-3">
+        {post.excerpt}
+      </p>
+      <div className="flex items-center text-gray-500 mb-4 text-sm">
+        <Calendar className="w-4 h-4 mr-2" />
+        <span className="mr-4">{new Date(post.date).toLocaleDateString()}</span>
+        <Clock className="w-4 h-4 mr-2" />
+        <span>{post.readTime}</span>
+      </div>
+      <Link 
+        to={`/blog/${post.slug}`}
+        className="inline-flex items-center text-pulse-600 font-semibold hover:text-pulse-700 transition-colors group"
+      >
+        Read More
+        <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
+      </Link>
+    </div>
+  </article>
+);
+
+// Extracted Newsletter Section
+const NewsletterSection: React.FC = () => (
+  <div className="mt-20 bg-gradient-to-r from-pulse-50 to-orange-50 rounded-2xl p-8 text-center">
+    <h3 className="section-title text-2xl lg:text-3xl text-gray-900 mb-4">
+      Stay tuned on B2B Payment Trends
+    </h3>
+    <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+      <input 
+        type="email" 
+        placeholder="Enter your email address"
+        required
+        className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pulse-500 focus:border-transparent text-gray-900 placeholder-gray-500"
+      />
+      <button 
+        type="submit" 
+        className="bg-pulse-500 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:bg-pulse-600 hover:shadow-lg hover:shadow-pulse-500/25"
+      >
+        Subscribe
+      </button>
+    </form>
+    <p className="text-sm text-gray-500 mt-4">
+      No spam. Unsubscribe anytime.
+    </p>
+  </div>
+);
 
 export default Blog;

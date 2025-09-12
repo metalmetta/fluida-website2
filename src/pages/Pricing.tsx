@@ -23,14 +23,14 @@ const Pricing = () => {
       <TopBanner />
       <Navbar />
       
-      <main className="pt-32 pb-16">
+      <main className="pt-40 pb-16">
         <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="section-title text-gray-900 mb-6">
               Simple, Transparent Pricing
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="section-subtitle text-gray-600 mx-auto">
               Pay only a small fee for successful transactions. No hidden costs, no monthly subscriptions.
             </p>
           </div>
@@ -45,7 +45,7 @@ const Pricing = () => {
               </div>
               
               <div className="p-12 text-center">
-                <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                <h3 className="font-display font-bold text-3xl text-gray-900 mb-4">
                   Transaction Fee
                 </h3>
                 <p className="text-gray-600 mb-8 text-lg">
@@ -97,7 +97,7 @@ const Pricing = () => {
 
           {/* FAQ Section */}
           <div className="mt-20 text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">
+            <h2 className="section-title text-2xl lg:text-3xl text-gray-900 mb-8">
               Frequently Asked Questions
             </h2>
             <div className="max-w-3xl mx-auto space-y-6">
@@ -130,7 +130,7 @@ const Pricing = () => {
 
           {/* CTA Section */}
           <div className="mt-20 text-center bg-gradient-to-r from-primary/10 to-primary/5 rounded-2xl p-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="section-title text-2xl lg:text-3xl text-gray-900 mb-4">
               Start with zero upfront costs
             </h2>
             <p className="text-xl text-gray-600 mb-8">

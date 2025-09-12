@@ -2,7 +2,7 @@ import React from "react";
 
 const TopBanner = () => {
   return (
-    <div className="bg-primary text-primary-foreground fixed top-0 left-0 right-0 z-40">
+    <div className="bg-primary text-primary-foreground fixed top-0 left-0 right-0 z-40 shadow-lg shadow-primary/50">
       <a 
         href="https://snake.getfluida.com/" 
         target="_blank" 
