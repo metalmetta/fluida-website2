@@ -174,16 +174,16 @@ const Hero = () => {
   return <section className="overflow-hidden relative bg-cover min-h-screen flex items-center" id="hero" role="banner" style={{
     backgroundImage: 'url("/Header-background.webp")',
     backgroundPosition: 'center 30%',
-    padding: isMobile ? '112px 16px 40px' : '168px 20px 60px'
+    padding: isMobile ? '100px 16px 20px' : '168px 20px 60px'
   }}>
       <div className="absolute -top-[10%] -right-[5%] w-1/2 h-[70%] bg-pulse-gradient opacity-20 blur-3xl rounded-full"></div>
       
       <div className="container px-4 sm:px-6 lg:px-8" ref={containerRef}>
-        <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-center">
+        <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-12 items-center">
           <div className="w-full lg:w-1/2">
             
             
-            <h1 className="section-title text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-tight opacity-0 animate-fade-in" style={{
+            <h1 className="section-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight opacity-0 animate-fade-in" style={{
             animationDelay: "0.3s"
           }}>
               <span itemProp="name">{heroTitle}</span>
@@ -192,40 +192,40 @@ const Hero = () => {
             
             <p style={{
             animationDelay: "0.5s"
-          }} className="section-subtitle mt-3 sm:mt-6 mb-4 sm:mb-8 leading-relaxed opacity-0 animate-fade-in text-gray-950 font-normal text-base sm:text-lg text-left" itemProp="description">
-              Send funds worldwide to your Vendors, Suppliers and Contractors in real time at a fraction of the cost. 
+          }} className="section-subtitle mt-2 sm:mt-3 md:mt-6 mb-3 sm:mb-4 md:mb-8 leading-relaxed opacity-0 animate-fade-in text-gray-950 font-normal text-sm sm:text-base md:text-lg text-left" itemProp="description">
+              Send funds worldwide to your Vendors, Suppliers and Contractors in real time at a fraction of the cost.
               <Link to="/blog/reduce-international-payment-fees-suppliers" className="text-pulse-600 hover:text-pulse-700 underline ml-1">
                 Learn how to save on payment fees.
               </Link>
             </p>
             
             {/* Request Access Form */}
-            <form onSubmit={handleWaitlistSubmit} className="flex flex-col sm:flex-row gap-3 items-start sm:items-center opacity-0 animate-fade-in" style={{
+            <form onSubmit={handleWaitlistSubmit} className="flex flex-col sm:flex-row gap-2 sm:gap-3 items-start sm:items-center opacity-0 animate-fade-in w-full" style={{
             animationDelay: "0.7s"
           }}>
-              <div className="relative flex-grow">
-                <input 
-                  type="email" 
-                  inputMode="email" 
-                  value={email} 
-                  onChange={e => setEmail(e.target.value)} 
-                  placeholder="Enter your email for early access" 
-                  className="w-full px-4 py-3 rounded-lg border border-black bg-transparent backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-black text-black placeholder-black"
-                  required 
+              <div className="relative flex-grow w-full">
+                <input
+                  type="email"
+                  inputMode="email"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                  placeholder="Enter your email for early access"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg border border-black bg-transparent backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-black text-black placeholder-black"
+                  required
                 />
               </div>
-              <button 
-                type="submit" 
-                disabled={isSubmitting} 
-                className="bg-transparent border-2 border-black text-black hover:bg-black hover:text-white hover:border-black font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2 w-full sm:w-auto group disabled:opacity-50 disabled:cursor-not-allowed"
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="bg-transparent border-2 border-black text-black hover:bg-black hover:text-white hover:border-black font-semibold py-2 sm:py-3 px-4 sm:px-6 text-sm sm:text-base rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2 w-full sm:w-auto group disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <Mail className="w-4 h-4" />
-                {isSubmitting ? "Requesting..." : "Request Access"}
+                <Mail className="w-3 sm:w-4 h-3 sm:h-4" />
+                <span className="whitespace-nowrap">{isSubmitting ? "Requesting..." : "Request Access"}</span>
               </button>
             </form>
           </div>
           
-          <div className="w-full lg:w-1/2 relative mt-6 lg:mt-0">
+          <div className="w-full lg:w-1/2 relative mt-4 sm:mt-6 lg:mt-0">
             {lottieData ? <div className="relative z-10 animate-fade-in" style={{
             animationDelay: "0.9s"
           }}>
