@@ -96,9 +96,9 @@ const Index = () => {
                   className="group relative"
                 >
                   <div className="relative">
-                    <img 
-                      src="/ecoup.png" 
-                      alt="EconomyUp Logo" 
+                    <img
+                      src="/ecoup.png"
+                      alt="EconomyUp Logo"
                       className="w-16 h-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                     />
                     <div className="absolute inset-0 bg-gray-200 opacity-20 rounded-lg"></div>
@@ -111,9 +111,24 @@ const Index = () => {
                   className="group relative"
                 >
                   <div className="relative">
-                    <img 
-                      src="/C14.png" 
-                      alt="C14 Logo" 
+                    <img
+                      src="/C14.png"
+                      alt="C14 Logo"
+                      className="w-16 h-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gray-200 opacity-20 rounded-lg"></div>
+                  </div>
+                </a>
+                <a
+                  href="https://foundationcapital.com/rewriting-the-way-money-moves-with-stablecoins/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative"
+                >
+                  <div className="relative">
+                    <img
+                      src="/fcapital.png"
+                      alt="Foundation Capital Logo"
                       className="w-16 h-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                     />
                     <div className="absolute inset-0 bg-gray-200 opacity-20 rounded-lg"></div>

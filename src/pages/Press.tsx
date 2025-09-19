@@ -7,6 +7,15 @@ import { ExternalLink, Calendar, Users, Award } from "lucide-react";
 const Press = () => {
   const pressItems = [
     {
+      title: "Rewriting the Way Money Moves with Stablecoins",
+      publication: "Foundation Capital",
+      date: "2024",
+      description: "Featured in Foundation Capital's comprehensive analysis of how stablecoins are revolutionizing global payments, highlighting Fluida's innovative approach to reducing cross-border payment costs.",
+      url: "https://foundationcapital.com/rewriting-the-way-money-moves-with-stablecoins/",
+      type: "VC Insight",
+      language: "English"
+    },
+    {
       title: "Come nasce in Valtellina una startup buona per la Silicon Valley: successi e (piccoli) fallimenti",
       publication: "EconomyUp",
       date: "2024",
@@ -27,7 +36,7 @@ const Press = () => {
   ];
 
   const stats = [
-    { icon: Users, label: "Media Mentions", value: "2+" },
+    { icon: Users, label: "Media Mentions", value: "3+" },
     { icon: Award, label: "Recognition Programs", value: "The Liquid Factory" },
     { icon: ExternalLink, label: "International Coverage", value: "Multi-Language" }
   ];

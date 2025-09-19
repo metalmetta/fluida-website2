@@ -1,72 +1,17 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Mail } from "lucide-react";
+import { CircleCheckBig } from "lucide-react";
 import { Link } from "react-router-dom";
 import LottieAnimation from "./LottieAnimation";
 import OptimizedImage from "./OptimizedImage";
-import { toast } from "@/components/ui/use-toast";
-import { supabase } from "@/integrations/supabase/client";
-import { getLocationInfo, getPersonalizedHeadline } from "@/utils/geoip";
-import { sendWelcomeEmail } from "@/utils/email";
+import { getLocationInfo } from "@/utils/geoip";
+
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
   const [lottieData, setLottieData] = useState<any>(null);
   const [isMobile, setIsMobile] = useState(false);
-  const [email, setEmail] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [heroTitle, setHeroTitle] = useState("Cut Costs by 88% on");
   const [heroSubtitle, setHeroSubtitle] = useState("Supplier Payments");
-
-  const handleWaitlistSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) {
-      toast({
-        title: "Please enter your email address",
-        variant: "destructive"
-      });
-      return;
-    }
-    setIsSubmitting(true);
-
-    try {
-      const { error } = await supabase
-        .from('signups')
-        .insert([
-          {
-            email,
-            company_name: 'Request Access - Main Page',
-            origin: 'website'
-          }
-        ]);
-
-      if (error) {
-        throw error;
-      }
-
-      // Send welcome email
-      try {
-        await sendWelcomeEmail(email);
-      } catch (emailError) {
-        console.error('Failed to send welcome email:', emailError);
-        // Don't show error to user, just log it
-      }
-
-      toast({
-        title: "Access requested successfully!",
-        description: "You'll be the first to know when we're ready."
-      });
-      setEmail("");
-    } catch (error) {
-      console.error('Error saving email:', error);
-      toast({
-        title: "Something went wrong",
-        description: "Please try again later.",
-        variant: "destructive"
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   useEffect(() => {
     // Check if mobile on mount and when window resizes
@@ -199,30 +144,21 @@ const Hero = () => {
               </Link>
             </p>
             
-            {/* Request Access Form */}
-            <form onSubmit={handleWaitlistSubmit} className="flex flex-col sm:flex-row gap-2 sm:gap-3 items-start sm:items-center opacity-0 animate-fade-in w-full" style={{
+            {/* Sign Up Button */}
+            <div className="flex justify-center opacity-0 animate-fade-in" style={{
             animationDelay: "0.7s"
           }}>
-              <div className="relative flex-grow w-full">
-                <input
-                  type="email"
-                  inputMode="email"
-                  value={email}
-                  onChange={e => setEmail(e.target.value)}
-                  placeholder="Enter your email for early access"
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg border border-black bg-transparent backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-black text-black placeholder-black"
-                  required
-                />
-              </div>
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="bg-transparent border-2 border-black text-black hover:bg-black hover:text-white hover:border-black font-semibold py-2 sm:py-3 px-4 sm:px-6 text-sm sm:text-base rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2 w-full sm:w-auto group disabled:opacity-50 disabled:cursor-not-allowed"
+              <a
+                href="https://app.getfluida.com/register"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-black text-black hover:bg-black hover:text-white hover:border-black font-semibold py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg rounded-lg transition-all duration-300 hover:shadow-2xl hover:shadow-black/20 shadow-lg shadow-black/10 group relative overflow-hidden"
               >
-                <Mail className="w-3 sm:w-4 h-3 sm:h-4" />
-                <span className="whitespace-nowrap">{isSubmitting ? "Requesting..." : "Request Access"}</span>
-              </button>
-            </form>
+                <div className="absolute inset-0 bg-gradient-to-r from-black/5 via-transparent to-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <CircleCheckBig className="w-4 sm:w-5 h-4 sm:h-5 relative z-10" />
+                <span className="whitespace-nowrap relative z-10">Start saving now</span>
+              </a>
+            </div>
           </div>
           
           <div className="w-full lg:w-1/2 relative mt-4 sm:mt-6 lg:mt-0">
