@@ -139,8 +139,8 @@ const Hero = () => {
             animationDelay: "0.5s"
           }} className="section-subtitle mt-2 sm:mt-3 md:mt-6 mb-3 sm:mb-4 md:mb-8 leading-relaxed opacity-0 animate-fade-in text-gray-950 font-normal text-sm sm:text-base md:text-lg text-left" itemProp="description">
               Send funds worldwide to your Vendors, Suppliers and Contractors in real time at a fraction of the cost.
-              <Link to="/blog/reduce-international-payment-fees-suppliers" className="text-pulse-600 hover:text-pulse-700 underline ml-1">
-                Learn how to save on payment fees.
+              <Link to="/blog/reduce-international-payment-fees-suppliers" className="inline-block bg-pulse-100 text-pulse-700 px-3 py-2 rounded-md text-sm font-medium ml-2 hover:bg-pulse-200 transition-all shadow-lg shadow-pulse-200/50 hover:shadow-pulse-300/70 hover:shadow-xl">
+                Learn how to save on payment fees
               </Link>
             </p>
             
@@ -156,7 +156,7 @@ const Hero = () => {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-black/5 via-transparent to-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <CircleCheckBig className="w-4 sm:w-5 h-4 sm:h-5 relative z-10" />
-                <span className="whitespace-nowrap relative z-10">Start saving now</span>
+                <span className="whitespace-nowrap relative z-10">Start now</span>
               </a>
             </div>
           </div>
@@ -172,8 +172,8 @@ const Hero = () => {
             animationDelay: "0.3s"
           }}>
                 <OptimizedImage 
-                  src="/hero2.png" 
-                  alt="Atlas Robot" 
+                  src="/blog2.png" 
+                  alt="Global trade on Fluida" 
                   className="w-full h-auto object-cover transition-transform duration-500 ease-out" 
                   loading="eager"
                   sizes="(max-width: 768px) 100vw, 50vw"
