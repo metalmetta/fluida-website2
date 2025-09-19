@@ -235,12 +235,12 @@ const BlogPost = () => {
               See how much you could save with Fluida's B2B payment platform.
             </p>
             <a 
-              href="https://bookva.ai/fluida"
+              href="https://app.getfluida.com/register"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center bg-pulse-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-pulse-600 transition-colors"
             >
-              Schedule a Demo
+              Start now
               <ArrowRight className="w-4 h-4 ml-2" />
             </a>
           </div>
