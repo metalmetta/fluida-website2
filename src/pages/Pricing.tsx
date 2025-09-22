@@ -82,10 +82,6 @@ const Pricing = () => {
                     <Check className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
                     <span className="text-gray-700">Real-time analytics</span>
                   </li>
-                  <li className="flex items-center">
-                    <Check className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
-                    <span className="text-gray-700">API access</span>
-                  </li>
                 </ul>
                 
                 <button className="w-full py-4 px-8 rounded-lg font-semibold bg-primary text-white hover:bg-primary/90 transition-all duration-300 hover:shadow-lg text-lg">
@@ -137,7 +133,7 @@ const Pricing = () => {
               Pay and get paid globally with Fluida, at a simple 0.5% fee.
             </p>
             <a
-              href="https://bookva.ai/fluida"
+              href="https://app.getfluida.com/register"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 md:ml-4 disabled:opacity-50 disabled:cursor-not-allowed"            >
