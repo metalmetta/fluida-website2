@@ -31,7 +31,7 @@ const Pricing = () => {
               Simple, Transparent Pricing
             </h1>
             <p className="section-subtitle text-gray-600 mx-auto">
-              Pay only a small fee for successful transactions. No hidden costs, no monthly subscriptions.
+             No hidden costs, no monthly subscriptions.
             </p>
           </div>
 
@@ -84,9 +84,13 @@ const Pricing = () => {
                   </li>
                 </ul>
                 
-                <button className="w-full py-4 px-8 rounded-lg font-semibold bg-primary text-white hover:bg-primary/90 transition-all duration-300 hover:shadow-lg text-lg">
-                  Start Saving Now
-                </button>
+                <a
+              href="https://app.getfluida.com/register"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 md:ml-4 disabled:opacity-50 disabled:cursor-not-allowed"            >
+              Start Saving Now
+            </a>
               </div>
             </div>
           </div>

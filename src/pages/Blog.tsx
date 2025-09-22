@@ -114,6 +114,8 @@ const Blog = () => {
                       <Clock className="w-4 h-4 mr-2" />
                       <span>{featuredPost.readTime}</span>
                     </div>
+                    
+                    
                     <Link 
                       to={`/blog/${featuredPost.slug}`}
                       className="inline-flex items-center bg-pulse-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-pulse-600 transition-colors"
