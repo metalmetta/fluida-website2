@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
-import { Mail } from "lucide-react";
+import { Mail, ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TopBanner from "@/components/TopBanner";
@@ -191,31 +191,20 @@ const LandingPageTemplate: React.FC<LandingPageTemplateProps> = ({ data }) => {
                     </li>
                   ))}
                 </ul>
-                
-                {/* Request Access Form */}
-                <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 sm:gap-3 items-stretch sm:items-center opacity-0 animate-fade-in px-1 sm:px-0" style={{
-                  animationDelay: "0.7s"
-                }}>
-                  <div className="relative w-full sm:w-80">
-                    <input 
-                      type="email" 
-                      inputMode="email" 
-                      value={email} 
-                      onChange={e => setEmail(e.target.value)} 
-                      placeholder="Enter your email" 
-                      className="w-full px-4 py-4 sm:py-3 rounded-xl sm:rounded-lg border-2 border-black bg-transparent backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-black text-black placeholder-black text-base"
-                      required 
-                    />
-                  </div>
-                  <button 
-                    type="submit" 
-                    disabled={isSubmitting} 
-                    className="bg-transparent border-2 border-black text-black hover:bg-black hover:text-white hover:border-black font-semibold py-4 sm:py-3 px-6 rounded-xl sm:rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2 w-full sm:w-auto group disabled:opacity-50 disabled:cursor-not-allowed min-h-[56px] sm:min-h-[48px] whitespace-nowrap"
+                <div className="flex justify-center mt-6">
+                  <a
+                    href="https://app.getfluida.com/register"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-black text-black hover:bg-black hover:text-white hover:border-black font-semibold py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg rounded-lg transition-all duration-300 hover:shadow-2xl hover:shadow-black/20 shadow-lg shadow-black/10 group relative overflow-hidden"
                   >
-                    <Mail className="w-4 h-4" />
-                    {isSubmitting ? "Requesting..." : "Request Access"}
-                  </button>
-                </form>
+                <div className="absolute inset-0 bg-gradient-to-r from-black/5 via-transparent to-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <span className="whitespace-nowrap relative z-10">Start now</span>
+                <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 relative z-10" />
+              </a>
+            </div>
+
+
               </div>
               
               <div className="w-full lg:w-1/2 relative mt-6 lg:mt-0">
@@ -233,15 +222,6 @@ const LandingPageTemplate: React.FC<LandingPageTemplateProps> = ({ data }) => {
           
           <div className="hidden lg:block absolute bottom-0 left-1/4 w-64 h-64 bg-pulse-100/30 rounded-full blur-3xl -z-10"></div>
         </section>
-
-        {/* Features Section */}
-        <Features />
-        
-        {/* Testimonials Section */}
-        <Testimonials />
-        
-        {/* Newsletter Section */}
-        <Newsletter />
 
       </main>
       

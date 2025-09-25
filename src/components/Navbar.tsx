@@ -127,7 +127,7 @@ const Navbar = () => {
           <nav className="flex items-center space-x-8">
             <button onClick={() => handleSectionNavigation('solution')} className="nav-link">Solution</button>
             <button onClick={() => handleSectionNavigation('features')} className="nav-link">Features</button>
-            <button onClick={() => handleSectionNavigation('testimonials')} className="nav-link">Testimonials</button>
+            <button onClick={() => handleSectionNavigation('testimonials')} className="nav-link">Customers</button>
             <Link to="/pricing" className="nav-link">Pricing</Link>
             <Link to="/blog" className="nav-link">Blog</Link>
             <a 
@@ -165,7 +165,7 @@ const Navbar = () => {
             onClick={() => handleSectionNavigation('testimonials')}
             className="text-xl font-medium py-4 px-8 w-full max-w-xs text-center rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors shadow-md" 
           >
-            Testimonials
+            Customers
           </button>
           <Link 
             to="/pricing" 

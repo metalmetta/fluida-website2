@@ -83,62 +83,6 @@ const Index = () => {
         <ImageShowcaseSection />
         <Features />
         
-        {/* As Featured In Section */}
-        <section className="py-12 bg-white">
-          <div className="container mx-auto px-4 sm:px-6">
-            <div className="max-w-4xl mx-auto text-center">
-              <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-8">As Featured In</h3>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
-                <a
-                  href="https://www.economyup.it/startup/come-si-costruisce-una-startup-buona-per-la-silicon-valley-successi-e-piccoli-fallimenti/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative"
-                >
-                  <div className="relative">
-                    <img
-                      src="/ecoup.png"
-                      alt="EconomyUp Logo"
-                      className="w-16 h-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                    />
-                    <div className="absolute inset-0 bg-gray-200 opacity-20 rounded-lg"></div>
-                  </div>
-                </a>
-                <a
-                  href="https://www.c14.so/a083fb31-53a0-4ee9-bf92-3d964b0074d6"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative"
-                >
-                  <div className="relative">
-                    <img
-                      src="/C14.png"
-                      alt="C14 Logo"
-                      className="w-16 h-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                    />
-                    <div className="absolute inset-0 bg-gray-200 opacity-20 rounded-lg"></div>
-                  </div>
-                </a>
-                <a
-                  href="https://foundationcapital.com/rewriting-the-way-money-moves-with-stablecoins/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative"
-                >
-                  <div className="relative">
-                    <img
-                      src="/fcapital.png"
-                      alt="Foundation Capital Logo"
-                      className="w-16 h-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                    />
-                    <div className="absolute inset-0 bg-gray-200 opacity-20 rounded-lg"></div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-        
         <Testimonials />
         <Newsletter />
         <MadeByHumans />

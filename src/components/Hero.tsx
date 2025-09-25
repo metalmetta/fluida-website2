@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { CircleCheckBig } from "lucide-react";
+import { CircleCheckBig, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import LottieAnimation from "./LottieAnimation";
 import OptimizedImage from "./OptimizedImage";
@@ -155,9 +155,52 @@ const Hero = () => {
                 className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-black text-black hover:bg-black hover:text-white hover:border-black font-semibold py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg rounded-lg transition-all duration-300 hover:shadow-2xl hover:shadow-black/20 shadow-lg shadow-black/10 group relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-black/5 via-transparent to-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <CircleCheckBig className="w-4 sm:w-5 h-4 sm:h-5 relative z-10" />
                 <span className="whitespace-nowrap relative z-10">Start now</span>
+                <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 relative z-10" />
               </a>
+            </div>
+
+            {/* As Featured In Section */}
+            <div className="mt-8 lg:mt-12">
+              <h3 className="text-xs font-semibold text-black uppercase tracking-wider mb-6 text-center opacity-0 animate-fade-in" style={{ animationDelay: "0.9s" }}>As Featured In</h3>
+              <div className="flex items-center justify-center gap-6 opacity-0 animate-fade-in" style={{ animationDelay: "1.1s" }}>
+                <a
+                  href="https://www.economyup.it/startup/come-si-costruisce-una-startup-buona-per-la-silicon-valley-successi-e-piccoli-fallimenti/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative"
+                >
+                  <img
+                    src="/ecoup.png"
+                    alt="EconomyUp Logo"
+                    className="w-16 h-16 object-contain"
+                  />
+                </a>
+                <a
+                  href="https://www.c14.so/a083fb31-53a0-4ee9-bf92-3d964b0074d6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative"
+                >
+                  <img
+                    src="/C14.png"
+                    alt="C14 Logo"
+                    className="w-16 h-16 object-contain"
+                  />
+                </a>
+                <a
+                  href="https://foundationcapital.com/rewriting-the-way-money-moves-with-stablecoins/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative"
+                >
+                  <img
+                    src="/fcapital.png"
+                    alt="Foundation Capital Logo"
+                    className="w-16 h-16 object-contain"
+                  />
+                </a>
+              </div>
             </div>
           </div>
           
@@ -189,7 +232,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      
+
       <div className="hidden lg:block absolute bottom-0 left-1/4 w-64 h-64 bg-pulse-100/30 rounded-full blur-3xl -z-10 parallax" data-speed="0.05"></div>
     </section>;
 };
