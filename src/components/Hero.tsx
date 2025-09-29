@@ -10,8 +10,8 @@ const Hero = () => {
   const imageRef = useRef<HTMLImageElement>(null);
   const [lottieData, setLottieData] = useState<any>(null);
   const [isMobile, setIsMobile] = useState(false);
-  const [heroTitle, setHeroTitle] = useState("Cut Costs by 88% on");
-  const [heroSubtitle, setHeroSubtitle] = useState("Supplier Payments");
+  const [heroTitle, setHeroTitle] = useState("Open your Global USD");
+  const [heroSubtitle, setHeroSubtitle] = useState("Business Account");
 
   useEffect(() => {
     // Check if mobile on mount and when window resizes
@@ -126,22 +126,26 @@ const Hero = () => {
       <div className="container px-4 sm:px-6 lg:px-8" ref={containerRef}>
         <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-12 items-center">
           <div className="w-full lg:w-1/2">
-            
-            
-            <h1 className="section-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight opacity-0 animate-fade-in" style={{
+
+            <div className="flex justify-center mb-4 opacity-0 animate-fade-in" style={{
+            animationDelay: "0.1s"
+          }}>
+              <Link to="/blog/reduce-international-payment-fees-suppliers" className="inline-block bg-pulse-100 text-pulse-700 px-3 py-2 rounded-md text-sm font-medium hover:bg-pulse-200 transition-all shadow-lg shadow-pulse-200/50 hover:shadow-pulse-300/70 hover:shadow-xl relative before:absolute before:inset-0 before:rounded-md before:bg-gradient-to-r before:from-pulse-300/30 before:via-pulse-200/50 before:to-pulse-300/30 before:animate-bounce before:blur-sm hover:before:animate-none">
+                <span className="relative z-10">Learn how to save on payment fees</span>
+              </Link>
+            </div>
+
+            <h1 className="section-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight opacity-0 animate-fade-in text-center" style={{
             animationDelay: "0.3s"
           }}>
               <span itemProp="name">{heroTitle}</span>
               <br className="hidden sm:inline" /> <span itemProp="description">{heroSubtitle}</span>
             </h1>
-            
+
             <p style={{
             animationDelay: "0.5s"
-          }} className="section-subtitle mt-2 sm:mt-3 md:mt-6 mb-3 sm:mb-4 md:mb-8 leading-relaxed opacity-0 animate-fade-in text-gray-950 font-normal text-sm sm:text-base md:text-lg text-left" itemProp="description">
-              Send funds worldwide to your Vendors, Suppliers and Contractors in real time at a fraction of the cost.
-              <Link to="/blog/reduce-international-payment-fees-suppliers" className="inline-block bg-pulse-100 text-pulse-700 px-3 py-2 rounded-md text-sm font-medium ml-2 hover:bg-pulse-200 transition-all shadow-lg shadow-pulse-200/50 hover:shadow-pulse-300/70 hover:shadow-xl">
-                Learn how to save on payment fees
-              </Link>
+          }} className="section-subtitle mt-2 sm:mt-3 md:mt-6 mb-3 sm:mb-4 md:mb-8 leading-relaxed opacity-0 animate-fade-in text-gray-950 font-normal text-sm sm:text-base md:text-lg text-center" itemProp="description">
+              <strong>Unlock the US market</strong> and grow with ease. Pay suppliers and get paid by clients instantly while   <strong>saving up to 88% on fees.</strong>
             </p>
             
             {/* Sign Up Button */}
@@ -155,7 +159,7 @@ const Hero = () => {
                 className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-black text-black hover:bg-black hover:text-white hover:border-black font-semibold py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg rounded-lg transition-all duration-300 hover:shadow-2xl hover:shadow-black/20 shadow-lg shadow-black/10 group relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-black/5 via-transparent to-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <span className="whitespace-nowrap relative z-10">Start now</span>
+                <span className="whitespace-nowrap relative z-10">Open now</span>
                 <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 relative z-10" />
               </a>
             </div>

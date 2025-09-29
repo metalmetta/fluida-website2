@@ -240,7 +240,7 @@ const BlogPost = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center bg-pulse-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-pulse-600 transition-colors"
             >
-              Start now
+              Pay now
               <ArrowRight className="w-4 h-4 ml-2" />
             </a>
           </div>

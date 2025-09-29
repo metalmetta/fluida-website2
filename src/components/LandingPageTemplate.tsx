@@ -199,7 +199,7 @@ const LandingPageTemplate: React.FC<LandingPageTemplateProps> = ({ data }) => {
                     className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-black text-black hover:bg-black hover:text-white hover:border-black font-semibold py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg rounded-lg transition-all duration-300 hover:shadow-2xl hover:shadow-black/20 shadow-lg shadow-black/10 group relative overflow-hidden"
                   >
                 <div className="absolute inset-0 bg-gradient-to-r from-black/5 via-transparent to-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <span className="whitespace-nowrap relative z-10">Start now</span>
+                <span className="whitespace-nowrap relative z-10">Pay Now</span>
                 <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 relative z-10" />
               </a>
             </div>
