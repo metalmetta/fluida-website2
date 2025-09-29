@@ -145,7 +145,7 @@ const Hero = () => {
             <p style={{
             animationDelay: "0.5s"
           }} className="section-subtitle mt-2 sm:mt-3 md:mt-6 mb-3 sm:mb-4 md:mb-8 leading-relaxed opacity-0 animate-fade-in text-gray-950 font-normal text-sm sm:text-base md:text-lg text-center" itemProp="description">
-              <strong>Unlock the US market</strong> and grow with ease. Pay suppliers and get paid by clients instantly while   <strong>saving up to 88% on fees.</strong>
+              <strong>Unlock the US market</strong> and bank as a local business. <br />Pay suppliers and get paid by clients instantly <strong>saving up to 88% on fees</strong>
             </p>
             
             {/* Sign Up Button */}
