@@ -116,7 +116,7 @@ const Features = () => {
           <FeatureCard
             icon={<SendHorizontal className="w-5 h-5 sm:w-6 sm:h-6" />}
             title="Payouts"
-            description={<>Send money <strong>globally</strong> in seconds. Withdraw, <strong>convert or pay anyone</strong> <strong>globally</strong> with real-time <strong>local currency payouts</strong>.</>}
+            description={<>Send money <strong>globally</strong> in seconds. Withdraw, convert or  <strong>pay anyone globally</strong> with real-time <strong>local currency</strong> payouts.</>}
             index={2}
           />
           <FeatureCard
@@ -128,13 +128,13 @@ const Features = () => {
           <FeatureCard
             icon={<ScanQrCode className="w-5 h-5 sm:w-6 sm:h-6" />}
             title="Virtual Accounts"
-            description={<>Store and manage your funds effortlessly. Virtual accounts give you <strong>secure USD, EUR, and digital asset management</strong> with real-time visibility and <strong>easy bank integration</strong>.</>}
+            description={<>Store and manage your funds effortlessly. Virtual accounts give you secure<strong> USD, EUR </strong>, and digital asset management with real-time visibility and <strong>easy bank integration</strong>.</>}
             index={4}
           />
           <FeatureCard
             icon={<Nfc className="w-5 h-5 sm:w-6 sm:h-6" />}
             title="Corporate Cards"
-            description={<>Empower your team with <strong>global spending</strong>. The Fluida Corporate Card connects to your <strong>USDC balance</strong> for <strong>instant, low-cost payments worldwide</strong>.</>}
+            description={<>Empower your team with <strong>global spending</strong>. The Fluida Corporate Card connects to your <strong>USDC</strong> balance for <strong>instant, low-cost payments worldwide</strong>.</>}
             index={5}
           />
         </div>
