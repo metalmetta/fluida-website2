@@ -48,7 +48,7 @@ This is a paragraph with **bold text** and *italic text*.
 **Tables:**
 | Platform | Cost | Features |
 |----------|------|----------|
-| Fluida | 0.5% | Low fees |
+| Fluida | 1 % | Low fees |
 | Competitor | 2.9% | Higher fees |
 
 ## Another Section

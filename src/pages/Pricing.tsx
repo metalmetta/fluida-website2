@@ -10,15 +10,15 @@ const Pricing = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Pricing | Fluida - 0.5% Transaction Fee | B2B Payment Platform</title>
-        <meta name="description" content="Discover Fluida's simple, transparent pricing - just 0.5% per transaction with no hidden fees or monthly subscriptions. Save up to 88% on supplier payments compared to traditional banking. See exactly what you'll pay and start saving today." />
+        <title>Pricing | Fluida - 1 % Transaction Fee | B2B Payment Platform</title>
+        <meta name="description" content="Discover Fluida's simple, transparent pricing - just 1 % per transaction with no hidden fees or monthly subscriptions. Save up to 88% on supplier payments compared to traditional banking. See exactly what you'll pay and start saving today." />
         <meta name="keywords" content="B2B payment pricing, transaction fees, business payment costs, supplier payment fees, international transfer pricing" />
         <link rel="canonical" href="https://getfluida.com/pricing" />
-        <meta property="og:title" content="Pricing | Fluida - 0.5% Transaction Fee" />
-        <meta property="og:description" content="Simple, transparent pricing for B2B payments. Pay only 0.5% per successful transaction with no hidden costs." />
+        <meta property="og:title" content="Pricing | Fluida - 1 % Transaction Fee" />
+        <meta property="og:description" content="Simple, transparent pricing for B2B payments. Pay only 1 % per successful transaction with no hidden costs." />
         <meta property="og:url" content="https://getfluida.com/pricing" />
-        <meta property="twitter:title" content="Pricing | Fluida - 0.5% Transaction Fee" />
-        <meta property="twitter:description" content="Simple, transparent pricing for B2B payments. Pay only 0.5% per successful transaction." />
+        <meta property="twitter:title" content="Pricing | Fluida - 1 % Transaction Fee" />
+        <meta property="twitter:description" content="Simple, transparent pricing for B2B payments. Pay only 1 % per successful transaction." />
       </Helmet>
       <TopBanner />
       <Navbar />
@@ -54,7 +54,7 @@ const Pricing = () => {
                 
                 <div className="mb-12">
                   <span className="text-6xl font-bold text-primary">
-                    0.5%
+                    1 %
                   </span>
                   <span className="text-xl text-gray-600 ml-2">
                     per transaction
@@ -103,10 +103,10 @@ const Pricing = () => {
             <div className="max-w-3xl mx-auto space-y-6">
               <div className="text-left bg-gray-50 rounded-lg p-6">
                 <h3 className="font-semibold text-gray-900 mb-2">
-                  How is the 0.5% fee calculated?
+                  How is the 1 % fee calculated?
                 </h3>
                 <p className="text-gray-600">
-                  The fee is calculated as 0.5% of each successful transaction amount. You only pay when transactions are completed successfully.
+                  The fee is calculated as 1 % of each successful transaction amount. You only pay when transactions are completed successfully.
                 </p>
               </div>
               <div className="text-left bg-gray-50 rounded-lg p-6">
@@ -114,7 +114,7 @@ const Pricing = () => {
                   Are there any minimum fees or monthly charges?
                 </h3>
                 <p className="text-gray-600">
-                  No, there are no minimum fees, setup costs, or monthly subscriptions. You only pay the 0.5% transaction fee when you use the platform.
+                  No, there are no minimum fees, setup costs, or monthly subscriptions. You only pay the 1 % transaction fee when you use the platform.
                 </p>
               </div>
               <div className="text-left bg-gray-50 rounded-lg p-6">
@@ -134,7 +134,7 @@ const Pricing = () => {
               Start with zero upfront costs
             </h2>
             <p className="text-xl text-gray-600 mb-8">
-              Pay and get paid globally with Fluida, at a simple 0.5% fee.
+              Pay and get paid globally with Fluida, at a simple 1 % fee.
             </p>
             <a
               href="https://app.getfluida.com/register"

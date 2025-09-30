@@ -74,7 +74,7 @@ The most cutting-edge payment platforms are incorporating blockchain technology 
 
 ### Technology Benefits
 
-**Ultra-Low Transaction Costs:** Blockchain-based payments can reduce transaction fees to as low as 0.5% of the transfer amount. Solana, a high-performance blockchain, processes transactions with fees as low as $0.0025, regardless of transfer size.
+**Ultra-Low Transaction Costs:** Blockchain-based payments can reduce transaction fees to as low as 1 % of the transfer amount. Solana, a high-performance blockchain, processes transactions with fees as low as $0.0025, regardless of transfer size.
 
 **24/7 Settlement:** Unlike traditional banking systems limited by business hours, blockchain payments process instantly around the clock, including weekends and holidays.
 
@@ -92,7 +92,7 @@ Fluida emerges as the definitive solution for businesses seeking to dramatically
 
 **Real-Time Multi-Currency Payouts:** The platform enables instant withdrawals and payments via various local rails including PIX, SPEI, ACH, and SEPA, ensuring recipients receive funds through their preferred payment methods.
 
-**Transparent 0.5% Fee Structure:** Fluida charges a simple 0.5% transaction fee with no setup costs, monthly subscriptions, or hidden charges. This represents an 88% cost reduction compared to traditional banking fees, which can reach 4-6% when including all charges.
+**Transparent 1 % Fee Structure:** Fluida charges a simple 1 % transaction fee with no setup costs, monthly subscriptions, or hidden charges. This represents an 88% cost reduction compared to traditional banking fees, which can reach 4-6% when including all charges.
 
 **Advanced Technology Stack:** Built on Solana's high-performance blockchain, Fluida processes payments with sub-second finality while maintaining enterprise-grade security and compliance standards.
 
@@ -123,7 +123,7 @@ A mid-size manufacturing company processing $500,000 in monthly supplier payment
 ### Cost Breakdown
 
 - **Traditional Banking Costs:** $12,000 monthly (2.4% average)
-- **Fluida Platform Costs:** $2,500 monthly (0.5% fee)
+- **Fluida Platform Costs:** $2,500 monthly (1 % fee)
 - **Monthly Savings:** $9,500 (79% reduction)
 - **Annual Savings:** $114,000
 
@@ -322,7 +322,7 @@ Automated systems process invoices in 2-3 minutes on average, an 80% reduction f
 The automation advantage extends beyond speed to reliability. Automated approval workflows eliminate bottlenecks by routing invoices based on predefined rules and escalation procedures. JJ Foodservice achieved 80% straight-through processing after implementing invoice automation, cutting approval times from days to minutes.
 
 Error Reduction and Accuracy
-Automation dramatically improves processing accuracy, reducing error rates to 0.1-0.5% compared to manual rates of 1.6-3.6%. Advanced systems achieve accuracy rates of 95% or higher through built-in validation tools and AI-powered invoice capture technology. This represents up to 80% reduction in invoice errors, eliminating the costly correction cycles that plague manual processing.
+Automation dramatically improves processing accuracy, reducing error rates to 0.1-1 % compared to manual rates of 1.6-3.6%. Advanced systems achieve accuracy rates of 95% or higher through built-in validation tools and AI-powered invoice capture technology. This represents up to 80% reduction in invoice errors, eliminating the costly correction cycles that plague manual processing.
 
 The financial impact of improved accuracy extends beyond error correction costs. Accurate processing enables organizations to capture early payment discounts consistently, with automated systems achieving 80-95% discount capture rates compared to just 10-20% for manual processes.
 
@@ -367,7 +367,7 @@ Modern cloud-based payment automation solutions typically require 2-4 weeks for 
 Successful implementations require dedicated project management and stakeholder engagement across finance, IT, and supplier management teams. Organizations should plan for staff training and change management to ensure user adoption and maximize ROI realization.
 
 Market Landscape and Selection
-The accounts payable automation software market is projected to reach $4.6 billion by 2025, growing at a 10.5% compound annual growth rate. This growth reflects increasing recognition of automation's value proposition and expanding solution capabilities.
+The accounts payable automation software market is projected to reach $4.6 billion by 2025, growing at a 11 % compound annual growth rate. This growth reflects increasing recognition of automation's value proposition and expanding solution capabilities.
 
 Leading platforms like Tipalti, Bill.com, and emerging fintech solutions offer different feature sets and pricing models tailored to various business sizes and requirements. Organizations should evaluate solutions based on integration capabilities, global payment support, and scalability to support future growth.
 
@@ -458,7 +458,7 @@ Credit and debit card networks charge 2.87% to 4.35% for B2B transactions, makin
 
 ### Unmatched Cost Savings Through Blockchain Innovation
 
-Fluida stands apart by delivering an 88% reduction in supplier payment costs compared to traditional methods. This dramatic cost reduction stems from Fluida's innovative use of stablecoin technology and blockchain infrastructure, which eliminates multiple intermediaries and their associated fees. Where traditional methods might charge 3-4% in total fees, Fluida's platform operates at a fraction of these costs through its 0.5% transaction fee structure.
+Fluida stands apart by delivering an 88% reduction in supplier payment costs compared to traditional methods. This dramatic cost reduction stems from Fluida's innovative use of stablecoin technology and blockchain infrastructure, which eliminates multiple intermediaries and their associated fees. Where traditional methods might charge 3-4% in total fees, Fluida's platform operates at a fraction of these costs through its 1 % transaction fee structure.
 
 Real-Time Settlement Transforms Cash Flow Management
 
