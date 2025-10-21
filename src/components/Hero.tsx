@@ -119,7 +119,7 @@ const Hero = () => {
   return <section className="overflow-hidden relative bg-cover min-h-screen flex items-center" id="hero" role="banner" style={{
     backgroundImage: 'url("/Header-background.webp")',
     backgroundPosition: 'center 30%',
-    padding: isMobile ? '100px 16px 20px' : '168px 20px 60px'
+    padding: isMobile ? '80px 16px 20px' : '120px 20px 60px'
   }}>
       <div className="absolute -top-[10%] -right-[5%] w-1/2 h-[70%] bg-pulse-gradient opacity-20 blur-3xl rounded-full"></div>
       

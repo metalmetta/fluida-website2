@@ -73,7 +73,7 @@ const Index = () => {
         <meta property="twitter:description" content="Revolutionary B2B payment platform. Send funds worldwide at 88% lower cost." />
       </Helmet>
       <Navbar />
-      <main className="space-y-2 sm:space-y-4 md:space-y-8 pt-4 sm:pt-8 md:pt-12">
+      <main className="space-y-2 sm:space-y-4 md:space-y-8">
         <Hero />
         <HumanoidSection />
         <SpecsSection />
