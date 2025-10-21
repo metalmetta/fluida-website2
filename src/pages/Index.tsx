@@ -1,7 +1,6 @@
 
 import React, { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
-import TopBanner from "@/components/TopBanner";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import HumanoidSection from "@/components/HumanoidSection";
@@ -73,7 +72,6 @@ const Index = () => {
         <meta property="twitter:title" content="Fluida | Cut Supplier Payment Costs by 88%" />
         <meta property="twitter:description" content="Revolutionary B2B payment platform. Send funds worldwide at 88% lower cost." />
       </Helmet>
-      <TopBanner />
       <Navbar />
       <main className="space-y-2 sm:space-y-4 md:space-y-8 pt-4 sm:pt-8 md:pt-12">
         <Hero />
