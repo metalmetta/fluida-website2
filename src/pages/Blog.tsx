@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import TopBanner from "@/components/TopBanner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Calendar, Clock, ArrowRight, Search } from "lucide-react";
@@ -34,16 +33,9 @@ const Blog = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>B2B Payment Insights | Fluida Blog - Supplier Payment Tips & Guides</title>
-        <meta name="description" content="Unlock B2B payment secrets with expert guides and actionable strategies. Learn proven methods to cut supplier payment costs by 88%, optimize international transfers, and streamline your business payments. Free insights from payment industry experts." />
-        <meta name="keywords" content="B2B payment blog, supplier payment tips, international payment guides, payment cost reduction, vendor payment strategies" />
-        <link rel="canonical" href="https://getfluida.com/blog" />
-        <meta property="og:title" content="B2B Payment Insights | Fluida Blog" />
-        <meta property="og:description" content="Expert insights on B2B payments, supplier payment optimization, and cost reduction strategies." />
-        <meta property="og:url" content="https://getfluida.com/blog" />
+        <title>Blog | Fluida - B2B Payment Platform</title>
+        <meta name="description" content="Stay updated with the latest insights, news, and trends in B2B payments, fintech, and global trade. Expert analysis and company updates from the Fluida team." />
       </Helmet>
-      
-      <TopBanner />
       <Navbar />
       
       <main className="pt-40 pb-16">

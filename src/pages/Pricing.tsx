@@ -1,6 +1,5 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
-import TopBanner from "@/components/TopBanner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Check } from "lucide-react";
@@ -20,7 +19,6 @@ const Pricing = () => {
         <meta property="twitter:title" content="Pricing | Fluida - 1 % Transaction Fee" />
         <meta property="twitter:description" content="Simple, transparent pricing for B2B payments. Pay only 1 % per successful transaction." />
       </Helmet>
-      <TopBanner />
       <Navbar />
       
       <main className="pt-40 pb-16">
