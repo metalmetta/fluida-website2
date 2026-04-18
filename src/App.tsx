@@ -14,6 +14,11 @@ import Freelancers from "./pages/Freelancers";
 import Nigeria from "./pages/Nigeria";
 import CryptoDevs from "./pages/CryptoDevs";
 import StartupsLatam from "./pages/StartupsLatam";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Privacy from "./pages/Privacy";
+import Developers from "./pages/Developers";
+import Compare from "./pages/Compare";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -37,6 +42,11 @@ const App = () => (
             <Route path="/nigeria" element={<Nigeria />} />
             <Route path="/crypto" element={<CryptoDevs />} />
             <Route path="/latam" element={<StartupsLatam />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/developers" element={<Developers />} />
+            <Route path="/compare" element={<Compare />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

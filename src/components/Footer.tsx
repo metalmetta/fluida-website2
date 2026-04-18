@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { X, Linkedin, ArrowRight } from "lucide-react";
+import { X, Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -18,9 +18,14 @@ const Footer = () => {
           
           {/* Right side - Links and Social */}
           <div className="flex items-center gap-8">
-            <div className="flex space-x-6">
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
               <Link to="/pricing" className="hover:text-white transition-colors">Pricing</Link>
               <Link to="/blog" className="hover:text-white transition-colors">Blog</Link>
+              <Link to="/developers" className="hover:text-white transition-colors">Developers</Link>
+              <Link to="/compare" className="hover:text-white transition-colors">Compare</Link>
+              <Link to="/about" className="hover:text-white transition-colors">About</Link>
+              <Link to="/contact" className="hover:text-white transition-colors">Contact</Link>
+              <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link>
             </div>
             <div className="flex space-x-4">
               <a 

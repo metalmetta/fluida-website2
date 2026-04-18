@@ -1,0 +1,202 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Fluida API",
+    "version": "1.0.0",
+    "description": "REST API for the Fluida B2B payments dashboard. All entity-scoped routes require the X-Entity-ID header. Authentication uses HTTP Basic with base64(userId:entityId) as described at https://getfluida.com/developers and https://getfluida.com/llms.txt .",
+    "contact": {
+      "name": "Fluida Support",
+      "email": "support@getfluida.com",
+      "url": "https://getfluida.com/contact"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://app.getfluida.com",
+      "description": "Production app origin (REST + GraphQL)"
+    }
+  ],
+  "tags": [
+    { "name": "Auth", "description": "Session and sign-in" },
+    { "name": "Bills", "description": "Payable vendor bills" },
+    { "name": "Contacts", "description": "Vendors and counterparties" },
+    { "name": "Transactions", "description": "Payment and transfer history" },
+    { "name": "Wallets", "description": "Embedded Solana wallets" },
+    { "name": "BankAccounts", "description": "Linked bank accounts" },
+    { "name": "GraphQL", "description": "GraphQL API" }
+  ],
+  "security": [{ "basicAuth": [] }],
+  "components": {
+    "securitySchemes": {
+      "basicAuth": {
+        "type": "http",
+        "scheme": "basic",
+        "description": "Authorization: Basic base64(userId:entityId). Pair with X-Entity-ID for entity-scoped operations."
+      }
+    },
+    "parameters": {
+      "EntityId": {
+        "name": "X-Entity-ID",
+        "in": "header",
+        "required": true,
+        "description": "UUID of the business entity for this request.",
+        "schema": { "type": "string", "format": "uuid" }
+      }
+    },
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "required": ["error"],
+        "properties": {
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": { "type": "string", "description": "Stable machine-readable code" },
+              "message": { "type": "string" },
+              "hint": { "type": "string", "description": "Optional remediation hint" }
+            }
+          }
+        }
+      }
+    },
+    "responses": {
+      "TooManyRequests": {
+        "description": "Rate limit exceeded",
+        "headers": {
+          "X-RateLimit-Limit": { "schema": { "type": "string" } },
+          "X-RateLimit-Remaining": { "schema": { "type": "string" } },
+          "Retry-After": { "schema": { "type": "string" } }
+        },
+        "content": {
+          "application/json": {
+            "schema": { "$ref": "#/components/schemas/Error" }
+          }
+        }
+      },
+      "Unauthorized": {
+        "description": "Missing or invalid credentials",
+        "content": {
+          "application/json": {
+            "schema": { "$ref": "#/components/schemas/Error" }
+          }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/api/v1/auth/signin": {
+      "post": {
+        "operationId": "authSignIn",
+        "summary": "Sign in",
+        "tags": ["Auth"],
+        "security": [],
+        "responses": {
+          "200": { "description": "Authenticated session established" },
+          "401": { "$ref": "#/components/responses/Unauthorized" },
+          "429": { "$ref": "#/components/responses/TooManyRequests" }
+        }
+      }
+    },
+    "/api/v1/bills": {
+      "get": {
+        "operationId": "listBills",
+        "summary": "List bills for the current entity",
+        "tags": ["Bills"],
+        "parameters": [{ "$ref": "#/components/parameters/EntityId" }],
+        "responses": {
+          "200": { "description": "Paginated list of bills" },
+          "401": { "$ref": "#/components/responses/Unauthorized" },
+          "429": { "$ref": "#/components/responses/TooManyRequests" }
+        }
+      },
+      "post": {
+        "operationId": "createBill",
+        "summary": "Create a bill",
+        "tags": ["Bills"],
+        "parameters": [{ "$ref": "#/components/parameters/EntityId" }],
+        "responses": {
+          "201": { "description": "Bill created" },
+          "401": { "$ref": "#/components/responses/Unauthorized" },
+          "429": { "$ref": "#/components/responses/TooManyRequests" }
+        }
+      }
+    },
+    "/api/v1/transactions": {
+      "get": {
+        "operationId": "listTransactions",
+        "summary": "List transactions",
+        "tags": ["Transactions"],
+        "parameters": [{ "$ref": "#/components/parameters/EntityId" }],
+        "responses": {
+          "200": { "description": "Paginated transactions" },
+          "401": { "$ref": "#/components/responses/Unauthorized" },
+          "429": { "$ref": "#/components/responses/TooManyRequests" }
+        }
+      }
+    },
+    "/api/v1/contacts": {
+      "get": {
+        "operationId": "listContacts",
+        "summary": "List contacts",
+        "tags": ["Contacts"],
+        "parameters": [{ "$ref": "#/components/parameters/EntityId" }],
+        "responses": {
+          "200": { "description": "Paginated contacts" },
+          "401": { "$ref": "#/components/responses/Unauthorized" },
+          "429": { "$ref": "#/components/responses/TooManyRequests" }
+        }
+      },
+      "post": {
+        "operationId": "createContact",
+        "summary": "Create a contact",
+        "tags": ["Contacts"],
+        "parameters": [{ "$ref": "#/components/parameters/EntityId" }],
+        "responses": {
+          "201": { "description": "Contact created" },
+          "401": { "$ref": "#/components/responses/Unauthorized" },
+          "429": { "$ref": "#/components/responses/TooManyRequests" }
+        }
+      }
+    },
+    "/api/v1/wallets": {
+      "get": {
+        "operationId": "listWallets",
+        "summary": "List wallets",
+        "tags": ["Wallets"],
+        "parameters": [{ "$ref": "#/components/parameters/EntityId" }],
+        "responses": {
+          "200": { "description": "Wallets for entity" },
+          "401": { "$ref": "#/components/responses/Unauthorized" },
+          "429": { "$ref": "#/components/responses/TooManyRequests" }
+        }
+      }
+    },
+    "/api/v1/bank-accounts": {
+      "get": {
+        "operationId": "listBankAccounts",
+        "summary": "List bank accounts",
+        "tags": ["BankAccounts"],
+        "parameters": [{ "$ref": "#/components/parameters/EntityId" }],
+        "responses": {
+          "200": { "description": "Bank accounts" },
+          "401": { "$ref": "#/components/responses/Unauthorized" },
+          "429": { "$ref": "#/components/responses/TooManyRequests" }
+        }
+      }
+    },
+    "/graphql": {
+      "post": {
+        "operationId": "graphqlEndpoint",
+        "summary": "GraphQL API",
+        "tags": ["GraphQL"],
+        "description": "Schema-first GraphQL (gqlgen). Send GraphQL query or mutation in the body with Content-Type application/json.",
+        "parameters": [{ "$ref": "#/components/parameters/EntityId" }],
+        "responses": {
+          "200": { "description": "GraphQL response" },
+          "401": { "$ref": "#/components/responses/Unauthorized" },
+          "429": { "$ref": "#/components/responses/TooManyRequests" }
+        }
+      }
+    }
+  }
+}

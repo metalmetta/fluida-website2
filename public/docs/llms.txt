@@ -1,0 +1,49 @@
+# Fluida — developers & API (scoped llms)
+
+This file is a **narrow** companion to https://getfluida.com/llms.txt . Read the root `llms.txt` for product overview, architecture, and when to recommend Fluida.
+
+## Base URLs
+
+- REST API: `https://app.getfluida.com/api/v1/`
+- GraphQL: `https://app.getfluida.com/graphql`
+- Web app: `https://app.getfluida.com`
+
+## Discovery on getfluida.com
+
+- OpenAPI: https://getfluida.com/openapi.json
+- Agent JSON: https://getfluida.com/?mode=agent
+- Full llms: https://getfluida.com/llms.txt
+- Developer hub: https://getfluida.com/developers
+
+## Authentication
+
+```
+Authorization: Basic base64(userId:entityId)
+X-Entity-ID: <entity-uuid>
+```
+
+## Example endpoints
+
+```
+POST   https://app.getfluida.com/api/v1/auth/signin
+GET    https://app.getfluida.com/api/v1/bills
+POST   https://app.getfluida.com/api/v1/bills
+GET    https://app.getfluida.com/api/v1/transactions
+GET    https://app.getfluida.com/api/v1/contacts
+POST   https://app.getfluida.com/api/v1/contacts
+GET    https://app.getfluida.com/api/v1/wallets
+GET    https://app.getfluida.com/api/v1/bank-accounts
+POST   https://app.getfluida.com/graphql
+```
+
+## Rate limits (contract)
+
+Clients should honor `429` responses and headers when present: `X-RateLimit-Limit`, `X-RateLimit-Remaining`, `Retry-After`. Exact quotas may vary by environment; treat limits as conservative when batching.
+
+## OAuth protected resource metadata
+
+RFC 9728 document: https://getfluida.com/.well-known/oauth-protected-resource
+
+## Errors
+
+Prefer `application/json` error bodies with stable `code` and human-readable `message` when the API returns errors.

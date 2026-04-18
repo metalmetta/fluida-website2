@@ -129,6 +129,9 @@ const Navbar = () => {
             <button onClick={() => handleSectionNavigation('testimonials')} className="nav-link">Customers</button>
             <Link to="/pricing" className="nav-link">Pricing</Link>
             <Link to="/blog" className="nav-link">Blog</Link>
+            <Link to="/developers" className="nav-link">Developers</Link>
+            <Link to="/compare" className="nav-link">Compare</Link>
+            <Link to="/about" className="nav-link">About</Link>
             <a 
               href="https://bookva.ai/fluida" 
               target="_blank" 
@@ -185,6 +188,56 @@ const Navbar = () => {
             }}
           >
             Blog
+          </Link>
+          <Link
+            to="/developers"
+            className="text-xl font-medium py-4 px-8 w-full max-w-xs text-center rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors shadow-md"
+            onClick={() => {
+              setIsMenuOpen(false);
+              document.body.style.overflow = '';
+            }}
+          >
+            Developers
+          </Link>
+          <Link
+            to="/compare"
+            className="text-xl font-medium py-4 px-8 w-full max-w-xs text-center rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors shadow-md"
+            onClick={() => {
+              setIsMenuOpen(false);
+              document.body.style.overflow = '';
+            }}
+          >
+            Compare
+          </Link>
+          <Link
+            to="/about"
+            className="text-xl font-medium py-4 px-8 w-full max-w-xs text-center rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors shadow-md"
+            onClick={() => {
+              setIsMenuOpen(false);
+              document.body.style.overflow = '';
+            }}
+          >
+            About
+          </Link>
+          <Link
+            to="/contact"
+            className="text-xl font-medium py-4 px-8 w-full max-w-xs text-center rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors shadow-md"
+            onClick={() => {
+              setIsMenuOpen(false);
+              document.body.style.overflow = '';
+            }}
+          >
+            Contact
+          </Link>
+          <Link
+            to="/privacy"
+            className="text-xl font-medium py-4 px-8 w-full max-w-xs text-center rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors shadow-md"
+            onClick={() => {
+              setIsMenuOpen(false);
+              document.body.style.overflow = '';
+            }}
+          >
+            Privacy
           </Link>
           <a 
             href="https://bookva.ai/fluida"

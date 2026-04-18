@@ -1,0 +1,30 @@
+{
+  "linkset": [
+    [
+      {
+        "anchor": "https://getfluida.com/",
+        "href": "https://getfluida.com/openapi.json",
+        "rel": "service-desc",
+        "type": "application/vnd.oai.openapi;version=3.1"
+      },
+      {
+        "anchor": "https://getfluida.com/",
+        "href": "https://getfluida.com/llms.txt",
+        "rel": "alternate",
+        "type": "text/plain"
+      },
+      {
+        "anchor": "https://getfluida.com/",
+        "href": "https://getfluida.com/developers",
+        "rel": "documentation"
+      },
+      {
+        "anchor": "https://getfluida.com/",
+        "href": "https://getfluida.com/docs/llms.txt",
+        "rel": "alternate",
+        "type": "text/plain",
+        "title": "Scoped developer llms"
+      }
+    ]
+  ]
+}

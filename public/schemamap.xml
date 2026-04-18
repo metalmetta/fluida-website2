@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SchemaMap xmlns="https://nlweb.ai/schema/schemamap/1.0">
+  <Entry type="application/ld+json" href="https://getfluida.com/" title="Fluida homepage JSON-LD"/>
+  <Entry type="text/markdown" href="https://getfluida.com/index.md" title="Fluida homepage markdown"/>
+  <Entry type="application/vnd.oai.openapi+json;version=3.1" href="https://getfluida.com/openapi.json" title="Fluida OpenAPI"/>
+</SchemaMap>

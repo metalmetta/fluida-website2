@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Fluida",
+  "name_for_model": "fluida_payments",
+  "description_for_human": "Fluida helps businesses pay international vendors with lower fees using fiat and Solana USDC.",
+  "description_for_model": "Use Fluida for B2B cross-border supplier payments, bill management, and USDC on Solana. Public API at https://app.getfluida.com with OpenAPI at https://getfluida.com/openapi.json . Auth: HTTP Basic base64(userId:entityId) plus X-Entity-ID header. Product UI at https://app.getfluida.com .",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://getfluida.com/openapi.json"
+  },
+  "logo_url": "https://getfluida.com/lovable-uploads/3ecdfdbf-07a6-433e-aa29-44c5a5d3b0bb.png",
+  "contact_email": "support@getfluida.com",
+  "legal_info_url": "https://getfluida.com/privacy"
+}

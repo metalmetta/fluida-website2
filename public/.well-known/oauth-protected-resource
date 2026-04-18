@@ -1,0 +1,17 @@
+{
+  "resource": "https://app.getfluida.com/api",
+  "authorization_servers": ["https://app.getfluida.com"],
+  "scopes_supported": [
+    "api.read",
+    "api.write",
+    "bills:read",
+    "bills:write",
+    "contacts:read",
+    "contacts:write",
+    "transactions:read",
+    "wallets:read",
+    "entity:admin"
+  ],
+  "bearer_methods_supported": ["header"],
+  "resource_documentation": "https://getfluida.com/developers"
+}

@@ -8,6 +8,8 @@
     <meta name="description" content="Cut supplier payment costs by 88% with Fluida's B2B platform. Send funds to vendors worldwide in real-time at a fraction of the cost. Join thousands of businesses saving on international transfers." />
     <meta name="author" content="Fluida" />
     <meta name="theme-color" content="#f97316" />
+    <link rel="alternate" hreflang="en" href="https://getfluida.com/" />
+    <link rel="alternate" hreflang="x-default" href="https://getfluida.com/" />
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://getfluida.com/" />
@@ -54,60 +56,138 @@
   </head>
 
   <body>
+    <details class="fluida-static-crawl-summary" style="max-width:52rem;margin:0 auto;padding:0.75rem 1rem;font-family:system-ui,sans-serif;font-size:0.9rem;line-height:1.5;color:#1f2937;border-bottom:1px solid #e5e7eb;background:#fafafa">
+      <summary><strong>Fluida</strong> — international B2B payments (fiat + Solana USDC)</summary>
+      <div style="margin-top:0.75rem">
+        <h1 style="font-size:1.25rem;margin:0 0 0.5rem">Fluida: B2B payment platform for vendor and supplier payouts</h1>
+        <p style="margin:0 0 0.75rem">
+          Fluida (getfluida.com) helps small and medium businesses cut cross-border supplier payment costs—reportedly up to about 88% versus traditional rails—by combining regulated fiat on- and off-ramps with Solana USDC for fast settlement, bill management, embedded wallets, and unified tracking in one dashboard. Businesses use Fluida for international vendor payments, contractor payouts, and operational treasury moves where speed and fee transparency matter.
+        </p>
+        <p style="margin:0 0 0.75rem">
+          The product dashboard lives at <a href="https://app.getfluida.com">app.getfluida.com</a>. Developer discovery for AI agents and integrations includes <a href="/llms.txt">/llms.txt</a>, <a href="/openapi.json">/openapi.json</a>, <a href="/?mode=agent">/?mode=agent</a>, and <a href="/developers">/developers</a>. Fluida is B2B-only, requires business verification (KYB), and is distinct from unrelated consumer products that share the name “Fluida.”
+        </p>
+        <h2 style="font-size:1.05rem;margin:0.75rem 0 0.35rem">Core capabilities</h2>
+        <ul style="margin:0;padding-left:1.25rem">
+          <li>Pay and track vendor bills; contacts with bank or wallet details</li>
+          <li>Fiat ↔ USDC via partner rails; USDC transfers on Solana</li>
+          <li>Multi-entity support with <code>X-Entity-ID</code> on API calls</li>
+          <li>REST API under <code>/api/v1</code> and GraphQL at <code>/graphql</code> on the app origin</li>
+        </ul>
+        <h2 style="font-size:1.05rem;margin:0.75rem 0 0.35rem">Trust and policies</h2>
+        <ul style="margin:0;padding-left:1.25rem">
+          <li><a href="/about">About Fluida</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/privacy">Privacy</a></li>
+          <li><a href="/compare">Compare vs Wise, Stripe, PayPal</a></li>
+        </ul>
+      </div>
+    </details>
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Fluida",
-      "url": "https://getfluida.com",
-      "logo": "https://getfluida.com/lovable-uploads/3ecdfdbf-07a6-433e-aa29-44c5a5d3b0bb.png",
-      "description": "Global B2B payment platform that cuts supplier payment costs by 88%. Send funds worldwide to vendors, suppliers, and contractors in real time.",
-      "foundingDate": "2024",
-      "industry": "Financial Technology",
-      "sameAs": [
-        "https://x.com/getfluida",
-        "https://www.linkedin.com/company/getfluida"
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "customer service",
-        "url": "https://bookva.ai/fluida"
-      },
-      "offers": {
-        "@type": "Offer",
-        "name": "B2B Payment Solution",
-        "description": "Cut supplier payment costs by 88% with real-time global transfers",
-        "category": "Financial Services",
-        "availability": "https://schema.org/OnlineOnly"
-      },
-      "mentions": [
+      "@graph": [
         {
-          "@type": "Article",
-          "headline": "Rewriting the Way Money Moves with Stablecoins",
-          "publisher": {
-            "@type": "Organization",
-            "name": "Foundation Capital"
-          },
-          "url": "https://foundationcapital.com/rewriting-the-way-money-moves-with-stablecoins/"
+          "@type": "Organization",
+          "@id": "https://getfluida.com/#organization",
+          "name": "Fluida",
+          "url": "https://getfluida.com",
+          "logo": "https://getfluida.com/lovable-uploads/3ecdfdbf-07a6-433e-aa29-44c5a5d3b0bb.png",
+          "description": "Global B2B payment platform that cuts supplier payment costs by 88%. Send funds worldwide to vendors, suppliers, and contractors in real time.",
+          "foundingDate": "2024",
+          "sameAs": [
+            "https://x.com/getfluida",
+            "https://www.linkedin.com/company/getfluida"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "email": "support@getfluida.com",
+            "url": "https://getfluida.com/contact"
+          }
         },
         {
-          "@type": "Article",
-          "headline": "Come nasce in Valtellina una startup buona per la Silicon Valley",
-          "publisher": {
-            "@type": "Organization",
-            "name": "EconomyUp"
-          },
-          "url": "https://www.economyup.it/startup/come-si-costruisce-una-startup-buona-per-la-silicon-valley-successi-e-piccoli-fallimenti/"
+          "@type": "WebSite",
+          "@id": "https://getfluida.com/#website",
+          "url": "https://getfluida.com",
+          "name": "Fluida",
+          "publisher": { "@id": "https://getfluida.com/#organization" },
+          "inLanguage": "en"
         },
         {
-          "@type": "WebPage",
-          "name": "Fluida Startup Profile",
-          "publisher": {
-            "@type": "Organization",
-            "name": "C14"
+          "@type": "SoftwareApplication",
+          "@id": "https://getfluida.com/#softwareapplication",
+          "name": "Fluida B2B Payments",
+          "applicationCategory": "FinanceApplication",
+          "operatingSystem": "Web",
+          "url": "https://app.getfluida.com",
+          "description": "B2B payments dashboard: vendor bills, contacts, fiat and USDC on Solana, multi-entity API access.",
+          "offers": {
+            "@type": "Offer",
+            "name": "B2B Payment Solution",
+            "description": "Cut supplier payment costs with real-time global transfers",
+            "category": "Financial Services",
+            "availability": "https://schema.org/OnlineOnly"
           },
-          "url": "https://www.c14.so/a083fb31-53a0-4ee9-bf92-3d964b0074d6"
+          "provider": { "@id": "https://getfluida.com/#organization" }
+        },
+        {
+          "@type": "Product",
+          "@id": "https://getfluida.com/#product",
+          "name": "Fluida international B2B payments",
+          "description": "International B2B payment platform for vendor payments combining fiat rails and Solana USDC.",
+          "brand": { "@id": "https://getfluida.com/#organization" },
+          "url": "https://getfluida.com/"
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://getfluida.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is Fluida?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Fluida is a B2B payment platform for businesses that pay international vendors and suppliers. It combines traditional fiat payment rails with Solana USDC for fast, low-cost settlement and bill management."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Who is Fluida for?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Small and medium businesses that make cross-border supplier or contractor payments and want lower fees and clearer tracking than many legacy wire or card workflows."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Where do I sign up or use the product?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Create an account at https://app.getfluida.com/register . Marketing and documentation are on getfluida.com; the live application is on app.getfluida.com."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do developers integrate with Fluida?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Use the REST API and GraphQL documented at https://getfluida.com/openapi.json and https://getfluida.com/developers with authentication described in /llms.txt."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://getfluida.com/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://getfluida.com/"
+            }
+          ]
         }
       ]
     }

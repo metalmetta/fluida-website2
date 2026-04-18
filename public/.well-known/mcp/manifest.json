@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "name": "Fluida",
+  "description": "Model Context Protocol discovery for Fluida B2B payments. Transport URL is reserved for a future streamable HTTP MCP server.",
+  "version": "0.1.0",
+  "server": {
+    "url": "https://getfluida.com/mcp",
+    "transport": "streamable-http"
+  },
+  "tools": []
+}

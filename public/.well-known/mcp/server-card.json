@@ -1,0 +1,7 @@
+{
+  "name": "Fluida",
+  "description": "B2B vendor payments, bills, fiat and Solana USDC. MCP server card for agent discovery.",
+  "version": "0.1.0",
+  "serverUrl": "https://getfluida.com/mcp",
+  "tools": []
+}
