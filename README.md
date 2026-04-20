@@ -24,7 +24,7 @@ Follow these steps:
 
 ```sh
 # Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>  test
+git clone <YOUR_GIT_URL>  test test test
 
 # Step 2: Navigate to the project directory.
 cd <YOUR_PROJECT_NAME>
@@ -37,7 +37,7 @@ npm run dev
 ```
 
 **Edit a file directly in GitHub**
-
+- fdsadasdas
 - Navigate to the desired file(s).
 - Click the "Edit" button (pencil icon) at the top right of the file view.
 - Make your changes and commit the changes.
